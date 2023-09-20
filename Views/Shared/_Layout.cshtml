@@ -37,20 +37,20 @@
 
                         <ul class="navbar-nav me-auto mb-2">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Lab1</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Lab @ViewBag.LabNum</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Catalog</a>
+                                <a class="nav-link" asp-controller="Product" asp-action="Index">Catalog</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Admin</a>
+                                <a class="nav-link" asp-area="Admin" asp-page="/Index">Admin</a>
                             </li>
                         </ul>
 
                         <div class="d-flex">
-                            <a href="#" class="navbar-text">
+                            <a class="navbar-text" asp-controller="Cart" asp-action="Index">
                                 00,0 руб <i class="fa-solid fa-cart-shopping"></i> (0)
                             </a>
 
@@ -80,7 +80,7 @@
                                     <li>
                                         <form id="logoutForm" class="form-inline">
                                             <button id="logout" type="submit" class="nav-link btn btn-link text-dark">
-                                                Logout
+                                                <a asp-controller="Identity" asp-action="LogOut">Logout</a>
                                             </button>
                                         </form>
                                     </li>

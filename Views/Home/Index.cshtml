@@ -1,13 +1,19 @@
-﻿@{
+﻿@model IEnumerable<SelectListItem>
+@{
     Layout = "_Layout";
 
     ViewData["Title"] = "Index";
+    ViewData["LabNum"] = 2;
 }
 @section Scripts
 {
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/password_show_hide.js" asp-append-version="true"></script>
 }
+
+<h2>Представление Index.cshtml</h2>
+
+@await Html.PartialAsync("_GetMessage")
 
 <div class="container">
     <ol type="A">
@@ -26,27 +32,31 @@
                     <div class="card-body py-4 px-4 px-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 px-md-2 text-center">Form</h3>
 
+                        <select name="selectListDemo" asp-items=@Model></select>
+
                         <div class="row">
                             <div class="col-md-4 col-0"></div>
 
                             <div class="col-md-8 mb-4">
                                 <div class="container h-100">
                                     <div class="row" style="flex-wrap:inherit;">
-                                        <input class="form-check-input"
-                                                type="checkbox"
-                                                style="float: none; margin-left: 0;"
-                                                name="checkbox_1"
-                                                id="id_checkbox_1">
+                                        <input 
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            style="float: none; margin-left: 0;"
+                                            name="checkbox_1"
+                                            id="id_checkbox_1">
 
                                         <label>First checkbox</label>
                                     </div>
 
                                     <div class="row" style="flex-wrap:inherit;">
-                                        <input class="form-check-input"
-                                                type="checkbox"
-                                                style="float: none; margin-left: 0;"
-                                                name="checkbox_2"
-                                                id="id_checkbox_2">
+                                        <input 
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            style="float: none; margin-left: 0;"
+                                            name="checkbox_2"
+                                            id="id_checkbox_2">
 
                                         <label>Second checkbox</label>
                                     </div>
@@ -132,6 +142,3 @@
         </div>
     </div>
 </form>
-
-
-
