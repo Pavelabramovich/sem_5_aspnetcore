@@ -11,10 +11,6 @@
     <script src="~/js/password_show_hide.js" asp-append-version="true"></script>
 }
 
-<h2>Представление Index.cshtml</h2>
-
-@await Html.PartialAsync("_GetMessage")
-
 <div class="container">
     <ol type="A">
         @for (int i = 0; i < 5; i++)
@@ -40,23 +36,21 @@
                             <div class="col-md-8 mb-4">
                                 <div class="container h-100">
                                     <div class="row" style="flex-wrap:inherit;">
-                                        <input 
-                                            class="form-check-input"
-                                            type="checkbox"
-                                            style="float: none; margin-left: 0;"
-                                            name="checkbox_1"
-                                            id="id_checkbox_1">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               style="float: none; margin-left: 0;"
+                                               name="checkbox_1"
+                                               id="id_checkbox_1">
 
                                         <label>First checkbox</label>
                                     </div>
 
                                     <div class="row" style="flex-wrap:inherit;">
-                                        <input 
-                                            class="form-check-input"
-                                            type="checkbox"
-                                            style="float: none; margin-left: 0;"
-                                            name="checkbox_2"
-                                            id="id_checkbox_2">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               style="float: none; margin-left: 0;"
+                                               name="checkbox_2"
+                                               id="id_checkbox_2">
 
                                         <label>Second checkbox</label>
                                     </div>
@@ -85,51 +79,18 @@
                                 <label class="form-label" for=@loginId>Login</label>
 
                                 <input type="text"
-                                        placeholder="Enter login"
-                                        id=@loginId
-                                        name="login"
-                                        class="form-control"
-                                        required />
+                                       placeholder="Enter login"
+                                       id=@loginId
+                                       name="login"
+                                       class="form-control"
+                                       required />
 
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col mb-4">
-                                @{
-                                    var passwordId = "id_password";
-                                }
-
-                                <label class="form-label" for=@passwordId>
-                                    Password
-                                </label>
-
-                                <div class="input-group">
-                                    <input type="password"
-                                            placeholder="Enter password"
-                                            id=@passwordId
-                                            name="password"
-                                            class="form-control"
-                                            required />
-
-                                    @{
-                                        var passwordShowId = $"{passwordId}_show";
-                                        var passwordHideId = $"{passwordId}_hide";
-                                    }
-
-                                    <div class="input-group-append d-flex">
-                                        <span class="input-group-text"
-                                                onclick="passwordShowHide(
-											                        '@passwordId',
-											                        '@passwordShowId',
-											                        '@passwordHideId'
-										                        );">
-
-                                            <i class="fas fa-eye" id=@passwordShowId></i>
-                                            <i class="fas fa-eye-slash d-none" id=@passwordHideId></i>
-                                        </span>
-                                    </div>
-                                </div>
+                                @await Html.PartialAsync("_PasswordInput", model: "id_password")
                             </div>
                         </div>
 

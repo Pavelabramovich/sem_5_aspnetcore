@@ -1,0 +1,21 @@
+﻿<div class="container">
+    <img src="~/images/logo.svg" height="47px" style="margin-right:10px;">
+
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false">
+
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+        @await Html.PartialAsync("_NavLeft")
+
+        <div class="d-flex">
+            @await Html.PartialAsync("_NavRight")
+        </div>
+    </div>
+</div>
