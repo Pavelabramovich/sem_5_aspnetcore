@@ -1,9 +1,7 @@
 ﻿<doc>
 	<class name="IBookService">
 		<method name="GetBookListAsync">
-			<summary>
-				Получение списка всех объектов
-			</summary>
+			<summary>Async getting a list of all books</summary>
 			
 			<param name="categoryNormalizedName">нормализованное имя категории для фильтрации</param>
 			<param name="pageNo">номер страницы списка</param>
@@ -12,13 +10,11 @@
 		</method>
 
 		<method name="GetBookByIdAsync">
-			<summary>
-				Поиск объекта по Id
-			</summary>
+			<summary>Getting book object by id</summary>
 			
-			<param name="id">Идентификатор объекта</param>
+			<param name="id">Id of the book needed to find</param>
 			
-			<returns>Найденный объект или null, если объект не найден</returns>
+			<returns>Found object or null if object not found</returns>
 		</method>
 
 		<method name="UpdateBookAsync">

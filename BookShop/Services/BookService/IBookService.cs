@@ -4,10 +4,16 @@ using BookShop.Domain.Models;
 namespace BookShop.Services.BookService;
 
 
-public interface IBookService //Task<ResponseData<List<Book>>>
+public interface IBookService 
 {
     /// <include file='IBookService.cs.xml' path='doc/class[@name="IBookService"]/method[@name="GetBookListAsync"]' />
-    public Task<ResponseData<ListModel<Book>>> GetBookListAsync(int categoryId, int pageNo = 1);
+    public Task<ResponseData<ListModel<Book>>> GetBookListAsync();
+
+    /// <include file='IBookService.cs.xml' path='doc/class[@name="IBookService"]/method[@name="GetBookListAsync"]' />
+    public Task<ResponseData<Book?>> FirstOrDefaultAsync();
+
+    /// <include file='IBookService.cs.xml' path='doc/class[@name="IBookService"]/method[@name="GetBookListByIdAsync"]' />
+    public Task<ResponseData<ListModel<Book>>> GetBookListByIdAsync(int categoryId, int pageNo = 1);
 
     /// <include file='IBookService.cs.xml' path='doc/class[@name="IBookService"]/method[@name="GetBookByIdAsync"]' />
     public Task<ResponseData<Book>> GetBookByIdAsync(int id);

@@ -1,6 +1,7 @@
 using BookShop.Services;
 using BookShop.Services.CategoryService;
 using BookShop.Services.BookService;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,5 +32,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

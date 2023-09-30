@@ -2,7 +2,8 @@
 using BookShop.Services.BookService;
 using BookShop.Services.CategoryService;
 using BookShop.Domain.Entities;
-
+using BookShop.Domain.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BookShop.Controllers;
 
@@ -18,13 +19,30 @@ public class BookController : Controller
         _categoryService = categoryService;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int? categoryId, int? pageNo)
     {
-        var productResponse = await _bookService.GetBookListAsync(categoryId: 1);
+        var categoryResponse = await _categoryService.GetCategoryListAsync();
+
+        if (!categoryResponse.Success)
+            return NotFound(categoryResponse.ErrorMessage);
+
+        if (categoryResponse.Data.Count == 0)
+            return NotFound("No categories in collection");
+
+        if (categoryId is null)
+            categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
+
+        if (pageNo is null)
+            pageNo = 1;
+        
+
+        var productResponse = await _bookService.GetBookListByIdAsync((int)categoryId, (int)pageNo);
 
         if (!productResponse.Success)
             return NotFound(productResponse.ErrorMessage);
 
-        return View(productResponse.Data.Items);
+        ViewData["Categories"] = categoryResponse.Data;
+
+        return View(productResponse.Data);
     }
 }
