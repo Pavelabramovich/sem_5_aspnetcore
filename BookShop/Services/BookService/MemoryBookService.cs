@@ -15,7 +15,7 @@ public class MemoryBookService : IBookService
 
     public MemoryBookService([FromServices] IConfiguration config, ICategoryService categoryService)
     {
-        _categories = categoryService.GetCategoryListAsync().Result.Data;
+        _categories = categoryService.GetAllAsync().Result.Data.ToList();
         _config = config;
 
         SetupData();
@@ -70,71 +70,64 @@ public class MemoryBookService : IBookService
     }
 
 
-    public Task<ResponseData<ListModel<Book>>> GetBookListAsync()
+    public Task<ResponseData<IEnumerable<Book>>> GetAllAsync()
     {
-        var response = new ResponseData<ListModel<Book>>
-        {
-            Data = new() { Items = _books }
-        };
+        var response = new ResponseData<IEnumerable<Book>>(data: new List<Book>(_books));
 
         return Task.FromResult(response);
     }
 
-    public Task<ResponseData<Book?>> FirstOrDefaultAsync()
-    {
-        var result = _books.FirstOrDefault();
-
-        var response = new ResponseData<Book?>
-        {
-            Data = result,
-        };
-
-        if (result is null)
-        {
-            response.Success = false;
-            response.ErrorMessage = "No books in collection";
-        }
-
-
-        return Task.FromResult(response);
-    }
-
-    public Task<ResponseData<ListModel<Book>>> GetBookListByIdAsync(int categoryId, int pageNo = 1)
-    {
-        var booksByCategory = _books.Where(book => book!.Category!.Id == categoryId);
-
-        int booksPerPage = _config.GetValue<int>("ItemsPerPage");
-        var pageCount = booksByCategory.Count() / booksPerPage + 1;
-
-        var booksOnPage = booksByCategory
-            .Skip(booksPerPage * (pageNo - 1))
-            .Take(booksPerPage);
-
-        var result = new ResponseData<ListModel<Book>>
-        {
-            Data = new() { Items = booksOnPage.ToList(), CurrentPage = pageNo, TotalPages = pageCount }
-        };
-
-        return Task.FromResult(result);
-    }
-
-
-    public Task<ResponseData<Book>> GetBookByIdAsync(int id)
+    public Task<ResponseData<Book?>> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateBookAsync(int id, Book book, IFormFile? formFile)
+    public Task<ResponseData<IEnumerable<Book>>> GetWhereAsync(Func<Book, bool> predicate)
     {
         throw new NotImplementedException();
     }
 
-    public Task DeleteBookAsync(int id)
+    public Task<ResponseData<IEnumerable<Book>>> GetWhereAsync(IEnumerable<Func<Book, bool>> predicates)
     {
         throw new NotImplementedException();
     }
 
-    public Task<ResponseData<Book>> CreateBookAsync(Book book, IFormFile? formFile)
+    public Task<ResponseData<Book?>> FirstOrNullAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Book?>> FirstOrNullAsync(Func<Book, bool> predicate)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Book?>> FirstOrNullAsync(IEnumerable<Func<Book, bool>> predicates)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, Book entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, Action<Book> replacement)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, IEnumerable<Action<Book>> replacements)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteByIdAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task ClearAsync(int id)
     {
         throw new NotImplementedException();
     }

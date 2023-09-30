@@ -1,4 +1,4 @@
-﻿@model ListModel<Book>
+﻿@model PageModel<Book>
 @{
     ViewData["Title"] = "Index";
 }
@@ -27,7 +27,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown">
                     @foreach (var category in ViewBag.Categories)
                     {
-                        <a class="dropdown-item" type="button" asp-controller="Book" asp-route-categoryId="@category.Id">
+                        <a class="dropdown-item" asp-controller="Book" asp-route-categoryId="@category.Id">
                             @category.Name
                         </a>
                     }
@@ -76,16 +76,16 @@
         </div>
     </div>
     <div class="row">
-        @if (Model.TotalPages > 1)
+        @if (Model.PagesCount > 1)
         {
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     @{
-                        var currentPage = Model.CurrentPage;
-                        var totalPages = Model.TotalPages;
+                        var pageNum = Model.PageNum;
+                        var pagesCount = Model.PagesCount;
 
-                        var next = currentPage + 1 < totalPages ? currentPage + 1 : totalPages;
-                        var prev = currentPage - 1 > 0 ? currentPage - 1 : 1;
+                        var next = pageNum + 1 < pagesCount ? pageNum + 1 : pagesCount - 1;
+                        var prev = pageNum - 1 >= 0 ? pageNum - 1 : 0;
 
                         var categoryId = request.RouteValues["categoryId"];
                     }
@@ -96,10 +96,10 @@
                         </a>
                     </li>
 
-                    @for (int i = 1; i <= totalPages; i++)
+                    @for (int i = 0; i < pagesCount; i++)
                     {
-                        <li class="page-item @(i == currentPage ? "active" : string.Empty)">
-                            <a class="page-link" asp-controller="Book" asp-route-categoryId="@categoryId" asp-route-pageNo="@i">@i</a>
+                        <li class="page-item @(i == pageNum ? "active" : string.Empty)">
+                            <a class="page-link" asp-controller="Book" asp-route-categoryId="@categoryId" asp-route-pageNo="@i">@(i + 1)</a>
                         </li>
                     }
 

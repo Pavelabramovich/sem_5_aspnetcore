@@ -11,36 +11,70 @@ public class MemoryCategoryService : ICategoryService
     {
         _categories = new List<Category>
         {
-            new Category { Id=1, Name="Programming" },
-            new Category {Id=2, Name="Child" },
+            new Category { Id = 1, Name = "Programming" },
+            new Category { Id = 2, Name = "Child" },
         };
     }
 
-    public Task<ResponseData<List<Category>>> GetCategoryListAsync()
+    public Task ClearAsync(int id)
     {
-        var response = new ResponseData<List<Category>>
-        {
-            Data = _categories
-        };
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteByIdAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Category?>> FirstOrNullAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Category?>> FirstOrNullAsync(Func<Category, bool> predicate)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Category?>> FirstOrNullAsync(IEnumerable<Func<Category, bool>> predicates)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<IEnumerable<Category>>> GetAllAsync()
+    {
+        var response = new ResponseData<IEnumerable<Category>>(data: _categories);
 
         return Task.FromResult(response);
     }
 
-    public Task<ResponseData<Category?>> FirstOrDefaultAsync()
+    public Task<ResponseData<Category?>> GetByIdAsync(int id)
     {
-        var result = _categories.FirstOrDefault();
+        throw new NotImplementedException();
+    }
 
-        var response = new ResponseData<Category?>
-        {
-            Data = result,
-        };
+    public Task<ResponseData<IEnumerable<Category>>> GetWhereAsync(Func<Category, bool> predicate)
+    {
+        throw new NotImplementedException();
+    }
 
-        if (result is null)
-        {
-            response.Success = false;
-            response.ErrorMessage = "No categories in collection";
-        }
+    public Task<ResponseData<IEnumerable<Category>>> GetWhereAsync(IEnumerable<Func<Category, bool>> predicates)
+    {
+        throw new NotImplementedException();
+    }
 
-        return Task.FromResult(response);
+    public Task UpdateByIdAsync(int id, Category entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, Action<Category> replacement)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, IEnumerable<Action<Category>> replacements)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace BookShop.Domain.Entities;
 
-public class Category
+public class Category : Entity, IEquatable<Category>
 {
-    public int Id { get; init; }
     public string? Name { get; set; }
 
     public ICollection<Book> Books { get; }
@@ -18,4 +17,11 @@ public class Category
         Books = new List<Book>();
     }
 
+    public bool Equals(Category? other) => other is not null ? this.Id == other.Id : false;
+    public override bool Equals(object? other) => Equals(other as Category);
+
+    public static bool operator ==(Category? first, Category? second) => first is null && second is null ? true : first?.Equals(second) ?? false;
+    public static bool operator !=(Category? first, Category? second) => !(first == second);
+
+    public override int GetHashCode() => Id.GetHashCode();
 }
