@@ -1,0 +1,12 @@
+﻿<doc>
+	<class name="ICategoryService">
+		<method name="GetCategoryListAsync">
+			
+			<summary>
+				Получение списка всех категорий
+			</summary>
+			<returns></returns>
+			
+		</method>	
+	</class>
+</doc>

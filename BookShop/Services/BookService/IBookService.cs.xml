@@ -1,0 +1,57 @@
+﻿<doc>
+	<class name="IBookService">
+		<method name="GetBookListAsync">
+			<summary>
+				Получение списка всех объектов
+			</summary>
+			
+			<param name="categoryNormalizedName">нормализованное имя категории для фильтрации</param>
+			<param name="pageNo">номер страницы списка</param>
+			
+			<returns></returns>
+		</method>
+
+		<method name="GetBookByIdAsync">
+			<summary>
+				Поиск объекта по Id
+			</summary>
+			
+			<param name="id">Идентификатор объекта</param>
+			
+			<returns>Найденный объект или null, если объект не найден</returns>
+		</method>
+
+		<method name="UpdateBookAsync">
+			<summary>
+				Обновление объекта
+			</summary>
+			
+			<param name="id">Id изменяемомго объекта</param>
+			<param name="book">объект с новыми параметрами</param>
+		    <param name="formFile">Файл изображения</param>
+			
+			<returns></returns>
+		</method>
+
+		<method name="DeleteBookAsync">
+			<summary>
+				Удаление объекта
+			</summary>
+			
+			<param name="id">Id удаляемомго объекта</param>
+			
+			<returns></returns>
+		</method>
+
+		<method name="CreateBookAsync">
+			<summary>
+				Создание объекта
+			</summary>
+			
+			<param name="book">Новый объект</param>
+			<param name="formFile">Файл изображения</param>
+			
+			<returns>Созданный объект</returns>
+		</method>
+	</class>
+</doc>
