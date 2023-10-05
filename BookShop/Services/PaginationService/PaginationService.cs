@@ -5,16 +5,16 @@ namespace BookShop.Services.PaginationService;
 
 public class PaginationService<T> : IPaginationService<T> where T : Entity
 {
-    public Task<ResponseData<PageModel<T>>> GetPageAsync(int entitiesPerPage, IEnumerable<T> entities, int pageNo = 0)
+    public Task<ResponseData<PageModel<T>>> GetPageAsync(int entitiesPerPage, IEnumerable<T> entities, int pageNum = 0)
     {
-        var pageCount = entities.Count() / entitiesPerPage + 1;
+        var pagesCount = entities.Count() / entitiesPerPage + 1;
 
         var entitiesOnPage = entities
-            .Skip(entitiesPerPage * pageNo)
+            .Skip(entitiesPerPage * pageNum)
             .Take(entitiesPerPage);
 
-        var result = new ResponseData<PageModel<T>>(data: new() { Items = entitiesOnPage.ToList(), PageNum = pageNo, PagesCount = pageCount });
+        var response = new ResponseData<PageModel<T>>(new PageModel<T>(entitiesOnPage, pagesCount, pageNum));
 
-        return Task.FromResult(result);
+        return Task.FromResult(response);
     }
 }

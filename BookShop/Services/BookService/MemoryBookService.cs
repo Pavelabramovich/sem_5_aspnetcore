@@ -44,7 +44,7 @@ public class MemoryBookService : IBookService
             },
             new Book
             {
-                Id = 1,
+                Id = 3,
                 Title = "Schildt",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
                 Price = 8m,
@@ -52,7 +52,7 @@ public class MemoryBookService : IBookService
             },
             new Book
             {
-                Id = 2,
+                Id = 4,
                 Title = "GoF",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
                 Price = 6m,
@@ -60,7 +60,7 @@ public class MemoryBookService : IBookService
             },
             new Book
             {
-                Id = 3,
+                Id = 5,
                 Title = "ABC",
                 Category = _categories.Find(c => c.Name?.Equals("Child") ?? false),
                 Price = 2m,

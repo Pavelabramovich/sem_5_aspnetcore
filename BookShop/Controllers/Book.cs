@@ -21,7 +21,7 @@ public class BookController : Controller
         _paginationService = paginationService;
     }
 
-    public async Task<IActionResult> Index(int? categoryId, int? pageNo)
+    public async Task<IActionResult> Index(int? categoryId, int pageNum = 0)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
 
@@ -34,9 +34,6 @@ public class BookController : Controller
         if (categoryId is null)
             categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
 
-        if (pageNo is null)
-            pageNo = 0;
-        
 
         var productResponse = await _bookService.GetAllAsync();
 
@@ -45,7 +42,7 @@ public class BookController : Controller
 
         ViewData["Categories"] = categoryResponse.Data;
 
-        var productsOnPageResponse = await _paginationService.GetPageAsync(3, productResponse.Data.Where(product => product.Category.Id == categoryId), (int)pageNo);
+        var productsOnPageResponse = await _paginationService.GetPageAsync(3, productResponse.Data.Where(product => product.Category.Id == categoryId), (int)pageNum);
 
         if (!productsOnPageResponse)
             return NotFound(productsOnPageResponse.ErrorMessage);

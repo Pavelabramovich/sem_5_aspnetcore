@@ -5,6 +5,8 @@ using BookShop.Services.PaginationService;
 using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -13,6 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICategoryService, MemoryCategoryService>();
 builder.Services.AddScoped<IBookService, MemoryBookService>();
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
+
 
 var app = builder.Build();
 
