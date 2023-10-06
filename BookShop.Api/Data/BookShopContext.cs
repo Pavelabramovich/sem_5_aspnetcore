@@ -42,8 +42,7 @@ public class BookShopContext : DbContext
             entity.HasKey(e => e.Id);
 
             entity.HasOne(e => e.Category)
-                .WithMany(e => e.Books)
-                .HasForeignKey(e => e.CategoryId);
+                .WithMany(e => e.Books);
         });
 
         modelBuilder.Entity<Category>(entity =>
@@ -51,8 +50,7 @@ public class BookShopContext : DbContext
             entity.HasKey(e => e.Id);
 
             entity.HasMany(e => e.Books)
-                .WithOne(e => e.Category)
-                .HasForeignKey(e => e.CategoryId);
+                .WithOne(e => e.Category);
         });
     }
 

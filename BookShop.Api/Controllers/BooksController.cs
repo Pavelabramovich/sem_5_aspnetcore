@@ -34,23 +34,26 @@ public class BooksController : ControllerBase
     [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooks(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
-        var categoryResponse = await _categoryService.GetAllAsync();
+        //var categoryResponse = await _categoryService.GetAllAsync();
 
-        if (!categoryResponse)
-            return NotFound(categoryResponse.ErrorMessage);
+        //if (!categoryResponse)
+        //    return NotFound(categoryResponse.ErrorMessage);
 
-        if (categoryResponse.Data.Count() == 0)
-            return NotFound("No categories in collection");
+        //if (categoryResponse.Data.Count() == 0)
+        //    return NotFound("No categories in collection");
+
+        //if (categoryId is null)
+        //    categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
 
         if (categoryId is null)
-            categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
+            categoryId = 7;
 
         var productResponse = await _bookService.GetAllAsync();
 
         if (!productResponse)
             return NotFound(productResponse.ErrorMessage);
 
-        var productsOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, productResponse.Data.Where(product => product.Category.Id == categoryId), (int)pageNum);
+        var productsOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, ((IQueryable<Book>)productResponse.Data).Include(book => book.Category).Where(product => product.Category.Id == categoryId), (int)pageNum);
 
         if (!productsOnPageResponse)
             return NotFound(productsOnPageResponse.ErrorMessage);
@@ -58,8 +61,8 @@ public class BooksController : ControllerBase
 
         var a = Ok(productsOnPageResponse);
 
-        var g = a.ToString();
-        var j = a.ToJson();
+ //       var g = a.ToString();
+ //       var j = a.ToJson();
 
         return a;
     }
