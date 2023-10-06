@@ -9,12 +9,12 @@ namespace BookShop.Domain.Models;
 
 public class ResponseData<T>
 {
-    public T Data { get; init; }
+    public T? Data { get; init; }
 
     public string? ErrorMessage { get; init; }
 
 
-    public ResponseData(T data, string? errorMessage = null)
+    public ResponseData(T? data = default, string? errorMessage = null)
     {
         Data = data;
         ErrorMessage = errorMessage;

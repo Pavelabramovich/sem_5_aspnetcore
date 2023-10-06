@@ -6,7 +6,7 @@ namespace BookShop.Services.EntityService;
 
 public abstract class EntityService<T> : IEntityService<T> where T : Entity
 {
-    public abstract Task<ResponseData<IEnumerable<T>>> GetAllAsync();
+    public abstract Task<ResponseData<List<T>>> GetAllAsync();
 
 
     public abstract Task<ResponseData<T?>> GetByIdAsync(int id);

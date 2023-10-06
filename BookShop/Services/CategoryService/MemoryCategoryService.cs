@@ -41,9 +41,9 @@ public class MemoryCategoryService : ICategoryService
         throw new NotImplementedException();
     }
 
-    public Task<ResponseData<IEnumerable<Category>>> GetAllAsync()
+    public Task<ResponseData<List<Category>>> GetAllAsync()
     {
-        var response = new ResponseData<IEnumerable<Category>>(data: _categories);
+        var response = new ResponseData<List<Category>>(data: _categories);
 
         return Task.FromResult(response);
     }

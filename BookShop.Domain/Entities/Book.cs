@@ -11,7 +11,7 @@ namespace BookShop.Domain.Entities;
 
 public class Book : Entity, IEquatable<Book>
 {
-    public string? Title { get; init; }
+    public string? Title { get; set; }
 
     public int? CategoryId { get; set; }
     public Category? Category { get; set; }

@@ -10,12 +10,8 @@ public class Category : Entity, IEquatable<Category>
 {
     public string? Name { get; set; }
 
-    public ICollection<Book> Books { get; }
+    public ICollection<Book>? Books { get; set; }
 
-    public Category() 
-    {
-        Books = new List<Book>();
-    }
 
     public bool Equals(Category? other) => other is not null ? this.Id == other.Id : false;
     public override bool Equals(object? other) => Equals(other as Category);

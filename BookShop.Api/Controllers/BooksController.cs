@@ -9,6 +9,7 @@ using BookShop.Api.Data;
 using BookShop.Domain.Entities;
 using BookShop.Api.Services;
 using BookShop.Domain.Models;
+using NuGet.Protocol;
 
 namespace BookShop.Api.Controllers;
 
@@ -30,7 +31,7 @@ public class BooksController : ControllerBase
 
 
     // GET: api/Books
-    [HttpGet]
+    [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooks(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
@@ -44,7 +45,6 @@ public class BooksController : ControllerBase
         if (categoryId is null)
             categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
 
-
         var productResponse = await _bookService.GetAllAsync();
 
         if (!productResponse)
@@ -56,7 +56,12 @@ public class BooksController : ControllerBase
             return NotFound(productsOnPageResponse.ErrorMessage);
 
 
-        return Ok(productsOnPageResponse);
+        var a = Ok(productsOnPageResponse);
+
+        var g = a.ToString();
+        var j = a.ToJson();
+
+        return a;
     }
 
 

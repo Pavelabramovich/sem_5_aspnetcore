@@ -7,7 +7,7 @@ namespace BookShop.Services.EntityService;
 public interface IEntityService<T> where T : Entity
 {
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="GetAllAsync"]' />
-    public Task<ResponseData<IEnumerable<T>>> GetAllAsync();
+    public Task<ResponseData<List<T>>> GetAllAsync();
 
 
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="GetByIdAsync"]' />

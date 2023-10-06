@@ -15,7 +15,9 @@ public class CategoryService : ICategoryService
 
     public Task<ResponseData<IEnumerable<Category>>> GetAllAsync()
     {
-        var response = new ResponseData<IEnumerable<Category>>(data: _context.Categories.ToList());
+      //  var d = _context.Books.ToList();
+        
+        var response = new ResponseData<IEnumerable<Category>>(data: _context.Categories);
 
         return Task.FromResult(response);
     }

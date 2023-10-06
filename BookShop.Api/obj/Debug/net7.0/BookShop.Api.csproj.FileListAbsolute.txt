@@ -282,3 +282,5 @@ E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\Syste
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\df.json
+E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\Castle.Core.dll
+E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll

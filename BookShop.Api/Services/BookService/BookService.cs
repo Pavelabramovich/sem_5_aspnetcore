@@ -19,7 +19,7 @@ public class BookService : IBookService
 
     public Task<ResponseData<IEnumerable<Book>>> GetAllAsync()
     {
-        var response = new ResponseData<IEnumerable<Book>>(data: _context.Books.ToList());
+        var response = new ResponseData<IEnumerable<Book>>(data: _context.Books);
 
         return Task.FromResult(response);
     }

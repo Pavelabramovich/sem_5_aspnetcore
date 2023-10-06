@@ -8,7 +8,7 @@ namespace BookShop.Domain.Entities;
 
 public abstract class Entity
 {
-    public int Id { get; init; }
+    public int Id { get; set; }
 }
 
 

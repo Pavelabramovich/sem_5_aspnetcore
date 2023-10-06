@@ -6,15 +6,23 @@ using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<ICategoryService, MemoryCategoryService>();
-builder.Services.AddScoped<IBookService, MemoryBookService>();
+builder.Services.AddScoped<ICategoryService, DbCategoryService>();
+builder.Services.AddScoped<IBookService, DbBookService>();
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
+
+var apiUri = builder.Configuration["UriData:ApiUri"];
+
+builder.Services
+    .AddHttpClient<IBookService, DbBookService>(opt => opt.BaseAddress = new Uri(apiUri));
+
+builder.Services
+    .AddHttpClient<ICategoryService, DbCategoryService>(opt => opt.BaseAddress = new Uri(apiUri));
+
 
 
 var app = builder.Build();

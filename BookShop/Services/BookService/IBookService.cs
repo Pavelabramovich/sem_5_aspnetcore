@@ -6,4 +6,6 @@ namespace BookShop.Services.BookService;
 
 
 public interface IBookService : IEntityService<Book>
-{ }
+{
+    public Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryId, int pageNo = 1);
+}

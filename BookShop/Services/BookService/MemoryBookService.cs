@@ -70,9 +70,9 @@ public class MemoryBookService : IBookService
     }
 
 
-    public Task<ResponseData<IEnumerable<Book>>> GetAllAsync()
+    public Task<ResponseData<List<Book>>> GetAllAsync()
     {
-        var response = new ResponseData<IEnumerable<Book>>(data: new List<Book>(_books));
+        var response = new ResponseData<List<Book>>(data: new List<Book>(_books));
 
         return Task.FromResult(response);
     }
@@ -128,6 +128,11 @@ public class MemoryBookService : IBookService
     }
 
     public Task ClearAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryNormalizedName, int pageNo = 1)
     {
         throw new NotImplementedException();
     }
