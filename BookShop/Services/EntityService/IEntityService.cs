@@ -41,6 +41,8 @@ public interface IEntityService<T> where T : Entity
     public Task UpdateByIdAsync(int id, IEnumerable<Action<T>> replacements);
 
 
+    public Task AddAsync(T entity);
+
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="DeleteByIdAsync"]' />
     public Task DeleteByIdAsync(int id);
 

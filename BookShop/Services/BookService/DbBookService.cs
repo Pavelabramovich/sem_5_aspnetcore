@@ -14,13 +14,11 @@ public class DbBookService : IBookService
 
     private readonly JsonSerializerOptions _serializerOptions;
 
-    private string _pageSize;
-
     public DbBookService(HttpClient httpClient, IConfiguration configuration, ILogger<DbBookService> logger)
     {
         _httpClient = httpClient;
 
-        _pageSize = configuration.GetSection("ItemsPerPage").Value;
+        //_pageSize = configuration.GetSection("ItemsPerPage").Value;
 
          _serializerOptions = new JsonSerializerOptions()
          {
@@ -66,22 +64,24 @@ public class DbBookService : IBookService
         return new ResponseData<PageModel<Book>>(data: null, errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
     }
 
-    public async Task<ResponseData<Book>> CreateProductAsync(Book product)
+    public async Task AddAsync(Book book)
     {
-        var uri = new Uri(_httpClient.BaseAddress.AbsoluteUri + "Dishes");
+        var uri = new Uri($"{_httpClient.BaseAddress.AbsoluteUri}Books" );
 
-        var response = await _httpClient.PostAsJsonAsync(uri, product, _serializerOptions);
+        var response = await _httpClient.PostAsJsonAsync(uri, book, _serializerOptions);
 
         if (response.IsSuccessStatusCode)
         {
-            var data = await response.Content.ReadFromJsonAsync<ResponseData<Book>>(_serializerOptions);
+            return;
+           // var data = await response.Content.ReadFromJsonAsync<ResponseData<Book>>(_serializerOptions);
 
-            return data; // dish;
+         //   return data; // dish;
         }
 
         _logger.LogError($"-----> object not created. Error: {response.StatusCode}");
 
-        return new ResponseData<Book>(data: null, errorMessage: $"Объект не добавлен. Error: {response.StatusCode}");
+        return;
+     //   return new ResponseData<Book>(data: null, errorMessage: $"Объект не добавлен. Error: {response.StatusCode}");
     }
 
 
@@ -111,9 +111,29 @@ public class DbBookService : IBookService
         throw new NotImplementedException();
     }
 
-    public Task<ResponseData<List<Book>>> GetAllAsync()
+    public async Task<ResponseData<List<Book>>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books");
+
+        var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
+
+        if (response.IsSuccessStatusCode)
+        {
+            try
+            {
+                return await response.Content.ReadFromJsonAsync<ResponseData<List<Book>>>(_serializerOptions);
+            }
+            catch (JsonException ex)
+            {
+                _logger.LogError($"-----> Ошибка: {ex.Message}");
+
+                return new(errorMessage: $"Ошибка: {ex.Message}");
+            }
+        }
+
+        _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode}");
+
+        return new(errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
     }
 
     public Task<ResponseData<Book?>> GetByIdAsync(int id)
@@ -145,4 +165,10 @@ public class DbBookService : IBookService
     {
         throw new NotImplementedException();
     }
+
+    //public Task AddAsync(Book book)
+    //{
+    //    throw new NotImplementedException();
+
+    //}
 }

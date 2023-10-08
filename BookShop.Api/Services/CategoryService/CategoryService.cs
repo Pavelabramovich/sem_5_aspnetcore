@@ -76,4 +76,9 @@ public class CategoryService : ICategoryService
     {
         throw new NotImplementedException();
     }
+
+    public Task AddAsync(Category entity)
+    {
+        throw new NotImplementedException();
+    }
 }

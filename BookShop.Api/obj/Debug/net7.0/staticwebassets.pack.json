@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookShop.Api.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BookShop.Api.bundle.scp.css"
-    },
-    {
       "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

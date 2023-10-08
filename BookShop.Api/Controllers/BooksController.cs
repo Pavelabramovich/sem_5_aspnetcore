@@ -58,13 +58,7 @@ public class BooksController : ControllerBase
         if (!productsOnPageResponse)
             return NotFound(productsOnPageResponse.ErrorMessage);
 
-
-        var a = Ok(productsOnPageResponse);
-
- //       var g = a.ToString();
- //       var j = a.ToJson();
-
-        return a;
+        return Ok(productsOnPageResponse);
     }
 
 
@@ -84,33 +78,33 @@ public class BooksController : ControllerBase
         }
     }
 
+    [HttpGet]
+    public async Task<ActionResult<Book>> GetBooks()
+    {
+        var booksResponse = await _bookService.GetAllAsync();
+
+        if (!booksResponse)
+        {
+            return NotFound(booksResponse.ErrorMessage);
+        }
+        else
+        {
+            return Ok(booksResponse);
+        }
+    }
+
+
     // PUT: api/Books/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
-        //if (id != book.Id)
-        //{
-        //    return BadRequest();
-        //}
+        if (id != book.Id)
+        {
+            return BadRequest();
+        }
 
-        //_context.Entry(book).State = EntityState.Modified;
-
-        //try
-        //{
-        //    await _context.SaveChangesAsync();
-        //}
-        //catch (DbUpdateConcurrencyException)
-        //{
-        //    if (!BookExists(id))
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        throw;
-        //    }
-        //}
+        _bookService.UpdateByIdAsync(id, book);
 
         return NoContent();
     }
@@ -120,12 +114,7 @@ public class BooksController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
-      //if (_context.Books == null)
-      //{
-      //    return Problem("Entity set 'BookShopContext.Books'  is null.");
-      //}
-      //  _context.Books.Add(book);
-      //  await _context.SaveChangesAsync();
+        await _bookService.AddAsync(book);
 
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }

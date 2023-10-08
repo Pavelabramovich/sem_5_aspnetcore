@@ -136,4 +136,9 @@ public class MemoryBookService : IBookService
     {
         throw new NotImplementedException();
     }
+
+    public Task AddAsync(Book entity)
+    {
+        throw new NotImplementedException();
+    }
 }

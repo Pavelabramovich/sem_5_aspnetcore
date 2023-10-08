@@ -12,8 +12,6 @@ E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.AssemblyInfoInpu
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.AssemblyInfo.cs
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.csproj.CoreCompileInputs.cache
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.MvcApplicationPartsAssemblyInfo.cache
-E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.RazorAssemblyInfo.cache
-E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.RazorAssemblyInfo.cs
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets\msbuild.BookShop.Api.Microsoft.AspNetCore.StaticWebAssets.props
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.BookShop.Api.props
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.BookShop.Api.props
@@ -21,9 +19,7 @@ E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets\msbuild.build
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets.pack.json
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets.build.json
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\staticwebassets.development.json
-E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\scopedcss\bundle\BookShop.Api.styles.css
-E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\scopedcss\projectbundle\BookShop.Api.bundle.scp.css
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.dll
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\refint\BookShop.Api.dll
 E:\NewRepos\BookShop\BookShop.Api\obj\Debug\net7.0\BookShop.Api.pdb
@@ -281,6 +277,5 @@ E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\Syste
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\df.json
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\Castle.Core.dll
 E:\NewRepos\BookShop\BookShop.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll

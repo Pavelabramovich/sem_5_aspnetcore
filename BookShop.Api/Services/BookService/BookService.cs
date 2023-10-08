@@ -59,9 +59,18 @@ public class BookService : IBookService
         throw new NotImplementedException();
     }
 
-    public Task UpdateByIdAsync(int id, Book entity)
+    public async Task UpdateByIdAsync(int id, Book book)
     {
-        throw new NotImplementedException();
+        _context.Entry(book).State = EntityState.Modified;
+
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            throw new DbUpdateConcurrencyException("Book entity not found", e);   
+        }
     }
 
     public Task UpdateByIdAsync(int id, Action<Book> replacement)
@@ -82,5 +91,11 @@ public class BookService : IBookService
     public Task ClearAsync(int id)
     {
         throw new NotImplementedException();
+    }
+
+    public async Task AddAsync(Book entity)
+    {
+        await _context.Books.AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 }

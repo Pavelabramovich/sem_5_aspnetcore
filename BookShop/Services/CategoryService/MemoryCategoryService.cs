@@ -16,6 +16,11 @@ public class MemoryCategoryService : ICategoryService
         };
     }
 
+    public Task AddAsync(Category entity)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task ClearAsync(int id)
     {
         throw new NotImplementedException();

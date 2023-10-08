@@ -35,4 +35,9 @@ public abstract class EntityService<T> : IEntityService<T> where T : Entity
 
 
     public abstract Task ClearAsync(int id);
+
+    public Task AddAsync(T entity)
+    {
+        throw new NotImplementedException();
+    }
 }

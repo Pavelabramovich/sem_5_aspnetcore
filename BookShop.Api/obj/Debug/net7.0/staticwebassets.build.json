@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tMNK3tBghDmzRVEiqJsfiZtVAEWkUqlSuSoRGziL+Jo=",
+  "Hash": "T7G5RUdQwTFEoh2Zr5DCMr31LDCifj3LKyhXviORT7o=",
   "Source": "BookShop.Api",
   "BasePath": "_content/BookShop.Api",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BookShop.Api.styles.css",
-      "SourceId": "BookShop.Api",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/BookShop.Api",
-      "RelativePath": "BookShop.Api.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BookShop.Api.styles.css"
-    },
-    {
-      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookShop.Api.bundle.scp.css",
-      "SourceId": "BookShop.Api",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/BookShop.Api",
-      "RelativePath": "BookShop.Api.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\NewRepos\\BookShop\\BookShop.Api\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookShop.Api.bundle.scp.css"
-    },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\css\\site.css",
       "SourceId": "BookShop.Api",

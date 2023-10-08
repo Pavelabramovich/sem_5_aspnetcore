@@ -27,6 +27,10 @@ public class DbCategoryService : ICategoryService
         _logger = logger;
     }
 
+    public Task AddAsync(Category entity)
+    {
+        throw new NotImplementedException();
+    }
 
     public Task ClearAsync(int id)
     {
