@@ -8,14 +8,14 @@ using System.Text.Json;
 
 namespace BookShop.Services.CategoryService;
 
-public class DbCategoryService : ICategoryService
+public class ApiCategoryService : ICategoryService
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<DbBookService> _logger;
+    private readonly ILogger<ApiBookService> _logger;
 
     private readonly JsonSerializerOptions _serializerOptions;
 
-    public DbCategoryService(HttpClient httpClient, IConfiguration configuration, ILogger<DbBookService> logger)
+    public ApiCategoryService(HttpClient httpClient, IConfiguration configuration, ILogger<ApiBookService> logger)
     {
         _httpClient = httpClient;
 

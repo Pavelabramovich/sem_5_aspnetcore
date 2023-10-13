@@ -13,7 +13,6 @@ E:\NewRepos\Web_153505_Abramovich\BookShop.Domain\obj\Debug\net7.0\ref\BookShop.
 E:\NewRepos\BookShop\BookShop.Domain\bin\Debug\net7.0\BookShop.Domain.deps.json
 E:\NewRepos\BookShop\BookShop.Domain\bin\Debug\net7.0\BookShop.Domain.dll
 E:\NewRepos\BookShop\BookShop.Domain\bin\Debug\net7.0\BookShop.Domain.pdb
-E:\NewRepos\BookShop\BookShop.Domain\obj\Debug\net7.0\BookShop.Domain.csproj.AssemblyReference.cache
 E:\NewRepos\BookShop\BookShop.Domain\obj\Debug\net7.0\BookShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
 E:\NewRepos\BookShop\BookShop.Domain\obj\Debug\net7.0\BookShop.Domain.AssemblyInfoInputs.cache
 E:\NewRepos\BookShop\BookShop.Domain\obj\Debug\net7.0\BookShop.Domain.AssemblyInfo.cs

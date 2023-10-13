@@ -13,6 +13,7 @@ public class MemoryBookService : IBookService
 
     private IConfiguration _config;
 
+
     public MemoryBookService([FromServices] IConfiguration config, ICategoryService categoryService)
     {
         _categories = categoryService.GetAllAsync().Result.Data.ToList();
@@ -132,7 +133,7 @@ public class MemoryBookService : IBookService
         throw new NotImplementedException();
     }
 
-    public Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryNormalizedName, int pageNo = 1)
+    public Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryNormalizedName, int? pageNo = 1)
     {
         throw new NotImplementedException();
     }

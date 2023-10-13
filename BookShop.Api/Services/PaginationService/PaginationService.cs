@@ -9,9 +9,12 @@ public class PaginationService<T> : IPaginationService<T> where T : Entity
     {
         var pagesCount = entities.Count() / entitiesPerPage + 1;
 
-        var entitiesOnPage = entities
+        IEnumerable<T> entitiesOnPage;
+
+        entitiesOnPage = entities
             .Skip(entitiesPerPage * pageNum)
-            .Take(entitiesPerPage);
+            .Take(entitiesPerPage)
+            .ToArray();
 
         var response = new ResponseData<PageModel<T>>(new PageModel<T>(entitiesOnPage, pagesCount, pageNum));
 

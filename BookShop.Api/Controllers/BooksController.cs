@@ -18,64 +18,51 @@ namespace BookShop.Api.Controllers;
 [ApiController]
 public class BooksController : ControllerBase
 {
-    private readonly IBookService _bookService;
-    private readonly ICategoryService _categoryService;
+    private readonly IEntityService<Book> _bookService;
+    private readonly IEntityService<Category> _categoryService;
+
     private readonly IPaginationService<Book> _paginationService;
 
-    public BooksController(IBookService bookService, ICategoryService categoryService, IPaginationService<Book> paginationService)
+
+    public BooksController(IEntityService<Book> bookService, IEntityService<Category> categoryService, IPaginationService<Book> paginationService)
     {
         _bookService = bookService;
         _categoryService = categoryService;
         _paginationService = paginationService;
     }
 
-
-    // GET: api/Books
     [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooks(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
-        //var categoryResponse = await _categoryService.GetAllAsync();
+        var categoryResponse = await _categoryService.GetAllAsync();
 
-        //if (!categoryResponse)
-        //    return NotFound(categoryResponse.ErrorMessage);
-
-        //if (categoryResponse.Data.Count() == 0)
-        //    return NotFound("No categories in collection");
-
-        //if (categoryId is null)
-        //    categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
+        if (!categoryResponse)
+            return NotFound(categoryResponse.ErrorMessage);
 
         if (categoryId is null)
-            categoryId = 7;
-
-        var productResponse = await _bookService.GetAllAsync();
-
-        if (!productResponse)
-            return NotFound(productResponse.ErrorMessage);
-
-        var productsOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, ((IQueryable<Book>)productResponse.Data).Include(book => book.Category).Where(product => product.Category.Id == categoryId), (int)pageNum);
-
-        if (!productsOnPageResponse)
-            return NotFound(productsOnPageResponse.ErrorMessage);
-
-        return Ok(productsOnPageResponse);
-    }
+            categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
 
 
-    // GET: api/Books/5
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Book>> GetBook(int id)
-    {
-        var productResponse = await _bookService.GetByIdAsync(id);
+        var booksResponse = await _bookService.GetAllAsync();
 
-        if (!productResponse)
-        {
-            return NotFound(productResponse.ErrorMessage);
-        }
-        else
-        {
-            return Ok(productResponse);
-        }
+        if (!booksResponse)
+            return NotFound(booksResponse.ErrorMessage);
+
+        var books = booksResponse.Data is IQueryable<Book> query
+            ? query
+                  .Include(book => book.Category)
+                  .Where(book => book.Category == null
+                                        ? false
+                                        : book.Category.Id == categoryId)
+            : booksResponse.Data!
+                .Where(book => book.Category?.Id == categoryId);
+
+        var booksOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, books!, pageNum);
+
+        if (!booksOnPageResponse)
+            return NotFound(booksOnPageResponse.ErrorMessage);
+
+        return Ok(booksOnPageResponse);
     }
 
     [HttpGet]
@@ -93,24 +80,33 @@ public class BooksController : ControllerBase
         }
     }
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Book>> GetBook(int id)
+    { 
+        var bookResponse = await _bookService.GetByIdAsync(id);
 
-    // PUT: api/Books/5
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        if (!bookResponse)
+        {
+            return NotFound(bookResponse.ErrorMessage);
+        }
+        else
+        {
+            return Ok(bookResponse);
+        }
+    }
+
+
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
-        if (id != book.Id)
-        {
+        if (id != book.Id)       
             return BadRequest();
-        }
 
-        _bookService.UpdateByIdAsync(id, book);
+        await _bookService.UpdateAsync(book);
 
         return NoContent();
     }
 
-    // POST: api/Books
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -119,29 +115,11 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    // DELETE: api/Books/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
-        //if (_context.Books == null)
-        //{
-        //    return NotFound();
-        //}
-        //var book = await _context.Books.FindAsync(id);
-        //if (book == null)
-        //{
-        //    return NotFound();
-        //}
-
-        //_context.Books.Remove(book);
-        //await _context.SaveChangesAsync();
+        await _bookService.DeleteByIdAsync(id);
 
         return NoContent();
-    }
-
-    private bool BookExists(int id)
-    {
-        return true;
-        //return (_context.Books?.Any(e => e.Id == id)).GetValueOrDefault();
     }
 }

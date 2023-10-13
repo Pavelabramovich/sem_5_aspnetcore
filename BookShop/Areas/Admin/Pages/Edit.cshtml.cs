@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BookShop.Services.BookService;
 using Microsoft.EntityFrameworkCore;
-using BookShop.Api.Data;
+
 using BookShop.Domain.Entities;
 
 namespace BookShop.Areas.Admin.Pages
@@ -49,6 +49,8 @@ namespace BookShop.Areas.Admin.Pages
             {
                 return Page();
             }
+
+            await _bookService.UpdateByIdAsync(Book.Id, Book);
 
             //_context.Attach(Book).State = EntityState.Modified;
 

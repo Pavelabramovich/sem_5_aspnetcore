@@ -12,17 +12,17 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<ICategoryService, DbCategoryService>();
-builder.Services.AddScoped<IBookService, DbBookService>();
+builder.Services.AddScoped<ICategoryService, ApiCategoryService>();
+builder.Services.AddScoped<IBookService, ApiBookService>();
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
 
 var apiUri = builder.Configuration["UriData:ApiUri"];
 
 builder.Services
-    .AddHttpClient<IBookService, DbBookService>(opt => opt.BaseAddress = new Uri(apiUri));
+    .AddHttpClient<IBookService, ApiBookService>(opt => opt.BaseAddress = new Uri(apiUri));
 
 builder.Services
-    .AddHttpClient<ICategoryService, DbCategoryService>(opt => opt.BaseAddress = new Uri(apiUri));
+    .AddHttpClient<ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri(apiUri));
 
 
 

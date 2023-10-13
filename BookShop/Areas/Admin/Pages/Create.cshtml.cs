@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using BookShop.Api.Data;
+
 using BookShop.Services.BookService;
 using BookShop.Services.CategoryService;
 using BookShop.Services.PaginationService;

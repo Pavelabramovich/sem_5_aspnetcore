@@ -59,6 +59,9 @@ public class DbInitializer
             },
         };
 
+
+        var s = """{ d: "123", 5: "124" }""";
+
      //   await context.Database.MigrateAsync();
         
 

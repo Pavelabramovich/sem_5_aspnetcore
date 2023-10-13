@@ -15,24 +15,14 @@
 		</method>
 
 		<method name="GetWhereAsync">
-			<first>
-				<summary>Getting all enteties with some condition</summary>
+			<summary>Getting all enteties with some condition</summary>
 
-				<param name="predicate">Function that filter collection</param>
+			<param name="predicate">Function that filter collection</param>
 
-				<returns>All entities that satisfy the predicate</returns>
-			</first>
-
-			<second>
-				<summary>Getting all enteties with some conditions</summary>
-
-				<param name="predicates">Functions that filter collection</param>
-
-				<returns>All entities that satisfy the predicates</returns>
-			</second>
+			<returns>All entities that satisfy the predicate</returns>
 		</method>
 
-		<method name="FirstOrNullAsync">
+		<method name="FirstOrDefaultAsync">
 			<first>
 				<summary>Getting first entity or null if no entities</summary>
 
@@ -46,41 +36,27 @@
 
 				<returns>First entity that satisfy the predicate or null if no satisfying</returns>
 			</second>
-
-			<third>
-				<summary>Getting first entity with some conditions or null if no satisfying</summary>
-
-				<param name="predicates">Functions that filter collection</param>
-
-				<returns>First entity that satisfy the predicates or null if no satisfying</returns>
-			</third>
 		</method>
 
+		<method name="AddAsync">
+			<summary>Add new entity</summary>
+
+			<param name="entity">New entity</param>
+		</method>
+
+		<method name="UpdateAsync">
+			<summary>Async update entity by it's id</summary>
+
+			<param name="entity">New entity to replace (id will be ignored)</param>
+		</method>
+		
 		<method name="UpdateByIdAsync">
-			<first>
-				<summary>Async update entity with passed id</summary>
+			<summary>Async update entity with passed id using replacement action</summary>
 
-				<param name="id">Id of the entity needed to update</param>
-				<param name="entity">New entity to replace (id will be ignored)</param>
-			</first>
+			<param name="id">Id of the entity needed to update</param>
+			<param name="replacement">Function that will be replace some field data</param>
 
-			<second>
-				<summary>Async update entity with passed id using replacement action</summary>
-
-				<param name="id">Id of the entity needed to update</param>
-				<param name="replacement">Function that will be replace some field data</param>
-
-				<exception cref="InvalidOperationException">Try change entity id</exception>
-			</second>
-
-			<third>
-				<summary>Async update entity with passed id using replacement actions</summary>
-
-				<param name="id">Id of the entity needed to update</param>
-				<param name="replacements">Functions that will be replace some field data</param>
-
-				<exception cref="InvalidOperationException">Try change entity id</exception>
-			</third>
+			<exception cref="InvalidOperationException">Try change entity id</exception>
 		</method>
 
 		<method name="DeleteByIdAsync">

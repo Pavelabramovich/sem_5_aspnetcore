@@ -17,9 +17,9 @@ namespace BookShop.Api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private ICategoryService _categoryService;
+        private IEntityService<Category> _categoryService;
 
-        public CategoriesController(ICategoryService categoryService)
+        public CategoriesController(IEntityService<Category> categoryService)
         {
             _categoryService = categoryService;
         }
@@ -32,9 +32,6 @@ namespace BookShop.Api.Controllers
 
             if (!categoryResponse)
                 return NotFound(categoryResponse.ErrorMessage);
-
-            if (categoryResponse.Data.Count() == 0)
-                return NotFound("No categories in collection");
 
             return Ok(categoryResponse);
         }

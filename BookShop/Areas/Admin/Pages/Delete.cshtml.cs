@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BookShop.Api.Data;
 using BookShop.Services.BookService;
 using BookShop.Domain.Entities;
+
 
 namespace BookShop.Areas.Admin.Pages
 {

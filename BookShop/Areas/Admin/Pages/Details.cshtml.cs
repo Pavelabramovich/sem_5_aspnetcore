@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookShop.Services.BookService;
-using BookShop.Api.Data;
+
 using BookShop.Domain.Entities;
 
 namespace BookShop.Areas.Admin.Pages
