@@ -52,10 +52,11 @@ public class ApiBookService : ApiService, IBookService
 
         Type controllerType = typeof(BooksController);
 
-        string actionName = "GetBooks";
+        string actionName = "GetBooksPage";
+        var actionArgsTypes = new Type[] { typeof(int?), typeof(int), typeof(int) };
         object actionArgs = new { categoryId = categoryId, pageNum = pageNum ?? 0 };
 
-        var uri = GetApiControllerUri(controllerType, actionName, actionArgs);
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
 
 
         var response = await _httpClient.GetAsync(uri);
@@ -84,9 +85,10 @@ public class ApiBookService : ApiService, IBookService
         Type controllerType = typeof(BooksController);
 
         string actionName = "PostBook";
+        var actionArgsTypes = new Type[] { book.GetType() };
         object actionArgs = new { book = book };
 
-        var uri = GetApiControllerUri(controllerType, actionName, actionArgs);
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
 
 
         var response = await _httpClient.PostAsJsonAsync(uri, book, _serializerOptions);
@@ -112,9 +114,10 @@ public class ApiBookService : ApiService, IBookService
         Type controllerType = typeof(BooksController);
 
         string actionName = "DeleteBook";
+        var actionArgsTypes = new Type[] { id.GetType() };
         object actionArgs = new { id = id };
 
-        var uri = GetApiControllerUri(controllerType, actionName, actionArgs);
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
 
         var response = await _httpClient.DeleteAsync(uri);
 
@@ -178,9 +181,10 @@ public class ApiBookService : ApiService, IBookService
         Type controllerType = typeof(BooksController);
 
         string actionName = "GetBook";
+        var actionArgsTypes = new Type[] { typeof(int) };
         object actionArgs = new { id = id };
 
-        var uri = GetApiControllerUri(controllerType, actionName, actionArgs);
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
 
 
         var response = await _httpClient.GetAsync(uri);
@@ -219,9 +223,10 @@ public class ApiBookService : ApiService, IBookService
         Type controllerType = typeof(BooksController);
 
         string actionName = "PutBook";
+        var actionArgsTypes = new Type[] { id.GetType(), typeof(Book) };
         object actionArgs = new { id = id, book = book };
 
-        var uri = GetApiControllerUri(controllerType, actionName, actionArgs);
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
 
 
         var response = await _httpClient.PutAsJsonAsync(uri, book, _serializerOptions);

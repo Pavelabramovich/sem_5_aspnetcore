@@ -26,35 +26,35 @@ public class DbInitializer
             {
                 Title = "Schildt",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 3m,
+                Price = 3,
                 ImagePath = "Images/light.png",
             },
             new Book
             {
                 Title = "GoF",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 5m,
+                Price = 5,
                 ImagePath = "Images/light.png",
             },
             new Book
             {
                 Title = "Schildt",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 8m,
+                Price = 8,
                 ImagePath = "Images/light.png",
             },
             new Book
             {
                 Title = "GoF",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 6m,
+                Price = 6,
                 ImagePath = "Images/light.png",
             },
             new Book
             {
                 Title = "ABC",
                 Category = _categories.Find(c => c.Name?.Equals("Child") ?? false),
-                Price = 2m,
+                Price = 2,
                 ImagePath = "Images/light.png",
             },
         };

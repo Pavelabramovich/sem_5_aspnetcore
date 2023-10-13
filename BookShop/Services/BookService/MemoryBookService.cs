@@ -32,7 +32,7 @@ public class MemoryBookService : IBookService
                 Id = 1,
                 Title = "Schildt",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 3m,
+                Price = 3,
                 ImagePath = "Images/light.png",
             },
             new Book
@@ -40,7 +40,7 @@ public class MemoryBookService : IBookService
                 Id = 2,
                 Title = "GoF",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 5m,
+                Price = 5,
                 ImagePath = "Images/light.png",
             },
             new Book
@@ -48,7 +48,7 @@ public class MemoryBookService : IBookService
                 Id = 3,
                 Title = "Schildt",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 8m,
+                Price = 8,
                 ImagePath = "Images/light.png",
             },
             new Book
@@ -56,7 +56,7 @@ public class MemoryBookService : IBookService
                 Id = 4,
                 Title = "GoF",
                 Category = _categories.Find(c => c.Name?.Equals("Programming") ?? false),
-                Price = 6m,
+                Price = 6,
                 ImagePath = "Images/light.png",
             },
             new Book
@@ -64,7 +64,7 @@ public class MemoryBookService : IBookService
                 Id = 5,
                 Title = "ABC",
                 Category = _categories.Find(c => c.Name?.Equals("Child") ?? false),
-                Price = 2m,
+                Price = 2,
                 ImagePath = "Images/light.png",
             },
         };

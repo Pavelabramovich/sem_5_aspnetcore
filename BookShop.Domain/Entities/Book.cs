@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +11,14 @@ using System.Threading.Tasks;
 
 namespace BookShop.Domain.Entities;
 
+
 public class Book : Entity, IEquatable<Book>
 {
     public string? Title { get; set; }
 
     public Category? Category { get; set; }
-
-    public decimal Price { get; set; }
+    
+    public int Price { get; set; }
 
     public string? ImagePath { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using BookShop.Services.BookService;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 
 
@@ -16,7 +17,7 @@ public abstract class ApiService
         _linkGenerator = linkGenerator;
     }
 
-    protected Uri GetApiControllerUri(Type controllerType, string actionName, object? actionArgs = null)
+    protected Uri GetApiControllerUri(Type? controllerType, string actionName, IEnumerable<Type>? actionArgsTypes = null, object? actionArgs = null)
     {
         ArgumentNullException
             .ThrowIfNull(controllerType, nameof(controllerType));
@@ -28,14 +29,21 @@ public abstract class ApiService
 
         try
         {
-            actionName = controllerType.GetMethod(actionName)?.Name!;
+            if (actionArgsTypes.IsNullOrEmpty())
+            {
+                actionName = controllerType.GetMethod(actionName)?.Name!;
+            }
+            else
+            {
+                actionName = controllerType.GetMethod(actionName, actionArgsTypes!.ToArray())?.Name!;
+            }
 
             if (actionName is null)
                 throw new ArgumentException("Invalid controller action.");
         }
-        catch (AmbiguousMatchException)
-        { 
-            // This exception is thrown if there are overloaded methods. No exception handling needed.
+        catch (AmbiguousMatchException e)
+        {
+            throw new ArgumentException("Invalid controller action.", e);
         }
 
         var actionPath = actionArgs is null

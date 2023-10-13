@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BookShop.Api.Data;
+
 using BookShop.Domain.Entities;
 using BookShop.Api.Services;
 using BookShop.Domain.Models;
-using NuGet.Protocol;
+
 
 namespace BookShop.Api.Controllers;
 
@@ -32,7 +27,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet("{categoryId}/{pageNum}")]
-    public async Task<ActionResult<ResponseData<List<Book>>>> GetBooks(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
+    public async Task<ActionResult<ResponseData<List<Book>>>> GetBooksPage(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
 
@@ -83,15 +78,15 @@ public class BooksController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Book>> GetBook(int id)
     { 
-        var bookResponse = await _bookService.GetByIdAsync(id);
+        var response = await _bookService.GetByIdAsync(id);
 
-        if (!bookResponse)
+        if (!response)
         {
-            return NotFound(bookResponse.ErrorMessage);
+            return NotFound(response.ErrorMessage);
         }
         else
         {
-            return Ok(bookResponse);
+            return Ok(response);
         }
     }
 

@@ -2,11 +2,14 @@ using BookShop.Api.Data;
 using BookShop.Api.Services;
 using BookShop.Api.Services.CategoryService;
 using BookShop.Domain.Entities;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddRazorPages();
 
@@ -18,8 +21,9 @@ builder.Services.AddScoped<IEntityService<Category>, CategoryService>();
 
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
 
-builder.Services.AddControllers().AddJsonOptions(x =>
-                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 
 var app = builder.Build();
@@ -39,5 +43,24 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+
+var defaultDateCulture = "en-US";
+var ci = new CultureInfo(defaultDateCulture);
+ci.NumberFormat.NumberDecimalSeparator = ".";
+ci.NumberFormat.CurrencyDecimalSeparator = ".";
+
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(ci),
+    SupportedCultures = new List<CultureInfo>
+    {
+        ci,
+    },
+    SupportedUICultures = new List<CultureInfo>
+    {
+        ci,
+    }
+});
+
 
 app.Run();

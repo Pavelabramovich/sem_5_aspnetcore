@@ -10,44 +10,47 @@ namespace BookShop.Api.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                });
+            ///migrationBuilder.DropTable(name: "Categories");
+            ///migrationBuilder.DropTable(name: "Books");
 
-            migrationBuilder.CreateTable(
-                name: "Books",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true),
-                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true),
-                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
-                    ImagePath = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Books", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Books_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Categories",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "INTEGER", nullable: false)
+            //            .Annotation("Sqlite:Autoincrement", true),
+            //        Name = table.Column<string>(type: "TEXT", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Categories", x => x.Id);
+            //    });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Books_CategoryId",
-                table: "Books",
-                column: "CategoryId");
+            //migrationBuilder.CreateTable(
+            //    name: "Books",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "INTEGER", nullable: false)
+            //            .Annotation("Sqlite:Autoincrement", true),
+            //        Title = table.Column<string>(type: "TEXT", nullable: true),
+            //        CategoryId = table.Column<int>(type: "INTEGER", nullable: true),
+            //        Price = table.Column<decimal>(type: "TEXT", nullable: false),
+            //        ImagePath = table.Column<string>(type: "TEXT", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Books", x => x.Id);
+            //        table.ForeignKey(
+            //            name: "FK_Books_Categories_CategoryId",
+            //            column: x => x.CategoryId,
+            //            principalTable: "Categories",
+            //            principalColumn: "Id");
+            //    });
+
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Books_CategoryId",
+            //    table: "Books",
+            //    column: "CategoryId");
         }
 
         /// <inheritdoc />
