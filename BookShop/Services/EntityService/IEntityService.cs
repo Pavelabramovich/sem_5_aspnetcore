@@ -32,7 +32,7 @@ public interface IEntityService<T> where T : Entity
 
 
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="UpdateByIdAsync"]/first' />
-    public Task UpdateByIdAsync(int id, T entity);
+    public Task UpdateByIdAsync(int id, T entity, IFormFile? formFile);
 
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="UpdateByIdAsync"]/second' />
     public Task UpdateByIdAsync(int id, Action<T> replacement);
@@ -41,7 +41,7 @@ public interface IEntityService<T> where T : Entity
     public Task UpdateByIdAsync(int id, IEnumerable<Action<T>> replacements);
 
 
-    public Task AddAsync(T entity);
+    public Task<ResponseData<T>> AddAsync(T entity);
 
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="DeleteByIdAsync"]' />
     public Task DeleteByIdAsync(int id);

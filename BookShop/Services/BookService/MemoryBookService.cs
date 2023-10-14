@@ -1,6 +1,7 @@
 ﻿using BookShop.Domain.Entities;
 using BookShop.Domain.Models;
 using BookShop.Services.CategoryService;
+using BookShop.Services.EntityService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -139,6 +140,16 @@ public class MemoryBookService : IBookService
     }
 
     public Task AddAsync(Book entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<ResponseData<Book>> IEntityService<Book>.AddAsync(Book entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, Book entity, IFormFile? Image)
     {
         throw new NotImplementedException();
     }

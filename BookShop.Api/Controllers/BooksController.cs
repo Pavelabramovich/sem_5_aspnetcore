@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using BookShop.Domain.Entities;
 using BookShop.Api.Services;
 using BookShop.Domain.Models;
+using System.Configuration;
 
 
 namespace BookShop.Api.Controllers;
@@ -17,13 +18,29 @@ public class BooksController : ControllerBase
     private readonly IEntityService<Category> _categoryService;
 
     private readonly IPaginationService<Book> _paginationService;
+    private readonly EntityImageService<Book> _imageService;
 
+    private readonly string _imagesPath;
+    private readonly string _appUri;
 
-    public BooksController(IEntityService<Book> bookService, IEntityService<Category> categoryService, IPaginationService<Book> paginationService)
+    public BooksController(
+        IEntityService<Book> bookService, 
+        IEntityService<Category> categoryService, 
+        IPaginationService<Book> paginationService,
+        EntityImageService<Book> imageService,
+        IWebHostEnvironment env,
+        IConfiguration configuration
+    )
     {
         _bookService = bookService;
         _categoryService = categoryService;
         _paginationService = paginationService;
+        _imageService = imageService;
+
+        string relativeImagePath = configuration.GetSection("ImageDirectory")?.Value ?? "Images";
+
+  //      _imagesPath = Path.Combine(env.ContentRootPath, relativeImagePath);
+        _appUri = configuration.GetSection("AppUrl")?.Value ?? throw new InvalidOperationException("AppUrl don't set.");
     }
 
     [HttpGet("{categoryId}/{pageNum}")]
@@ -109,6 +126,22 @@ public class BooksController : ControllerBase
 
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
+
+    [HttpPost("{id}")]
+    public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
+    {
+        var response = await _imageService.SaveImageAsync(id, formFile);
+
+        if (response)
+        {
+            return Ok(response);
+        }
+        else
+        {
+            return NotFound(response);
+        }       
+    }
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)

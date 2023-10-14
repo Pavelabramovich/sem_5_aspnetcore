@@ -24,7 +24,7 @@ public abstract class EntityService<T> : IEntityService<T> where T : Entity
     public abstract Task<ResponseData<T?>> FirstOrNullAsync(IEnumerable<Func<T, bool>> predicates);
 
 
-    public abstract Task UpdateByIdAsync(int id, T entity);
+    public abstract Task UpdateByIdAsync(int id, T entity, IFormFile? formFile);
 
     public abstract Task UpdateByIdAsync(int id, Action<T> replacement);
 
@@ -37,6 +37,11 @@ public abstract class EntityService<T> : IEntityService<T> where T : Entity
     public abstract Task ClearAsync(int id);
 
     public Task AddAsync(T entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<ResponseData<T>> IEntityService<T>.AddAsync(T entity)
     {
         throw new NotImplementedException();
     }

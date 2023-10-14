@@ -87,11 +87,13 @@
                         var next = pageNum + 1 < pagesCount ? pageNum + 1 : pagesCount - 1;
                         var prev = pageNum - 1 >= 0 ? pageNum - 1 : 0;
 
-                        var categoryId = request.RouteValues["categoryId"];
+                        var d = request.RouteValues;
+
+                        var categoryId = request.Query["categoryId"].FirstOrDefault();
                     }
 
                     <li class="page-item">
-                        <a class="page-link" asp-controller="Book" asp-route-categoryId="@categoryId" asp-route-pageNum="@prev" aria-label="Previous">
+                        <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@prev" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
@@ -99,12 +101,12 @@
                     @for (int i = 0; i < pagesCount; i++)
                     {
                         <li class="page-item @(i == pageNum ? "active" : string.Empty)">
-                            <a class="page-link" asp-controller="Book" asp-route-categoryId="@categoryId" asp-route-pageNum="@i">@(i + 1)</a>
+                            <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@i">@(i + 1)</a>
                         </li>
                     }
 
                     <li class="page-item">
-                        <a class="page-link" asp-controller="Book" asp-route-categoryId="@categoryId" asp-route-pageNum="@next" aria-label="Next">
+                        <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@next" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

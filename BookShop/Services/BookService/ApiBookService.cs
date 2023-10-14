@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc.Abstractions;
 using BookShop.Api.Controllers;
 using BookShop.Services.CategoryService;
 using System.Reflection;
+using Azure.Core;
+using System.Net.Http;
 
 namespace BookShop.Services.BookService;
 
@@ -80,7 +82,7 @@ public class ApiBookService : ApiService, IBookService
         return new(errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
     }
 
-    public async Task AddAsync(Book book)
+    public async Task<ResponseData<Book>> AddAsync(Book book)
     {
         Type controllerType = typeof(BooksController);
 
@@ -95,12 +97,18 @@ public class ApiBookService : ApiService, IBookService
 
         if (response.IsSuccessStatusCode)
         {
-            return;
+            var data = await response.Content.ReadFromJsonAsync<ResponseData<Book>>(_serializerOptions);
+
+            return data;
         }
 
         _logger.LogError($"-----> object not created. Error: {response.StatusCode}");
 
-        return;
+        return new ResponseData<Book>
+        {
+            ErrorMessage = $"Объект не добавлен. Error: {response.StatusCode}"
+        };
+
     }
 
 
@@ -249,5 +257,39 @@ public class ApiBookService : ApiService, IBookService
     public Task UpdateByIdAsync(int id, IEnumerable<Action<Book>> replacements)
     {
         throw new NotImplementedException();
-    }    
+    }
+
+    private async Task SaveImageAsync(int id, IFormFile image)
+    {
+        Type controllerType = typeof(BooksController);
+
+        string actionName = "PostImage";
+        var actionArgsTypes = new Type[] { typeof(int), typeof(IFormFile) };
+        object actionArgs = new { id = id, formFile = image };
+
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
+
+        var request = new HttpRequestMessage
+        {
+            Method = HttpMethod.Post,
+            RequestUri = uri    
+        };
+
+        var content = new MultipartFormDataContent();
+        var streamContent = new StreamContent(image.OpenReadStream());
+        content.Add(streamContent, "formFile", image.FileName);
+
+        var s = content.ToList();
+
+        request.Content = content;
+        await _httpClient.SendAsync(request);
+    }
+
+    public async Task UpdateByIdAsync(int id, Book entity, IFormFile? image)
+    {
+        await UpdateByIdAsync(id, entity);
+
+        if (image is not null)
+            await SaveImageAsync(id, image);
+    }
 }

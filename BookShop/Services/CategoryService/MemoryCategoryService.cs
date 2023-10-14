@@ -1,5 +1,6 @@
 ﻿using BookShop.Domain.Entities;
 using BookShop.Domain.Models;
+using BookShop.Services.EntityService;
 
 namespace BookShop.Services.CategoryService;
 
@@ -79,6 +80,16 @@ public class MemoryCategoryService : ICategoryService
     }
 
     public Task UpdateByIdAsync(int id, IEnumerable<Action<Category>> replacements)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateByIdAsync(int id, Category entity, IFormFile? formFile)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<ResponseData<Category>> IEntityService<Category>.AddAsync(Category entity)
     {
         throw new NotImplementedException();
     }

@@ -7,17 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BookShop.Services.BookService;
 using BookShop.Domain.Entities;
-
+using BookShop.Services.CategoryService;
 
 namespace BookShop.Areas.Admin.Pages
 {
     public class DeleteModel : PageModel
     {
         private readonly IBookService _bookService;
+        private readonly ICategoryService _categoryService;
 
-        public DeleteModel(IBookService bookService)
+        public DeleteModel(IBookService bookService, ICategoryService categoryService)
         {
             _bookService = bookService;
+            _categoryService = categoryService;
         }
 
         [BindProperty]
@@ -38,6 +40,21 @@ namespace BookShop.Areas.Admin.Pages
             {
                 Book = bookResponse.Data;
             }
+
+            if (Book.CategoryId is not null)
+            {
+                var categoryResponse = await _categoryService.GetByIdAsync((int)Book.CategoryId);
+
+                if (!categoryResponse)
+                {
+                    return NotFound(categoryResponse.ErrorMessage);
+                }
+                else
+                {
+                    Book.Category = categoryResponse.Data;
+                }
+            }
+
             return Page();
         }
 

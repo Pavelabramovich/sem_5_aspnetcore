@@ -20,11 +20,14 @@ builder.Services.AddScoped<IEntityService<Book>, BookService>();
 builder.Services.AddScoped<IEntityService<Category>, CategoryService>();
 
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
+builder.Services.AddScoped<EntityImageService<Book>, BookImageService>();
 
 builder.Services
     .AddControllers()
     .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

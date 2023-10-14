@@ -7,7 +7,7 @@ public class PaginationService<T> : IPaginationService<T> where T : Entity
 {
     public Task<ResponseData<PageModel<T>>> GetPageAsync(int entitiesPerPage, IEnumerable<T> entities, int pageNum = 0)
     {
-        var pagesCount = entities.Count() / entitiesPerPage + 1;
+        var pagesCount = (int)Math.Ceiling(entities.Count() / (double)entitiesPerPage);
 
         IEnumerable<T> entitiesOnPage;
 

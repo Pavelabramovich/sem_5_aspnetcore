@@ -7,14 +7,18 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<a asp-page="Create" class="btn btn-success">
+    <i class="fa-solid fa-plus" style="letter-spacing:5px;">&nbsp; CREATE</i>
+</a>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Book[0].Title)
+            </th>
+            <th>
+                Category
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Book[0].Price)
@@ -32,15 +36,27 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
+                @(item.Category != null ? item.Category.Name : "???")
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImagePath)
+                <img src="@item.ImagePath" style="height: 80px;" />
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+
+            <td style="letter-spacing:5px;">
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary">
+                    <i class="fa-solid fa-pen">&nbsp; EDIT</i>
+                </a>
+
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info">
+                    <i class="fa-solid fa-circle-info">&nbsp; DETAILS</i>
+                </a>
+
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <i class="fa-solid fa-trash-can">&nbsp; DELETE</i>
+                </a>
             </td>
         </tr>
 }
