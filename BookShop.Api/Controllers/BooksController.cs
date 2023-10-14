@@ -142,6 +142,22 @@ public class BooksController : ControllerBase
         }       
     }
 
+    [HttpGet("image/{id}")]
+    public async Task<ActionResult<ResponseData<string>>> GetImage(int id)
+    {
+        var response = await _imageService.GetImageAsync(id);
+
+        if (!response)
+        {
+            return NotFound(response.ErrorMessage);
+        }
+        else
+        {
+            return Ok(response);
+        }
+    }
+
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)

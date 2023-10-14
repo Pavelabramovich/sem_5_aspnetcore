@@ -45,4 +45,9 @@ public abstract class EntityService<T> : IEntityService<T> where T : Entity
     {
         throw new NotImplementedException();
     }
+
+    public Task<ResponseData<T>> AddAsync(T entity, IFormFile? formFile)
+    {
+        throw new NotImplementedException();
+    }
 }

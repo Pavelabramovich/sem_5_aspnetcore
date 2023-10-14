@@ -60,16 +60,9 @@ public abstract class EntityImageService<T> : IImageService<T> where T : Entity
 
         if (formFile is not null)
         {
-            if (GetImageField(entity) is string { Length: > 0 } prevFileName)
-            {
-                var separators = @"/\".ToArray();
-
-                prevFileName = prevFileName.Split(separators)[^1];
-                string oldImagePath = Path.Combine(_directoryImagesPath, prevFileName);
-
+            if (GetDirectoryImagePath(entity) is string oldImagePath)           
                 File.Delete(oldImagePath);
-            }
-
+            
             var ext = Path.GetExtension(formFile.FileName);
             var fileName = Path.ChangeExtension(Path.GetRandomFileName(), ext);
 
@@ -87,6 +80,40 @@ public abstract class EntityImageService<T> : IImageService<T> where T : Entity
         {
             return new(null);
         }  
+    }
+
+    public async Task<ResponseData<string>> GetImageAsync(int id)
+    {
+        var entityResponse = await _entityService.GetByIdAsync(id);
+
+        if (entityResponse is null)
+            return new(errorMessage: "No item found.");
+
+        var entity = entityResponse.Data!;
+        
+        if (GetDirectoryImagePath(entity) is string directoryImagePath)
+        {
+            return new(directoryImagePath);
+        }
+        else
+        {
+            return new(null);
+        }
+
+    }
+
+    private string? GetImageName(T entity)
+    {
+        return GetImageField(entity) is string { Length: > 0 } prevImagePath
+            ? prevImagePath.Split(@"/\".ToArray())[^1]
+            : null;
+    }
+
+    private string? GetDirectoryImagePath(T entity)
+    {
+        return GetImageName(entity) is string imageName 
+            ? Path.Combine(_directoryImagesPath, imageName)
+            : null;
     }
 }
 

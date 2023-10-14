@@ -10,81 +10,84 @@ using Microsoft.EntityFrameworkCore;
 
 using BookShop.Domain.Entities;
 using BookShop.Services.CategoryService;
+using System.IO;
+using BookShop.Api.Services;
 
-namespace BookShop.Areas.Admin.Pages
+namespace BookShop.Areas.Admin.Pages;
+
+public class EditModel : PageModel
 {
-    public class EditModel : PageModel
+    private readonly IBookService _bookService;
+    private readonly ICategoryService _categoryService;
+
+    public EditModel(IBookService bookService, ICategoryService categoryService)
     {
-        private readonly IBookService _bookService;
-        private readonly ICategoryService _categoryService;
+        _bookService = bookService;
+        _categoryService = categoryService;
+    }
 
-        public EditModel(IBookService bookService, ICategoryService categoryService)
+    [BindProperty]
+    public Book Book { get; set; } = default!;
+
+
+    [BindProperty]
+    public IFormFile? Image { get; set; }
+
+    public List<SelectListItem> CategoriesOptions { get; set; }
+
+
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id is null)
         {
-            _bookService = bookService;
-            _categoryService = categoryService;
+            return NotFound();
         }
 
-        [BindProperty]
-        public Book Book { get; set; } = default!;
+        var bookResponse = await _bookService.GetByIdAsync((int)id);
 
-
-        [BindProperty]
-        public IFormFile? Image { get; set; }
-
-        public List<SelectListItem> CategoriesOptions { get; set; }
-
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        if (!bookResponse)
         {
-            if (id == null)
+            return NotFound();
+        }
+
+        Book = bookResponse.Data;
+
+        var categoryResponse = await _categoryService.GetAllAsync();
+
+        if (!categoryResponse)
+            return NotFound();
+
+        CategoriesOptions = categoryResponse.Data!
+            .Select(category => new SelectListItem
             {
-                return NotFound();
-            }
+                Value = category.Id.ToString(),
+                Text = category.Name
+            })
+            .ToList();
 
-            var bookResponse = await _bookService.GetByIdAsync((int)id);
+        if (Book.CategoryId is null)
+            CategoriesOptions.Insert(0, new SelectListItem(text: string.Empty, value: string.Empty));
 
-            if (!bookResponse)
+        if (Book.ImagePath is not null)
+        {
+            var imageResponse = await _bookService.GetImageAsync((int)id);
+
+            if (imageResponse)
             {
-                return NotFound();
+                Image = imageResponse.Data;
             }
+        }
 
-            Book = bookResponse.Data;
+        return Page();
+    }
 
-            var categoryResponse = await _categoryService.GetAllAsync();
-
-            if (!categoryResponse)
-                return NotFound();
-
-            CategoriesOptions = categoryResponse.Data!
-                .Select(category => new SelectListItem
-                {
-                    Value = category.Id.ToString(),
-                    Text = category.Name
-                })
-                .ToList();
-
-            if (Book.CategoryId is null)
-                CategoriesOptions.Insert(0, new SelectListItem(text: string.Empty, value: string.Empty));
-
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid)
             return Page();
-        }
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-          //  var categoryResponse = await _categoryService.GetByIdAsync(CategoryId);
+        await _bookService.UpdateByIdAsync(Book.Id, Book, Image);
 
-         //   if (!categoryResponse)
-         //       return NotFound();
-         //
-          //  Book.CategoryId = CategoryId;
-
-
-            if (!ModelState.IsValid)
-                return Page();
-
-            await _bookService.UpdateByIdAsync(Book.Id, Book, Image);
-
-            return RedirectToPage("./Index");
-        }
+        return RedirectToPage("./Index");
     }
 }

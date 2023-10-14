@@ -12,6 +12,7 @@ using BookShop.Services.CategoryService;
 using System.Reflection;
 using Azure.Core;
 using System.Net.Http;
+using System.IO;
 
 namespace BookShop.Services.BookService;
 
@@ -97,9 +98,9 @@ public class ApiBookService : ApiService, IBookService
 
         if (response.IsSuccessStatusCode)
         {
-            var data = await response.Content.ReadFromJsonAsync<ResponseData<Book>>(_serializerOptions);
+            var data = await response.Content.ReadFromJsonAsync<Book>(_serializerOptions);
 
-            return data;
+            return new(data);
         }
 
         _logger.LogError($"-----> object not created. Error: {response.StatusCode}");
@@ -291,5 +292,68 @@ public class ApiBookService : ApiService, IBookService
 
         if (image is not null)
             await SaveImageAsync(id, image);
+    }
+
+    public async Task<ResponseData<IFormFile>> GetImageAsync(int id)
+    {
+        Type controllerType = typeof(BooksController);
+
+        string actionName = "GetImage";
+        var actionArgsTypes = new Type[] { typeof(int) };
+        object actionArgs = new { id = id };
+
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
+
+
+        var response = await _httpClient.GetAsync(uri);
+
+        if (response.IsSuccessStatusCode)
+        {
+            try
+            {
+                var imagepathResponce = await response.Content.ReadFromJsonAsync<ResponseData<string>>(_serializerOptions);
+
+                if (imagepathResponce)
+                {
+                    using (var stream = File.OpenRead(imagepathResponce.Data))
+                    {
+                        return new(new FormFile(stream, 0, stream.Length, "lololol", Path.GetFileName(stream.Name)) { Headers = new HeaderDictionary() });
+                    }
+                }
+                else
+                {
+                    return new(errorMessage: "No image in entity.");
+                }
+            }
+            catch (JsonException ex)
+            {
+                _logger.LogError($"-----> Ошибка: {ex.Message}");
+
+                return new(errorMessage: $"Ошибка: {ex.Message}");
+            }
+        }
+
+        _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode}");
+
+        return new(errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
+    }
+
+    public async Task<ResponseData<Book>> AddAsync(Book entity, IFormFile? formFile)
+    {
+        var bookResponse = await AddAsync(entity);
+
+        if (!bookResponse)
+        {
+            _logger.LogError($"-----> Ошибка: {bookResponse.ErrorMessage}");
+
+            return new(errorMessage: $"Ошибка: {bookResponse.ErrorMessage}");
+        }
+
+        var book = bookResponse.Data!;
+
+        if (formFile is not null)
+            await SaveImageAsync(book.Id, formFile);
+
+        return bookResponse;
     }
 }

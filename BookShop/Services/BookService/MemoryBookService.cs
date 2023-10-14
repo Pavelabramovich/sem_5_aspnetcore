@@ -153,4 +153,19 @@ public class MemoryBookService : IBookService
     {
         throw new NotImplementedException();
     }
+
+    public Task<ResponseData<IFormFile>> GetImageAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<ResponseData<IFormFile>> IBookService.GetImageAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ResponseData<Book>> AddAsync(Book entity, IFormFile? formFile)
+    {
+        throw new NotImplementedException();
+    }
 }

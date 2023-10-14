@@ -10,38 +10,57 @@ using BookShop.Services.BookService;
 using BookShop.Services.CategoryService;
 using BookShop.Services.PaginationService;
 using BookShop.Domain.Entities;
+using BookShop.Api.Services.CategoryService;
 
-namespace BookShop.Areas.Admin.Pages
+namespace BookShop.Areas.Admin.Pages;
+
+public class CreateModel : PageModel
 {
-    public class CreateModel : PageModel
+    private readonly IBookService _bookService;
+    private readonly ICategoryService _categoryService;
+
+    public CreateModel(IBookService bookService, ICategoryService categoryService)
     {
-        private readonly IBookService _bookService;
+        _bookService = bookService;
+        _categoryService = categoryService;
+    }
 
-        public CreateModel(IBookService bookService)
-        {
-            _bookService = bookService;
-        }
+    public IActionResult OnGet()
+    {
+        var categoryResponse = _categoryService.GetAllAsync().Result;
 
-        public IActionResult OnGet()
+        if (!categoryResponse)
+            return NotFound();
+
+        CategoriesOptions = new SelectListItem[] { new(text: string.Empty, value: string.Empty) }
+            .Concat(categoryResponse.Data!
+                .Select(category => new SelectListItem
+                {
+                    Value = category.Id.ToString(),
+                    Text = category.Name
+                }))
+                .ToList();
+
+        return Page();
+    }
+
+    [BindProperty]
+    public Book Book { get; set; } = default!;
+
+    public List<SelectListItem> CategoriesOptions { get; set; }
+
+    [BindProperty]
+    public IFormFile? Image { get; set; }
+
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid || !_bookService.GetAllAsync().Result || Book == null)
         {
             return Page();
         }
 
-        [BindProperty]
-        public Book Book { get; set; } = default!;
-        
+        await _bookService.AddAsync(Book, Image);
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid || !_bookService.GetAllAsync().Result || Book == null)
-            {
-                return Page();
-            }
-
-            await _bookService.AddAsync(Book);
-
-            return RedirectToPage("./Index");
-        }
+        return RedirectToPage("./Index");
     }
 }

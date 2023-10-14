@@ -1,6 +1,42 @@
 {
   "Files": [
     {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\01n4r5qi.jpg",
+      "PackagePath": "staticwebassets\\Images\\01n4r5qi.jpg"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\dbs2es1h.jpg",
+      "PackagePath": "staticwebassets\\Images\\dbs2es1h.jpg"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\ejskjh4l.jpg",
+      "PackagePath": "staticwebassets\\Images\\ejskjh4l.jpg"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\esdyc5v3.jpg",
+      "PackagePath": "staticwebassets\\Images\\esdyc5v3.jpg"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\jjwhbnsn.png",
+      "PackagePath": "staticwebassets\\Images\\jjwhbnsn.png"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\rdbhf5iz.png",
+      "PackagePath": "staticwebassets\\Images\\rdbhf5iz.png"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\thrcx4it.jpg",
+      "PackagePath": "staticwebassets\\Images\\thrcx4it.jpg"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\twjrvdib.png",
+      "PackagePath": "staticwebassets\\Images\\twjrvdib.png"
+    },
+    {
+      "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\xc1phy5b.png",
+      "PackagePath": "staticwebassets\\Images\\xc1phy5b.png"
+    },
+    {
       "Id": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

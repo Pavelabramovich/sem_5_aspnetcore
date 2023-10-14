@@ -22,6 +22,11 @@ public class MemoryCategoryService : ICategoryService
         throw new NotImplementedException();
     }
 
+    public Task<ResponseData<Category>> AddAsync(Category entity, IFormFile? formFile)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task ClearAsync(int id)
     {
         throw new NotImplementedException();

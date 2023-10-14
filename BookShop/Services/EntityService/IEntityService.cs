@@ -43,6 +43,8 @@ public interface IEntityService<T> where T : Entity
 
     public Task<ResponseData<T>> AddAsync(T entity);
 
+    public Task<ResponseData<T>> AddAsync(T entity, IFormFile? formFile);
+
     /// <include file='IEntityService.cs.xml' path='doc/class[@name="IEntityService"]/method[@name="DeleteByIdAsync"]' />
     public Task DeleteByIdAsync(int id);
 
