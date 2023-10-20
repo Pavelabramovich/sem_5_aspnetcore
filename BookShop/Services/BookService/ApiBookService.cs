@@ -13,6 +13,9 @@ using System.Reflection;
 using Azure.Core;
 using System.Net.Http;
 using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using System.Net.Http.Headers;
 
 namespace BookShop.Services.BookService;
 
@@ -25,7 +28,9 @@ public class ApiBookService : ApiService, IBookService
 
     private readonly JsonSerializerOptions _serializerOptions;
 
-    public ApiBookService(HttpClient httpClient, ILogger<ApiBookService> logger, LinkGenerator linkGenerator, ICategoryService categoryService) :
+    private readonly HttpContext _httpContext;
+
+    public ApiBookService(HttpClient httpClient, ILogger<ApiBookService> logger, LinkGenerator linkGenerator, ICategoryService categoryService, IHttpContextAccessor httpContextAccessor) :
         base(httpClient, linkGenerator)
     {
          _serializerOptions = new JsonSerializerOptions()
@@ -36,11 +41,15 @@ public class ApiBookService : ApiService, IBookService
         _logger = logger;
 
         _categoryService = categoryService;
+        _httpContext = httpContextAccessor.HttpContext;
     }
 
 
     public async Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryId, int? pageNum = null)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         var categoryResponse = await _categoryService.GetAllAsync();
 
         if (!categoryResponse)
@@ -85,6 +94,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task<ResponseData<Book>> AddAsync(Book book)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "PostBook";
@@ -120,6 +132,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task DeleteByIdAsync(int id)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "DeleteBook";
@@ -157,6 +172,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task<ResponseData<List<Book>>> GetAllAsync()
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "GetBooks";
@@ -187,6 +205,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task<ResponseData<Book>> GetByIdAsync(int id)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "GetBook";
@@ -229,6 +250,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task UpdateByIdAsync(int id, Book book)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "PutBook";
@@ -262,6 +286,9 @@ public class ApiBookService : ApiService, IBookService
 
     private async Task SaveImageAsync(int id, IFormFile image)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "PostImage";
@@ -288,6 +315,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task UpdateByIdAsync(int id, Book entity, IFormFile? image)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         await UpdateByIdAsync(id, entity);
 
         if (image is not null)
@@ -296,6 +326,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task<ResponseData<IFormFile>> GetImageAsync(int id)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         Type controllerType = typeof(BooksController);
 
         string actionName = "GetImage";
@@ -340,6 +373,9 @@ public class ApiBookService : ApiService, IBookService
 
     public async Task<ResponseData<Book>> AddAsync(Book entity, IFormFile? formFile)
     {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
         var bookResponse = await AddAsync(entity);
 
         if (!bookResponse)

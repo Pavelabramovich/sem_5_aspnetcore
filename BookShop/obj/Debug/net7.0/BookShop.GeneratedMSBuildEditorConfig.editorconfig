@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/NewRepos/BookShop/BookShop/Pages/Signout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/NewRepos/BookShop/BookShop/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

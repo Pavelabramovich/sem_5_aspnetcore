@@ -3,16 +3,18 @@ using BookShop.Api.Services;
 using BookShop.Api.Services.CategoryService;
 using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Globalization;
+
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<BookShopContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
@@ -24,8 +26,12 @@ builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
 builder.Services.AddScoped<EntityImageService<Book>, BookImageService>();
 
 builder.Services
-    .AddControllers()
-    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+    .AddMvc()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.WriteIndented = true;
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 
 
 builder.Services
@@ -41,7 +47,7 @@ builder.Services
 });
 
 
-builder.Services.AddHttpContextAccessor();
+//builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -51,34 +57,21 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
+//app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllers();
-
-var defaultDateCulture = "en-US";
-var ci = new CultureInfo(defaultDateCulture);
-ci.NumberFormat.NumberDecimalSeparator = ".";
-ci.NumberFormat.CurrencyDecimalSeparator = ".";
-
-app.UseRequestLocalization(new RequestLocalizationOptions
-{
-    DefaultRequestCulture = new RequestCulture(ci),
-    SupportedCultures = new List<CultureInfo>
-    {
-        ci,
-    },
-    SupportedUICultures = new List<CultureInfo>
-    {
-        ci,
-    }
-});
-
 
 app.Run();

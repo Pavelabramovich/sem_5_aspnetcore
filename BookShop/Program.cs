@@ -4,13 +4,13 @@ using BookShop.Services.BookService;
 using BookShop.Services.PaginationService;
 using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.IdentityModel.Tokens.Jwt;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
-
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<ICategoryService, ApiCategoryService>();
 builder.Services.AddScoped<IBookService, ApiBookService>();
@@ -24,7 +24,34 @@ builder.Services
 builder.Services
     .AddHttpClient<ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri(apiUri));
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAuthorization();
 
+//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+//JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultScheme = "Cookies";
+    opt.DefaultChallengeScheme = "oidc";
+})
+.AddCookie("Cookies")
+.AddOpenIdConnect("oidc", options =>
+{
+    options.Authority = builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];
+    options.ClientId = builder.Configuration["InteractiveServiceSettings:ClientId"];
+    options.ClientSecret = builder.Configuration["InteractiveServiceSettings:ClientSecret"];
+
+    options.GetClaimsFromUserInfoEndpoint = true;
+    options.ResponseType = "code";
+    options.ResponseMode = "query";
+
+    //options.Scope.Clear();
+    //options.Scope.Add("openid");
+    //options.Scope.Add("profile");
+
+    options.SaveTokens = true;
+});
 
 var app = builder.Build();
 
@@ -41,13 +68,13 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapRazorPages().RequireAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapRazorPages();
 
 app.Run();

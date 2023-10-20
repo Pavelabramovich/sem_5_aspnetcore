@@ -9,72 +9,71 @@ using BookShop.Services.BookService;
 using BookShop.Domain.Entities;
 using BookShop.Services.CategoryService;
 
-namespace BookShop.Areas.Admin.Pages
+namespace BookShop.Areas.Admin.Pages;
+
+public class DeleteModel : PageModel
 {
-    public class DeleteModel : PageModel
+    private readonly IBookService _bookService;
+    private readonly ICategoryService _categoryService;
+
+    public DeleteModel(IBookService bookService, ICategoryService categoryService)
     {
-        private readonly IBookService _bookService;
-        private readonly ICategoryService _categoryService;
+        _bookService = bookService;
+        _categoryService = categoryService;
+    }
 
-        public DeleteModel(IBookService bookService, ICategoryService categoryService)
+    [BindProperty]
+    public Book Book { get; set; } = default!;
+
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id == null)           
+            return NotFound();
+
+        var bookResponse = await _bookService.GetByIdAsync((int)id);
+
+        if (!bookResponse)
         {
-            _bookService = bookService;
-            _categoryService = categoryService;
+            return NotFound(bookResponse.ErrorMessage);
+        }
+        else 
+        {
+            Book = bookResponse.Data;
         }
 
-        [BindProperty]
-        public Book Book { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        if (Book.CategoryId is not null)
         {
-            if (id == null)           
-                return NotFound();
+            var categoryResponse = await _categoryService.GetByIdAsync((int)Book.CategoryId);
 
-            var bookResponse = await _bookService.GetByIdAsync((int)id);
-
-            if (!bookResponse)
+            if (!categoryResponse)
             {
-                return NotFound(bookResponse.ErrorMessage);
+                return NotFound(categoryResponse.ErrorMessage);
             }
-            else 
+            else
             {
-                Book = bookResponse.Data;
+                Book.Category = categoryResponse.Data;
             }
-
-            if (Book.CategoryId is not null)
-            {
-                var categoryResponse = await _categoryService.GetByIdAsync((int)Book.CategoryId);
-
-                if (!categoryResponse)
-                {
-                    return NotFound(categoryResponse.ErrorMessage);
-                }
-                else
-                {
-                    Book.Category = categoryResponse.Data;
-                }
-            }
-
-            return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        return Page();
+    }
+
+    public async Task<IActionResult> OnPostAsync(int? id)
+    {
+        if (id == null)        
+            return NotFound();
+
+        var bookResponse = await _bookService.GetByIdAsync((int)id);
+
+        if (bookResponse)
         {
-            if (id == null)        
-                return NotFound();
+            Book = bookResponse.Data;
 
-            var bookResponse = await _bookService.GetByIdAsync((int)id);
-
-            if (bookResponse)
-            {
-                Book = bookResponse.Data;
-
-                await _bookService.DeleteByIdAsync(Book.Id);
-                //_context.Books.Remove(Book); 
-                //await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
+            await _bookService.DeleteByIdAsync(Book.Id);
+            //_context.Books.Remove(Book); 
+            //await _context.SaveChangesAsync();
         }
+
+        return RedirectToPage("./Index");
     }
 }

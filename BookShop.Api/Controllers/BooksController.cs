@@ -6,6 +6,7 @@ using BookShop.Api.Services;
 using BookShop.Domain.Models;
 using System.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace BookShop.Api.Controllers;
 
@@ -28,7 +29,6 @@ public class BooksController : ControllerBase
         IEntityService<Category> categoryService, 
         IPaginationService<Book> paginationService,
         EntityImageService<Book> imageService,
-        IWebHostEnvironment env,
         IConfiguration configuration
     )
     {
@@ -37,12 +37,10 @@ public class BooksController : ControllerBase
         _paginationService = paginationService;
         _imageService = imageService;
 
-        string relativeImagePath = configuration.GetSection("ImageDirectory")?.Value ?? "Images";
-
-  //      _imagesPath = Path.Combine(env.ContentRootPath, relativeImagePath);
         _appUri = configuration.GetSection("AppUrl")?.Value ?? throw new InvalidOperationException("AppUrl don't set.");
     }
 
+    [AllowAnonymous]
     [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooksPage(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
@@ -77,6 +75,7 @@ public class BooksController : ControllerBase
         return Ok(booksOnPageResponse);
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<Book>> GetBooks()
     {
@@ -92,6 +91,7 @@ public class BooksController : ControllerBase
         }
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<ActionResult<Book>> GetBook(int id)
     { 
@@ -107,7 +107,7 @@ public class BooksController : ControllerBase
         }
     }
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
@@ -119,7 +119,7 @@ public class BooksController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -128,7 +128,7 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [HttpPost("{id}")]
     public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
     {
@@ -144,6 +144,7 @@ public class BooksController : ControllerBase
         }       
     }
 
+    [AllowAnonymous]
     [HttpGet("image/{id}")]
     public async Task<ActionResult<ResponseData<string>>> GetImage(int id)
     {
@@ -160,7 +161,7 @@ public class BooksController : ControllerBase
     }
 
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {

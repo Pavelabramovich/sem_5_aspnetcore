@@ -359,3 +359,8 @@ E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\BookShop.Api.dll
 E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\BookShop.Api.pdb
 E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\BookShop.MvcApplicationPartsAssemblyInfo.cs
 E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Microsoft.OpenApi.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

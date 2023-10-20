@@ -74,6 +74,7 @@ namespace BookShop.IdentityServer
                 }
                 else
                 {
+                    userMgr.AddToRoleAsync(admin, adminRoleName);
                     Log.Debug("admin already exists");
                 }
 

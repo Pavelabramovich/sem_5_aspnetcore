@@ -78,3 +78,4 @@ E:\NewRepos\BookShop\BookShop.IdentityServer\obj\Debug\net6.0\refint\BookShop.Id
 E:\NewRepos\BookShop\BookShop.IdentityServer\obj\Debug\net6.0\BookShop.IdentityServer.pdb
 E:\NewRepos\BookShop\BookShop.IdentityServer\obj\Debug\net6.0\BookShop.IdentityServer.genruntimeconfig.cache
 E:\NewRepos\BookShop\BookShop.IdentityServer\obj\Debug\net6.0\ref\BookShop.IdentityServer.dll
+E:\NewRepos\BookShop\BookShop.IdentityServer\bin\Debug\net6.0\keys\is-signing-key-65FC0BBB88EE882024D20BAB88D9F14D.json
