@@ -1,4 +1,4 @@
-﻿using BookShop.IdentityServer;
+using BookShop.IdentityServer;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()

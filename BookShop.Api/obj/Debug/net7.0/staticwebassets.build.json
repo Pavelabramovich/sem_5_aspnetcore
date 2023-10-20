@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w7hfZXwVL+r78GQyJ6583q8kNcKyodD3e48By/lvGgk=",
+  "Hash": "0lR6FPxO3JNbI0WKGLa6I+6mS3HdTCMTya6wEfixCoY=",
   "Source": "BookShop.Api",
   "BasePath": "_content/BookShop.Api",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\0yf25qov.png"
+    },
+    {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\0zvsoeok.png",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/0zvsoeok.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\0zvsoeok.png"
+    },
+    {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\2dy1ssvu.png",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/2dy1ssvu.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\2dy1ssvu.png"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\4bu0l432.png",
@@ -491,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\u4xrr1ky.png"
+    },
+    {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\utbd52pz.jpg",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/utbd52pz.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\utbd52pz.jpg"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\wy5c1tnt.png",

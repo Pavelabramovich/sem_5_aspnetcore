@@ -1,40 +1,51 @@
-﻿
-<a class="navbar-text" asp-controller="Cart" asp-action="Index">
-    @await Component.InvokeAsync("Cart")
-</a>
+﻿@if (User.Identity?.IsAuthenticated ?? false)
+{
+    string userName = User.Claims.FirstOrDefault(c => c.Type.Equals("Name", StringComparison.OrdinalIgnoreCase))?.Value!;
 
-<div class="dropdown ms-4 nav-color">
-    <button 
-        class="btn btn-secondary dropdown-toggle"
-        type="button" id="dropdownMenuButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false">
+    <a class="navbar-text" asp-controller="Cart" asp-action="Index">
+        @await Component.InvokeAsync("Cart")
+    </a>
 
-        User@gmail.com
+    <div class="dropdown ms-4 nav-color">
+        <button 
+            class="btn btn-secondary dropdown-toggle"
+            type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
 
-        <img src="images/avatar_default.jpg" width="30" alt="User" class="rounded nav-color" />
-    </button>
+            @userName
 
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li>
-            <span class="dropdown-item-text">
-                <img src="images/avatar_default.jpg" width="50" alt="User" class="rounded nav-color" />
+        </button>
 
-                User@gmail.com
-            </span>
-        </li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-        <li><hr class="dropdown-divider"></li>
 
-        <li>
-            <form id="logoutForm" class="form-inline">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">
-                    <a asp-controller="Identity" asp-action="LogOut">Logout</a>
-                </button>
-            </form>
-         
-            <a class="nav-link text-dark" asp-area="" asp-page="/Signout">Signout</a>
-         
-        </li>
-    </ul>
-</div>
+            <li>
+                <span class="dropdown-item-text">
+                    <img src="https://localhost:7003/avatar" width="30" alt="User" style="border-radius:50%;" />
+
+                    @userName
+                </span>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <form method="POST" class="form-inline" asp-controller="Identity" asp-action="Logout">
+                    <button id="logout" type="submit" class="text-dark" style="background-color:transparent; border: 0;">
+                        Logout
+                    </button>
+                </form>
+            </li>
+        </ul>
+
+    </div>
+}
+else
+{
+    <form class="form-inline" asp-controller="Identity" asp-action="Login">
+        <button id="logout" type="submit" class="btn btn-secondary">
+            Login
+        </button>
+    </form>
+}

@@ -30,12 +30,13 @@ builder.Services.AddAuthorization();
 //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 //JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
+
 builder.Services.AddAuthentication(opt =>
 {
-    opt.DefaultScheme = "Cookies";
+    opt.DefaultScheme = "cookie";
     opt.DefaultChallengeScheme = "oidc";
 })
-.AddCookie("Cookies")
+.AddCookie("cookie")
 .AddOpenIdConnect("oidc", options =>
 {
     options.Authority = builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];

@@ -107,7 +107,7 @@ public class BooksController : ControllerBase
         }
     }
 
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
@@ -119,7 +119,7 @@ public class BooksController : ControllerBase
         return NoContent();
     }
 
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -128,7 +128,7 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize]
     [HttpPost("{id}")]
     public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
     {
@@ -161,7 +161,7 @@ public class BooksController : ControllerBase
     }
 
 
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
