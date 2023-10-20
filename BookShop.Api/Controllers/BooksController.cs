@@ -5,7 +5,7 @@ using BookShop.Domain.Entities;
 using BookShop.Api.Services;
 using BookShop.Domain.Models;
 using System.Configuration;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookShop.Api.Controllers;
 
@@ -107,7 +107,7 @@ public class BooksController : ControllerBase
         }
     }
 
-
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
@@ -119,6 +119,7 @@ public class BooksController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -127,6 +128,7 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
+    [Authorize]
     [HttpPost("{id}")]
     public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
     {
@@ -158,7 +160,7 @@ public class BooksController : ControllerBase
     }
 
 
-
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {

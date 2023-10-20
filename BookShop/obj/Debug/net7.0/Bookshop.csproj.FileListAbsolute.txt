@@ -358,3 +358,4 @@ E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3
 E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\BookShop.Api.dll
 E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\BookShop.Api.pdb
 E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\BookShop.MvcApplicationPartsAssemblyInfo.cs
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

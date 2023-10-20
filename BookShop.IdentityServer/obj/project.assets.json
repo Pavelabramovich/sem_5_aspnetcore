@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Duende.IdentityServer/6.3.2": {
+      "Duende.IdentityServer/6.3.5": {
         "type": "package",
         "dependencies": {
-          "Duende.IdentityServer.Storage": "6.3.2",
+          "Duende.IdentityServer.Storage": "6.3.5",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.0"
         },
         "compile": {
@@ -22,10 +22,10 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Duende.IdentityServer.AspNetIdentity/6.3.2": {
+      "Duende.IdentityServer.AspNetIdentity/6.3.5": {
         "type": "package",
         "dependencies": {
-          "Duende.IdentityServer": "6.3.2"
+          "Duende.IdentityServer": "6.3.5"
         },
         "compile": {
           "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll": {
@@ -41,7 +41,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Duende.IdentityServer.Storage/6.3.2": {
+      "Duende.IdentityServer.Storage/6.3.5": {
         "type": "package",
         "dependencies": {
           "IdentityModel": "6.1.0",
@@ -1203,15 +1203,15 @@
     }
   },
   "libraries": {
-    "Duende.IdentityServer/6.3.2": {
-      "sha512": "qLZS9kWngu2mGvEExhia+VdzfxDDIIzeSCYAodyqk5SDXf13yzO57wVSpqXkB678Z0POxFVGRDWQxNS/hD40mQ==",
+    "Duende.IdentityServer/6.3.5": {
+      "sha512": "OTIQ4FIbHZDIB5pzz2IAsGUCYk8KU50orWXoaM8jDSf/isb+N0bsOLi/+5BKmWm/odoq2GLkv6uFsyQUhF/GrA==",
       "type": "package",
-      "path": "duende.identityserver/6.3.2",
+      "path": "duende.identityserver/6.3.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "duende.identityserver.6.3.2.nupkg.sha512",
+        "duende.identityserver.6.3.5.nupkg.sha512",
         "duende.identityserver.nuspec",
         "icon.png",
         "lib/net6.0/Duende.IdentityServer.dll",
@@ -1220,15 +1220,15 @@
         "lib/net7.0/Duende.IdentityServer.xml"
       ]
     },
-    "Duende.IdentityServer.AspNetIdentity/6.3.2": {
-      "sha512": "dyqbwJJ1MKnMJemA02XZQsJ+mtuj0FJ0oJe3ii2i4Bv4HPOsxQS9+XXpGJkkIcLI1HPoZLX/32KwW0GEc6pW6g==",
+    "Duende.IdentityServer.AspNetIdentity/6.3.5": {
+      "sha512": "R0gqYxL6S0L2q/yxat3dsbKYWgd8rBFRamUhoM0aUm/+rR1OX2Npy0LTfrAfNADsuCzYWWNfl9/iHR6KQY3vzA==",
       "type": "package",
-      "path": "duende.identityserver.aspnetidentity/6.3.2",
+      "path": "duende.identityserver.aspnetidentity/6.3.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "duende.identityserver.aspnetidentity.6.3.2.nupkg.sha512",
+        "duende.identityserver.aspnetidentity.6.3.5.nupkg.sha512",
         "duende.identityserver.aspnetidentity.nuspec",
         "icon.png",
         "lib/net6.0/Duende.IdentityServer.AspNetIdentity.dll",
@@ -1237,15 +1237,15 @@
         "lib/net7.0/Duende.IdentityServer.AspNetIdentity.xml"
       ]
     },
-    "Duende.IdentityServer.Storage/6.3.2": {
-      "sha512": "49m+PVjaXLwSsElR4tU3oC4HOLaP1VwebzsbZTuFMfw31n2lWzPy7UZCFOaQR1xEy/S44fDtaxGnfMU/1PKdXQ==",
+    "Duende.IdentityServer.Storage/6.3.5": {
+      "sha512": "b7btTpJPgXs/PfZ073IaAoKf68yLjVCcpnKI/rNh1W3E6NXHrngrOZhiDpu6XKsHw4X4w1lwEh9YN2SPLQAgrw==",
       "type": "package",
-      "path": "duende.identityserver.storage/6.3.2",
+      "path": "duende.identityserver.storage/6.3.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "duende.identityserver.storage.6.3.2.nupkg.sha512",
+        "duende.identityserver.storage.6.3.5.nupkg.sha512",
         "duende.identityserver.storage.nuspec",
         "icon.png",
         "lib/net6.0/Duende.IdentityServer.Storage.dll",
@@ -2759,7 +2759,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Duende.IdentityServer.AspNetIdentity >= 6.3.2",
+      "Duende.IdentityServer.AspNetIdentity >= 6.3.5",
       "Microsoft.AspNetCore.Authentication.Google >= 6.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
@@ -2816,7 +2816,7 @@
         "dependencies": {
           "Duende.IdentityServer.AspNetIdentity": {
             "target": "Package",
-            "version": "[6.3.2, )"
+            "version": "[6.3.5, )"
           },
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",

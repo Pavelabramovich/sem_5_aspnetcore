@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zYuHemIG+Zln3sA1t1bTsp+Nz9sr/lEZXOOGhGFI1AIgpin7QZ9CajOgkhMQFR6Ao38gM+lAyhdXe04wAyxfxw==",
+  "dgSpecHash": "I/SYf5tABwnvGr3ygYwbKXWg3DSOsd3KTh80xpKniFb54NUV1oeb6bz/jbyy9yFA6fxuxkHqD6Kru8+xcS7olw==",
   "success": true,
   "projectFilePath": "E:\\NewRepos\\BookShop\\BookShop.IdentityServer\\BookShop.IdentityServer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver\\6.3.2\\duende.identityserver.6.3.2.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver.aspnetidentity\\6.3.2\\duende.identityserver.aspnetidentity.6.3.2.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver.storage\\6.3.2\\duende.identityserver.storage.6.3.2.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver\\6.3.5\\duende.identityserver.6.3.5.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver.aspnetidentity\\6.3.5\\duende.identityserver.aspnetidentity.6.3.5.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\duende.identityserver.storage\\6.3.5\\duende.identityserver.storage.6.3.5.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\identitymodel\\6.1.0\\identitymodel.6.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.0\\microsoft.aspnetcore.authentication.google.6.0.0.nupkg.sha512",

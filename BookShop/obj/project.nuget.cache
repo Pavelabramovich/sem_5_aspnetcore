@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WK2f8FKh6BtElK9uPnsX8Th8mpr4GeFxMb3FWYORcfbR8ai8oRA/KAPP3c2sFvwHvTk7+EAUBRUikBDWdMwNvQ==",
+  "dgSpecHash": "+pbVIlpA/ckw4NQCPmwoIM65VMbdtFJo/fcFCuLo9ozfQIHFd+jFLkQDWs+zG6gUB8AZ5dp/QnnV7HTr+rLGmg==",
   "success": true,
   "projectFilePath": "E:\\NewRepos\\BookShop\\BookShop\\BookShop.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.12\\microsoft.aspnetcore.authentication.jwtbearer.7.0.12.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",
