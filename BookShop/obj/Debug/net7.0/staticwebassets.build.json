@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vltsYnLoDgm2EzQA/Fw6SN4wQxxIaqsXj6aiwyJMfhc=",
+  "Hash": "qZKlk9l8C3tt6GE0Bi6Ou4+DK04yHLeSm+SHZT3nyyE=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -595,6 +595,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\xc1phy5b.png"
+    },
+    {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\yoaloq2t.png",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/yoaloq2t.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\yoaloq2t.png"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\zqtauuim.png",

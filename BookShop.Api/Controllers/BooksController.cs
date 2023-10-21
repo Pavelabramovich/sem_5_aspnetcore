@@ -75,6 +75,28 @@ public class BooksController : ControllerBase
         return Ok(booksOnPageResponse);
     }
 
+
+    [AllowAnonymous]
+    [HttpGet]
+    [Route("pageNum{pageNum:int}")]
+    public async Task<ActionResult<ResponseData<List<Book>>>> GetPage(int pageNum = 0, int itemsPerPage = 3)
+    {
+        var booksResponse = await _bookService.GetAllAsync();
+
+        if (!booksResponse)
+            return NotFound(booksResponse.ErrorMessage);
+
+        var books = booksResponse.Data;
+
+        var booksOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, books!, pageNum);
+
+        if (!booksOnPageResponse)
+            return NotFound(booksOnPageResponse.ErrorMessage);
+
+        return Ok(booksOnPageResponse);
+    }
+
+
     [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<Book>> GetBooks()

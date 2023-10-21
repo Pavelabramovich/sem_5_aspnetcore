@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-
+using Microsoft.IdentityModel.Tokens;
 
 namespace BookShop.TagHelpers;
 
@@ -129,7 +129,7 @@ public class BpgTagHelper : PagerTagHelper
 
         a.InnerHtml.AppendLine(text ?? (index + 1).ToString());
 
-        var href = _linkGenerator.GetPathByAction("Index", "Book", new { categotyId = CategoryId, pageNum = index });
+        var href = _linkGenerator.GetPathByAction("Index", "Book", new { categoryId = CategoryId, pageNum = index });
 
         a.Attributes.Add("href", href); 
 
@@ -137,3 +137,31 @@ public class BpgTagHelper : PagerTagHelper
     }
 }
 
+public class AbpgTagHelper : PagerTagHelper
+{
+    protected readonly LinkGenerator _linkGenerator;
+
+    private readonly HttpContext _httpContext;
+
+
+    public AbpgTagHelper(LinkGenerator linkGenerator, IHttpContextAccessor httpContextAccessor)
+    {
+        _linkGenerator = linkGenerator;
+        _httpContext = httpContextAccessor.HttpContext;
+    }
+
+    protected override TagBuilder GetPageLink(int index, string? text = null)
+    {
+        var a = new TagBuilder("a");
+
+        a.AddCssClass("page-link");
+
+        a.InnerHtml.AppendLine(text ?? (index + 1).ToString());
+
+        var href = _linkGenerator.GetPathByPage(_httpContext, "Index", values: new { Area = "Admin", pageNum = index });
+
+        a.Attributes.Add("href", href);
+
+        return a;
+    }
+}

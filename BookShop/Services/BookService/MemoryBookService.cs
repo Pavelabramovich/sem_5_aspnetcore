@@ -168,4 +168,9 @@ public class MemoryBookService : IBookService
     {
         throw new NotImplementedException();
     }
+
+    public Task<ResponseData<PageModel<Book>>> GetPageAsync(int? pageNum)
+    {
+        throw new NotImplementedException();
+    }
 }

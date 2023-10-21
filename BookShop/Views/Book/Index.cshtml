@@ -75,10 +75,10 @@
 
     <div class="row">
         @{
-            var categoryId2 = request.Query["categoryId"].FirstOrDefault();
+            var categoryId = request.Query["categoryId"].FirstOrDefault();
         }
 
-        <bpg current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-id="@categoryId2"></bpg>
+        <bpg current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-id="@categoryId"></bpg>
     </div>
 </div>
 

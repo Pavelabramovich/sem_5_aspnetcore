@@ -92,6 +92,47 @@ public class ApiBookService : ApiService, IBookService
         return new(errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
     }
 
+
+
+    public async Task<ResponseData<PageModel<Book>>> GetPageAsync(int? pageNum)
+    {
+        var token = await _httpContext.GetTokenAsync("access_token");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
+
+        Type controllerType = typeof(BooksController);
+
+        string actionName = "GetPage";
+        var actionArgsTypes = new Type[] { typeof(int), typeof(int) };
+        object actionArgs = new {  pageNum = pageNum ?? 0, itemsPerPage = 5 };
+
+        var uri = GetApiControllerUri(controllerType, actionName, actionArgsTypes, actionArgs);
+
+
+        var response = await _httpClient.GetAsync(uri);
+
+        if (response.IsSuccessStatusCode)
+        {
+            try
+            {
+                return await response.Content.ReadFromJsonAsync<ResponseData<PageModel<Book>>>(_serializerOptions);
+            }
+            catch (JsonException ex)
+            {
+                _logger.LogError($"-----> Ошибка: {ex.Message}");
+
+                return new(errorMessage: $"Ошибка: {ex.Message}");
+            }
+        }
+
+        _logger.LogError($"-----> Данные не получены от сервера. Error:{response.StatusCode}");
+
+        return new(errorMessage: $"Данные не получены от сервера. Error: {response.StatusCode}");
+    }
+
+
+
+
     public async Task<ResponseData<Book>> AddAsync(Book book)
     {
         var token = await _httpContext.GetTokenAsync("access_token");
@@ -306,8 +347,6 @@ public class ApiBookService : ApiService, IBookService
         var content = new MultipartFormDataContent();
         var streamContent = new StreamContent(image.OpenReadStream());
         content.Add(streamContent, "formFile", image.FileName);
-
-        var s = content.ToList();
 
         request.Content = content;
         await _httpClient.SendAsync(request);

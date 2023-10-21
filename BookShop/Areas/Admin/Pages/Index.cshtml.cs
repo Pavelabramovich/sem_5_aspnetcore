@@ -11,7 +11,12 @@ using BookShop.Domain.Entities;
 using BookShop.Services.CategoryService;
 using BookShop.Api.Controllers;
 
+
 namespace BookShop.Areas.Admin.Pages;
+
+
+using BookPageViewModel = BookShop.Domain.Models.PageModel<Book>;
+
 
 public class IndexModel : PageModel
 {
@@ -24,17 +29,17 @@ public class IndexModel : PageModel
         _categoryService = categoryService;
     }
 
-    public IList<Book> Book { get;set; } = default!;
+    public BookPageViewModel Book { get;set; } = default!;
 
-    public async Task OnGetAsync()
+    public async Task OnGetAsync(int pageNum = 0)
     {
-        Book = _bookService.GetAllAsync().Result.Data.ToList();
+        Book = _bookService.GetPageAsync(pageNum).Result.Data;
 
         var categories = new Dictionary<int, Category>();
 
         _categoryService.GetAllAsync().Result.Data.ForEach(c => categories.Add(c.Id, c));
 
-        foreach (var item in Book)
+        foreach (var item in Book.Items)
         {
             if (item.CategoryId is not null)
             {

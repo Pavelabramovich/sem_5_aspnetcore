@@ -9,5 +9,7 @@ public interface IBookService : IEntityService<Book>
 {
     public Task<ResponseData<PageModel<Book>>> GetProductListAsync(int? categoryId, int? pageNo = 1);
 
+    public Task<ResponseData<PageModel<Book>>> GetPageAsync(int? pageNum);
+
     public Task<ResponseData<IFormFile>> GetImageAsync(int id);
 } 
