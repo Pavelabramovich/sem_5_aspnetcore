@@ -72,44 +72,13 @@
             </div>
         </div>
     </div>
+
     <div class="row">
-        @if (Model.PagesCount > 1)
-        {
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    @{
-                        var pageNum = Model.PageNum;
-                        var pagesCount = Model.PagesCount;
-
-                        var next = pageNum + 1 < pagesCount ? pageNum + 1 : pagesCount - 1;
-                        var prev = pageNum - 1 >= 0 ? pageNum - 1 : 0;
-
-                        var d = request.RouteValues;
-
-                        var categoryId = request.Query["categoryId"].FirstOrDefault();
-                    }
-
-                    <li class="page-item">
-                        <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@prev" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-
-                    @for (int i = 0; i < pagesCount; i++)
-                    {
-                        <li class="page-item @(i == pageNum ? "active" : string.Empty)">
-                            <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@i">@(i + 1)</a>
-                        </li>
-                    }
-
-                    <li class="page-item">
-                        <a class="page-link" asp-controller="Book" asp-action="Index" asp-route-categoryId="@categoryId" asp-route-pageNum="@next" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        @{
+            var categoryId2 = request.Query["categoryId"].FirstOrDefault();
         }
+
+        <bpg current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-id="@categoryId2"></bpg>
     </div>
 </div>
 

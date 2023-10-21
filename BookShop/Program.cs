@@ -27,7 +27,7 @@ builder.Services
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization();
 
-//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 //JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 
