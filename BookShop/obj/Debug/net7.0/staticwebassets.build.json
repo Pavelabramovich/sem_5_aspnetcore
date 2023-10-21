@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qZKlk9l8C3tt6GE0Bi6Ou4+DK04yHLeSm+SHZT3nyyE=",
+  "Hash": "QvIU33IiRJXfzBPr7Jwdb7hIVDhlBkQXzrlG/SS8NhM=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -306,6 +306,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\esdyc5v3.jpg"
+    },
+    {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\fpfvx0bp.png",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/fpfvx0bp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\fpfvx0bp.png"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\jjwhbnsn.png",

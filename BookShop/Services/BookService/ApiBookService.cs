@@ -33,10 +33,10 @@ public class ApiBookService : ApiService, IBookService
     public ApiBookService(HttpClient httpClient, ILogger<ApiBookService> logger, LinkGenerator linkGenerator, ICategoryService categoryService, IHttpContextAccessor httpContextAccessor) :
         base(httpClient, linkGenerator)
     {
-         _serializerOptions = new JsonSerializerOptions()
-         {
-             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-         };
+        _serializerOptions = new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
 
         _logger = logger;
 

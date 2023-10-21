@@ -5,6 +5,8 @@ using BookShop.Services.PaginationService;
 using BookShop.Domain.Entities;
 using BookShop.Domain.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
+using BookShop.Extensions;
 
 namespace BookShop.Controllers;
 
@@ -12,25 +14,27 @@ public class BookController : Controller
 {
     private readonly IBookService _bookService;
     private readonly ICategoryService _categoryService;
-    private readonly IPaginationService<Book> _paginationService;
 
-    public BookController(IBookService bookService, ICategoryService categoryService, IPaginationService<Book> paginationService)
+    public BookController(IBookService bookService, ICategoryService categoryService)
     {
         _bookService = bookService;
         _categoryService = categoryService;
-        _paginationService = paginationService;
     }
 
+    [HttpGet]
     public async Task<IActionResult> Index(int? categoryId, int pageNum = 0)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
         ViewData["Categories"] = categoryResponse.Data;
 
-        var productsOnPageResponse = await _bookService.GetProductListAsync(categoryId, pageNum);
+        var booksOnPageResponse = await _bookService.GetProductListAsync(categoryId, pageNum);
 
-        if (!productsOnPageResponse)
-            return NotFound(productsOnPageResponse.ErrorMessage);
+        if (!booksOnPageResponse)
+            return NotFound(booksOnPageResponse.ErrorMessage);
 
-        return View(productsOnPageResponse.Data);
+        if (Request.IsAjaxRequest())
+            return PartialView("_ListPartial", booksOnPageResponse.Data);
+        
+        return View(booksOnPageResponse.Data);
     }
 }
