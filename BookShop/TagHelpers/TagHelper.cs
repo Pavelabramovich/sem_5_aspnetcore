@@ -106,14 +106,14 @@ public abstract class PagerTagHelper : TagHelper
 }
 
 
-public class BpgTagHelper : PagerTagHelper
+public class BpgrTagHelper : PagerTagHelper
 {
     protected readonly LinkGenerator _linkGenerator;
 
-    public string? CategoryId { get; set; }
+    public string? CategoryName { get; set; }
 
 
-    public BpgTagHelper(LinkGenerator linkGenerator)
+    public BpgrTagHelper(LinkGenerator linkGenerator)
     {
         _linkGenerator = linkGenerator;
     }
@@ -121,7 +121,7 @@ public class BpgTagHelper : PagerTagHelper
     protected override TagBuilder GetPageLink(int index, string? text = null)
     {
         ArgumentNullException
-            .ThrowIfNull(nameof(CategoryId));
+            .ThrowIfNull(nameof(CategoryName));
 
         var a = new TagBuilder("a");
 
@@ -129,7 +129,7 @@ public class BpgTagHelper : PagerTagHelper
 
         a.InnerHtml.AppendLine(text ?? (index + 1).ToString());
 
-        var href = _linkGenerator.GetPathByAction("Index", "Book", new { categoryId = CategoryId, pageNum = index });
+        var href = _linkGenerator.GetPathByAction("Index", "Book", new { categoryName = CategoryName, pageNum = index });
 
         a.Attributes.Add("href", href); 
 

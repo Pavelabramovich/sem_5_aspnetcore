@@ -24,7 +24,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown">
                     @foreach (var category in ViewBag.Categories)
                     {
-                        <a class="dropdown-item" asp-controller="Book" asp-route-categoryId="@category.Id">
+                        <a class="dropdown-item" asp-controller="Book" asp-route-categoryName="@category.Name">
                             @category.Name
                         </a>
                     }
@@ -75,9 +75,9 @@
 
     <div class="row">
         @{
-            var categoryId = request.Query["categoryId"].FirstOrDefault();
+            var categoryName = ViewContext.RouteData.Values["categoryName"];
         }
 
-        <bpg current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-id="@categoryId"></bpg>
+        <bpgr current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-name="@categoryName"></bpgr>
     </div>
 </div>

@@ -10,6 +10,7 @@ using BookShop.Extensions;
 
 namespace BookShop.Controllers;
 
+[Route("catalog")]
 public class BookController : Controller
 {
     private readonly IBookService _bookService;
@@ -22,10 +23,15 @@ public class BookController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index(int? categoryId, int pageNum = 0)
+    [Route("")]
+    [Route("{categoryName}")]
+    public async Task<IActionResult> Index(string? categoryName, int pageNum = 0)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
         ViewData["Categories"] = categoryResponse.Data;
+
+        int? categoryId = categoryResponse.Data.Where(category => category.Name == categoryName).SingleOrDefault()?.Id;
+
 
         var booksOnPageResponse = await _bookService.GetProductListAsync(categoryId, pageNum);
 
@@ -33,7 +39,10 @@ public class BookController : Controller
             return NotFound(booksOnPageResponse.ErrorMessage);
 
         if (Request.IsAjaxRequest())
+        {
+            throw new NotImplementedException();
             return PartialView("_ListPartial", booksOnPageResponse.Data);
+        }
         
         return View(booksOnPageResponse.Data);
     }
