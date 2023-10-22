@@ -5,7 +5,14 @@ namespace BookShop.Controllers;
 
 public class IdentityController : Controller
 {
-    [HttpGet]
+    private readonly ISession _session;
+
+
+    public IdentityController(IHttpContextAccessor httpContextAccessor)
+    {
+        _session = httpContextAccessor.HttpContext.Session;
+    }
+
     public async Task Login()
     {
         await HttpContext.ChallengeAsync("oidc", new AuthenticationProperties
@@ -22,6 +29,8 @@ public class IdentityController : Controller
         {
             RedirectUri = Url.Action("Index", "Home")
         });
+
+        _session.Clear();
     }
 
 }

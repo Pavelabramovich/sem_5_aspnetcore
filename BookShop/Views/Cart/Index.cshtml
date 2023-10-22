@@ -1,0 +1,70 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "Index";
+
+    var request = ViewContext.HttpContext.Request;
+    string returnUrl = request.Path + request.QueryString.ToUriComponent();
+}
+
+<h1>Cart</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Count
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Title)
+                </td>
+                <td>
+                    @(item.Book.Category != null ? item.Book.Category.Name : "???")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Price)
+                </td>
+                <td>
+                    <img src="@item.Book.ImagePath" style="height: 80px;" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Count)
+                </td>
+
+                <td style="letter-spacing:5px;">
+                    <a asp-action="Add" asp-controller="Cart" asp-route-id="@item.Book.Id" asp-route-returnurl="@returnUrl" class="btn btn-primary">
+                        <i class="fa-solid fa-plus">&nbsp; ADD ONE</i>
+                    </a>
+
+                    <a asp-action="RemoveOne" asp-controller="Cart" asp-route-id="@item.Book.Id" asp-route-returnurl="@returnUrl" class="btn btn-warning">
+                        <i class="fa-solid fa-minus">&nbsp; REMOVE ONE</i>
+                    </a>
+
+                    <a asp-action="Remove" asp-controller="Cart" asp-route-id="@item.Book.Id" asp-route-returnurl="@returnUrl" class="btn btn-danger">
+                        <i class="fa-solid fa-trash-can">&nbsp; REMOVE ALL</i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

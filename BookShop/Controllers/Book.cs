@@ -23,8 +23,7 @@ public class BookController : Controller
     }
 
     [HttpGet]
-    [Route("")]
-    [Route("{categoryName}")]
+    [Route("{categoryName?}")]
     public async Task<IActionResult> Index(string? categoryName, int pageNum = 0)
     {
         var categoryResponse = await _categoryService.GetAllAsync();

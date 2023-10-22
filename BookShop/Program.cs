@@ -16,6 +16,8 @@ builder.Services.AddScoped<ICategoryService, ApiCategoryService>();
 builder.Services.AddScoped<IBookService, ApiBookService>();
 builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
 
+builder.Services.AddScoped<Cart, SessionCart>();
+
 var apiUri = builder.Configuration["UriData:ApiUri"];
 
 builder.Services
@@ -27,8 +29,9 @@ builder.Services
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization();
 
-JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-//JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 
 builder.Services.AddAuthentication(opt =>
@@ -46,10 +49,6 @@ builder.Services.AddAuthentication(opt =>
     options.GetClaimsFromUserInfoEndpoint = true;
     options.ResponseType = "code";
     options.ResponseMode = "query";
-
-    //options.Scope.Clear();
-    //options.Scope.Add("openid");
-    //options.Scope.Add("profile");
 
     options.SaveTokens = true;
 });
@@ -77,5 +76,7 @@ app.MapRazorPages().RequireAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseSession();
 
 app.Run();

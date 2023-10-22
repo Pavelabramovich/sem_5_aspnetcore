@@ -30,7 +30,13 @@ public class ApiBookService : ApiService, IBookService
 
     private readonly HttpContext _httpContext;
 
-    public ApiBookService(HttpClient httpClient, ILogger<ApiBookService> logger, LinkGenerator linkGenerator, ICategoryService categoryService, IHttpContextAccessor httpContextAccessor) :
+    public ApiBookService(
+        HttpClient httpClient, 
+        ILogger<ApiBookService> logger, 
+        LinkGenerator linkGenerator, 
+        ICategoryService categoryService, 
+        IHttpContextAccessor httpContextAccessor
+    ) :
         base(httpClient, linkGenerator)
     {
         _serializerOptions = new JsonSerializerOptions()
