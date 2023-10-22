@@ -74,10 +74,6 @@
     </div>
 
     <div class="row">
-        @{
-            var categoryName = ViewContext.RouteData.Values["categoryName"];
-        }
-
-        <bpgr current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-name="@categoryName"></bpgr>
+        <bpgr current-page="@Model.PageNum" total-pages="@Model.PagesCount" category-name="@ViewData["CategoryName"]"></bpgr>
     </div>
 </div>

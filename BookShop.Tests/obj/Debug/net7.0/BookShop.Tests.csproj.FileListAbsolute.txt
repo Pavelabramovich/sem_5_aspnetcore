@@ -390,3 +390,7 @@ E:\NewRepos\BookShop\BookShop.Tests\obj\Debug\net7.0\refint\BookShop.Tests.dll
 E:\NewRepos\BookShop\BookShop.Tests\obj\Debug\net7.0\BookShop.Tests.pdb
 E:\NewRepos\BookShop\BookShop.Tests\obj\Debug\net7.0\BookShop.Tests.genruntimeconfig.cache
 E:\NewRepos\BookShop\BookShop.Tests\obj\Debug\net7.0\ref\BookShop.Tests.dll
+E:\NewRepos\BookShop\BookShop.Tests\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\NewRepos\BookShop\BookShop.Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+E:\NewRepos\BookShop\BookShop.Tests\bin\Debug\net7.0\Moq.dll
+E:\NewRepos\BookShop\BookShop.Tests\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

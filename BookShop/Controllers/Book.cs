@@ -27,10 +27,15 @@ public class BookController : Controller
     public async Task<IActionResult> Index(string? categoryName, int pageNum = 0)
     {
         var categoryResponse = await _categoryService.GetAllAsync();
+
+        if (!categoryResponse)
+            return NotFound(categoryResponse.ErrorMessage);
+
         ViewData["Categories"] = categoryResponse.Data;
 
-        int? categoryId = categoryResponse.Data.Where(category => category.Name == categoryName).SingleOrDefault()?.Id;
+        int? categoryId = categoryResponse.Data!.Where(category => category.Name == categoryName).SingleOrDefault()?.Id;
 
+        ViewData["CategoryName"] = categoryName;
 
         var booksOnPageResponse = await _bookService.GetProductListAsync(categoryId, pageNum);
 

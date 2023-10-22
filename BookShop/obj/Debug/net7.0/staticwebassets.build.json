@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YxRdXh1DEO7P0jhKh9h+sqGkIhEUwJLLz4CLP/jo+60=",
+  "Hash": "/BA+aVauWzJ3L6jbfp1Fmu2i696LGo5tGq25qUOXkqw=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -444,6 +444,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\pujz4ga4.png"
     },
     {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\qamju4ir.jpg",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/qamju4ir.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\qamju4ir.jpg"
+    },
+    {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\qraepmy2.png",
       "SourceId": "BookShop.Api",
       "SourceType": "Project",
@@ -459,23 +476,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\qraepmy2.png"
-    },
-    {
-      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\rdbhf5ia.png",
-      "SourceId": "BookShop.Api",
-      "SourceType": "Project",
-      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
-      "BasePath": "_content/BookShop.Api",
-      "RelativePath": "Images/rdbhf5ia.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\rdbhf5ia.png"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\rdbhf5iz.png",

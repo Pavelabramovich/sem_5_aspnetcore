@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Y7/uCy+klGSLYCsOxWHOBp8TxUL/JzgnGJqWrNainlw=",
+  "Hash": "UfeVz6w/cztW36pzJEBriqUkBbDi+Yzn+A9gr6TCQ+4=",
   "Source": "BookShop.Api",
   "BasePath": "_content/BookShop.Api",
   "Mode": "Default",
@@ -425,6 +425,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\pujz4ga4.png"
     },
     {
+      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\qamju4ir.jpg",
+      "SourceId": "BookShop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
+      "BasePath": "_content/BookShop.Api",
+      "RelativePath": "Images/qamju4ir.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\qamju4ir.jpg"
+    },
+    {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\qraepmy2.png",
       "SourceId": "BookShop.Api",
       "SourceType": "Discovered",
@@ -440,23 +457,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\qraepmy2.png"
-    },
-    {
-      "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\rdbhf5ia.png",
-      "SourceId": "BookShop.Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\",
-      "BasePath": "_content/BookShop.Api",
-      "RelativePath": "Images/rdbhf5ia.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\rdbhf5ia.png"
     },
     {
       "Identity": "E:\\NewRepos\\BookShop\\BookShop.Api\\wwwroot\\Images\\rdbhf5iz.png",
