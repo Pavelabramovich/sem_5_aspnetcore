@@ -19,12 +19,11 @@ using System.Text;
 using Xunit;
 
 
-namespace BookShop.Tests;
+namespace BookShop.Tests.BookControllerTests;
 
 
 public class BookControllerTests
 {
-
     [Fact]
     public async void Test_Invalid_Category_Response()
     {
@@ -187,7 +186,6 @@ public class BookControllerTests
         // Assert
         Assert.Equal("First", controller.ViewData["CategoryName"]);
     }
-
 
     [Fact]
     public async void Test_Model_Is_PageModel()

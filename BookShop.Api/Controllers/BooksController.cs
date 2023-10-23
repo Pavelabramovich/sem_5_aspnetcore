@@ -15,26 +15,23 @@ namespace BookShop.Api.Controllers;
 [ApiController]
 public class BooksController : ControllerBase
 {
-    private readonly IEntityService<Book> _bookService;
+    private readonly IBookService _bookService;
     private readonly IEntityService<Category> _categoryService;
 
-    private readonly IPaginationService<Book> _paginationService;
     private readonly EntityImageService<Book> _imageService;
 
     private readonly string _imagesPath;
     private readonly string _appUri;
 
     public BooksController(
-        IEntityService<Book> bookService, 
+        IBookService bookService, 
         IEntityService<Category> categoryService, 
-        IPaginationService<Book> paginationService,
         EntityImageService<Book> imageService,
         IConfiguration configuration
     )
     {
         _bookService = bookService;
         _categoryService = categoryService;
-        _paginationService = paginationService;
         _imageService = imageService;
 
         _appUri = configuration.GetSection("AppUrl")?.Value ?? throw new InvalidOperationException("AppUrl don't set.");
@@ -49,25 +46,22 @@ public class BooksController : ControllerBase
         if (!categoryResponse)
             return NotFound(categoryResponse.ErrorMessage);
 
-        if (categoryId is null)
-            categoryId = categoryResponse.Data!.FirstOrDefault()!.Id;
+        categoryId ??= categoryResponse.Data!.FirstOrDefault()!.Id;
 
 
-        var booksResponse = await _bookService.GetAllAsync();
+        //var booksResponse = await _bookService.GetAllAsync();
 
-        if (!booksResponse)
-            return NotFound(booksResponse.ErrorMessage);
+        //if (!booksResponse)
+        //    return NotFound(booksResponse.ErrorMessage);
 
-        var books = booksResponse.Data is IQueryable<Book> query
-            ? query
-                  .Include(book => book.Category)
-                  .Where(book => book.Category == null
-                                        ? false
-                                        : book.Category.Id == categoryId)
-            : booksResponse.Data!
-                .Where(book => book.Category?.Id == categoryId);
+        //var books = booksResponse.Data is IQueryable<Book> query
+        //    ? query
+        //          .Include(book => book.Category)
+        //          .Where(book => book.Category != null && book.Category.Id == categoryId)
+        //    : booksResponse.Data!
+        //          .Where(book => book.Category?.Id == categoryId);
 
-        var booksOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, books!, pageNum);
+        var booksOnPageResponse = await _bookService.GetPageAsync(itemsPerPage, (int)categoryId, pageNum);
 
         if (!booksOnPageResponse)
             return NotFound(booksOnPageResponse.ErrorMessage);
@@ -81,14 +75,7 @@ public class BooksController : ControllerBase
     [Route("pageNum{pageNum:int}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetPage(int pageNum = 0, int itemsPerPage = 3)
     {
-        var booksResponse = await _bookService.GetAllAsync();
-
-        if (!booksResponse)
-            return NotFound(booksResponse.ErrorMessage);
-
-        var books = booksResponse.Data;
-
-        var booksOnPageResponse = await _paginationService.GetPageAsync(itemsPerPage, books!, pageNum);
+        var booksOnPageResponse = await _bookService.GetPageAsync(itemsPerPage, categoryId: null, pageNum);
 
         if (!booksOnPageResponse)
             return NotFound(booksOnPageResponse.ErrorMessage);

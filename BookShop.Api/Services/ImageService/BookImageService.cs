@@ -8,7 +8,7 @@ public class BookImageService : EntityImageService<Book>
 {
 
     public BookImageService(
-       IEntityService<Book> bookService,  
+       IBookService bookService,  
        IHttpContextAccessor httpContextAccessor,
        IConfiguration config,
        IWebHostEnvironment env

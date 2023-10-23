@@ -19,10 +19,9 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<BookShopContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddScoped<IEntityService<Book>, BookService>();
+builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IEntityService<Category>, CategoryService>();
 
-builder.Services.AddScoped<IPaginationService<Book>, PaginationService<Book>>();
 builder.Services.AddScoped<EntityImageService<Book>, BookImageService>();
 
 builder.Services
