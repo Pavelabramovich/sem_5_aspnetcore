@@ -15,14 +15,26 @@ using static Duende.IdentityServer.Models.IdentityResources;
 namespace BookShop.Tests.BookServiceTests;
 
 
-public class BookServiceTests
+public class BookServiceTests : IDisposable
 {
+    private SqliteConnection _connection;
+
+
+    //SetUp
+    public BookServiceTests()
+    {
+        _connection = new SqliteConnection("Filename=:memory:");
+        _connection.Open();
+    }
+
+
+    //TearDown
+    public void Dispose() => _connection?.Dispose();
+
+
     [Fact]
     public async void Test_Correct_PagesCount_And_Count_Of_Books()
     {
-        var _connection = new SqliteConnection("Filename=:memory:");
-        _connection.Open();
-
         var _contextOptions = new DbContextOptionsBuilder<BookShopContext>()
             .UseSqlite(_connection)
             .Options;
@@ -69,9 +81,6 @@ public class BookServiceTests
     [Fact]
     public async void Test_Correct_Books_On_Page()
     {
-        var _connection = new SqliteConnection("Filename=:memory:");
-        _connection.Open();
-
         var _contextOptions = new DbContextOptionsBuilder<BookShopContext>()
             .UseSqlite(_connection)
             .Options;
@@ -117,9 +126,6 @@ public class BookServiceTests
     [Fact]
     public async void Test_Thrown_On_BooksPerPage_Greather_Than_MaxCount()
     {
-        var _connection = new SqliteConnection("Filename=:memory:");
-        _connection.Open();
-
         var _contextOptions = new DbContextOptionsBuilder<BookShopContext>()
             .UseSqlite(_connection)
             .Options;
@@ -162,9 +168,6 @@ public class BookServiceTests
     [Fact]
     public async void Test_Thrown_On_PageNum_Greather_Than_PagesCount()
     {
-        var _connection = new SqliteConnection("Filename=:memory:");
-        _connection.Open();
-
         var _contextOptions = new DbContextOptionsBuilder<BookShopContext>()
             .UseSqlite(_connection)
             .Options;
