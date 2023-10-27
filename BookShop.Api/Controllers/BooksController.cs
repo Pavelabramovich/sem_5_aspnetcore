@@ -13,6 +13,7 @@ namespace BookShop.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class BooksController : ControllerBase
 {
     private readonly IBookService _bookService;
@@ -116,7 +117,7 @@ public class BooksController : ControllerBase
         }
     }
 
-    [Authorize]
+    
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
@@ -128,7 +129,7 @@ public class BooksController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
+    
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -137,7 +138,7 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    [Authorize]
+    
     [HttpPost("{id}")]
     public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
     {
@@ -170,7 +171,7 @@ public class BooksController : ControllerBase
     }
 
 
-    [Authorize]
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {

@@ -364,3 +364,12 @@ E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\refint\BookShop.dll
 E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\BookShop.pdb
 E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\BookShop.genruntimeconfig.cache
 E:\NewRepos\BookShop\BookShop\obj\Debug\net7.0\ref\BookShop.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.AspNetCore.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+E:\NewRepos\BookShop\BookShop\bin\Debug\net7.0\Serilog.Sinks.File.dll

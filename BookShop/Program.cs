@@ -1,11 +1,11 @@
+using Serilog;
+
 using BookShop.Services;
 using BookShop.Services.CategoryService;
 using BookShop.Services.BookService;
 using BookShop.Services.PaginationService;
 using BookShop.Domain.Entities;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.IdentityModel.Tokens.Jwt;
-
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,6 +53,22 @@ builder.Services.AddAuthentication(opt =>
     options.SaveTokens = true;
 });
 
+
+const string OUTPUT_TEMPALTE = "{Timestamp:HH:mm:ss} [{Level}] ---> {Message}{NewLine}{Exception}";
+
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console(outputTemplate: OUTPUT_TEMPALTE)               
+    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day, outputTemplate: OUTPUT_TEMPALTE)
+    .MinimumLevel.Information()
+    .Filter.ByExcluding(logEvent => logEvent.Properties.GetValueOrDefault("StatusCode")?.ToString() is ['2',_,_])
+    .CreateLogger();
+
+
+builder.Host.UseSerilog(logger);
+
 var app = builder.Build();
 
 
@@ -60,7 +76,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -77,6 +92,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+
 app.UseSession();
+
+app.UseSerilogRequestLogging();
 
 app.Run();
