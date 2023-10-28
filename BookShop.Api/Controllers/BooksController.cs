@@ -7,13 +7,16 @@ using BookShop.Domain.Models;
 using System.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors;
 
 namespace BookShop.Api.Controllers;
 
 
+[EnableCors("AllowAnyOrigin")]
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+
+//[Authorize]
 public class BooksController : ControllerBase
 {
     private readonly IBookService _bookService;

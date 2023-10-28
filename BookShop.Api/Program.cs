@@ -46,6 +46,16 @@ builder.Services
 });
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 //builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
@@ -72,5 +82,7 @@ app.UseAuthorization();
 
 
 app.MapControllers();
+
+app.UseCors("AllowAnyOrigin");
 
 app.Run();

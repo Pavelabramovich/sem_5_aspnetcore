@@ -1986,3 +1986,787 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
 11:52:08 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.1037ms
 11:52:08 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
 11:52:08 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:32:43 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:32:43 [Information] ---> Now listening on: "https://localhost:7001"
+20:32:43 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:32:43 [Information] ---> Hosting environment: "Development"
+20:32:43 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:32:46 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:32:47 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:32:47 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:32:47 [Information] ---> Executing ViewResult, running view "Index".
+20:32:47 [Information] ---> Accessing expired session, Key:"408ff13f-2b42-5e82-ef08-79d4112160e6"
+20:32:47 [Information] ---> Executed ViewResult - view "Index" executed in 431.9836ms.
+20:32:47 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 455.4358ms
+20:32:47 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:32:47 [Information] ---> Session started; Key:"408ff13f-2b42-5e82-ef08-79d4112160e6", Id:"e2d9d3ff-51b9-3316-09ed-244f4a561c4f"
+20:32:48 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:32:48 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 8.9317ms
+20:32:48 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:32:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signout-oidc?sid=31A8EDB15E4520C54A674580B4A30566&iss=https%3A%2F%2Flocalhost%3A7003 - -
+20:32:53 [Information] ---> Remote signout request processed.
+20:32:53 [Information] ---> AuthenticationScheme: "cookie" signed out.
+20:36:46 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:36:46 [Information] ---> Now listening on: "https://localhost:7001"
+20:36:46 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:36:46 [Information] ---> Hosting environment: "Development"
+20:36:46 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:36:50 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:36:50 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:36:50 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:36:50 [Information] ---> Executing ViewResult, running view "Index".
+20:36:51 [Information] ---> Executed ViewResult - view "Index" executed in 362.1164ms.
+20:36:51 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 383.9982ms
+20:36:51 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:36:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:36:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:36:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:36:51 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 36.3299ms
+20:37:28 [Information] ---> Request starting HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182
+20:37:28 [Information] ---> Executing endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:37:28 [Information] ---> Route matched with "{action = \"Login\", controller = \"Identity\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task Login()" on controller "BookShop.Controllers.IdentityController" ("BookShop").
+20:37:29 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+20:37:29 [Information] ---> Executed action "BookShop.Controllers.IdentityController.Login (BookShop)" in 475.3668ms
+20:37:29 [Information] ---> Executed endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:37:29 [Information] ---> Request finished HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182 - 302 0 - 499.0173ms
+20:37:59 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:37:59 [Information] ---> Now listening on: "https://localhost:7001"
+20:37:59 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:37:59 [Information] ---> Hosting environment: "Development"
+20:37:59 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:38:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:38:03 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:38:03 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:38:03 [Information] ---> Executing ViewResult, running view "Index".
+20:38:03 [Information] ---> Executed ViewResult - view "Index" executed in 215.1734ms.
+20:38:03 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 225.0313ms
+20:38:03 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:38:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:38:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:38:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:38:03 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 40.3360ms
+20:38:05 [Information] ---> Request starting HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182
+20:38:05 [Information] ---> Executing endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:38:05 [Information] ---> Route matched with "{action = \"Login\", controller = \"Identity\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task Login()" on controller "BookShop.Controllers.IdentityController" ("BookShop").
+20:38:06 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+20:38:06 [Information] ---> Executed action "BookShop.Controllers.IdentityController.Login (BookShop)" in 638.0634ms
+20:38:06 [Information] ---> Executed endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:38:06 [Information] ---> Request finished HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182 - 302 0 - 652.6834ms
+20:41:19 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:41:19 [Information] ---> Now listening on: "https://localhost:7001"
+20:41:19 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:41:19 [Information] ---> Hosting environment: "Development"
+20:41:19 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:41:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:41:22 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:41:22 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:41:22 [Information] ---> Executing ViewResult, running view "Index".
+20:41:22 [Information] ---> Executed ViewResult - view "Index" executed in 225.3993ms.
+20:41:22 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 243.7374ms
+20:41:22 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:41:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:41:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:41:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:41:22 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 34.6348ms
+20:41:25 [Information] ---> Request starting HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182
+20:41:25 [Information] ---> Executing endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:41:25 [Information] ---> Route matched with "{action = \"Login\", controller = \"Identity\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task Login()" on controller "BookShop.Controllers.IdentityController" ("BookShop").
+20:41:26 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+20:41:26 [Information] ---> Executed action "BookShop.Controllers.IdentityController.Login (BookShop)" in 783.2419ms
+20:41:26 [Information] ---> Executed endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:41:26 [Information] ---> Request finished HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182 - 302 0 - 801.7848ms
+20:49:19 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:49:19 [Information] ---> Now listening on: "https://localhost:7001"
+20:49:19 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:49:19 [Information] ---> Hosting environment: "Development"
+20:49:19 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:49:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:49:22 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:49:22 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:49:22 [Information] ---> Executing ViewResult, running view "Index".
+20:49:23 [Information] ---> Executed ViewResult - view "Index" executed in 220.1577ms.
+20:49:23 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 231.8663ms
+20:49:23 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:49:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:49:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:49:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:49:23 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 48.4006ms
+20:49:28 [Information] ---> Request starting HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182
+20:49:28 [Information] ---> Executing endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:49:28 [Information] ---> Route matched with "{action = \"Login\", controller = \"Identity\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task Login()" on controller "BookShop.Controllers.IdentityController" ("BookShop").
+20:49:29 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+20:49:29 [Information] ---> Executed action "BookShop.Controllers.IdentityController.Login (BookShop)" in 783.5806ms
+20:49:29 [Information] ---> Executed endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:49:29 [Information] ---> Request finished HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182 - 302 0 - 802.0262ms
+20:49:33 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:49:33 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:49:33 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:49:33 [Information] ---> Executing ViewResult, running view "Index".
+20:49:33 [Information] ---> Executed ViewResult - view "Index" executed in 11.079ms.
+20:49:33 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 12.374ms
+20:49:33 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:49:33 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:51:52 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+20:51:53 [Information] ---> Now listening on: "https://localhost:7001"
+20:51:53 [Information] ---> Application started. Press Ctrl+C to shut down.
+20:51:53 [Information] ---> Hosting environment: "Development"
+20:51:53 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+20:51:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:51:56 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:51:56 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:51:56 [Information] ---> Executing ViewResult, running view "Index".
+20:51:56 [Information] ---> Executed ViewResult - view "Index" executed in 220.7492ms.
+20:51:56 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 232.4074ms
+20:51:56 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:51:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:51:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+20:51:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:51:56 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 14.2856ms
+20:52:00 [Information] ---> Request starting HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182
+20:52:00 [Information] ---> Executing endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:52:00 [Information] ---> Route matched with "{action = \"Login\", controller = \"Identity\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task Login()" on controller "BookShop.Controllers.IdentityController" ("BookShop").
+20:52:01 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+20:52:01 [Information] ---> Executed action "BookShop.Controllers.IdentityController.Login (BookShop)" in 771.9929ms
+20:52:01 [Information] ---> Executed endpoint '"BookShop.Controllers.IdentityController.Login (BookShop)"'
+20:52:01 [Information] ---> Request finished HTTP/2 POST https://localhost:7001/Identity/Login application/x-www-form-urlencoded 182 - 302 0 - 795.1655ms
+20:52:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signin-oidc?code=F04C1C79438173F00DD889246F007A31E8B2A82E29170A45CB4D32861C867F3E-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKWmlCa5hqiwGd9boZvTEbfWB5gLJlu3X0tFKZteqBg6CSv3m5rTipOmBiQSmsuwepjiNXT5Edjt2JRF0Aau2lTckOOsKsqQzm9ewHsPuxv-0lQPJIJ_1TbdWtUn2Ge4wozmz34G0372lfw9RraKgcBNDA86ARl6LnZP4g5JIbNVGptp0Up-JXBWHHzJtGVvEW0s4SvxqU-cv8M2mzjpEECBxThZiwRw557DmwL6jnF26WoRfdTvr4Y7kShtLPvNr4JaeZiotmvXnHP2W1PNH9L0HWIWnTXIyajcleTErKlvnJUcdGU9NbLQRmwtcwGfdRz-TtQOmEuf7_2FwDWCfEotXJFMccps18bv3S2kMo9g2A&session_state=uFsn73KxdbpD_TYHHV0cXZTORvbfDL9tcCZiOiCEbM8.4CF69B75C6FE574799E7BA2670C30EC0&iss=https%3A%2F%2Flocalhost%3A7003 - -
+20:52:05 [Information] ---> AuthenticationScheme: "cookie" signed in.
+20:52:05 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/signin-oidc?code=F04C1C79438173F00DD889246F007A31E8B2A82E29170A45CB4D32861C867F3E-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKWmlCa5hqiwGd9boZvTEbfWB5gLJlu3X0tFKZteqBg6CSv3m5rTipOmBiQSmsuwepjiNXT5Edjt2JRF0Aau2lTckOOsKsqQzm9ewHsPuxv-0lQPJIJ_1TbdWtUn2Ge4wozmz34G0372lfw9RraKgcBNDA86ARl6LnZP4g5JIbNVGptp0Up-JXBWHHzJtGVvEW0s4SvxqU-cv8M2mzjpEECBxThZiwRw557DmwL6jnF26WoRfdTvr4Y7kShtLPvNr4JaeZiotmvXnHP2W1PNH9L0HWIWnTXIyajcleTErKlvnJUcdGU9NbLQRmwtcwGfdRz-TtQOmEuf7_2FwDWCfEotXJFMccps18bv3S2kMo9g2A&session_state=uFsn73KxdbpD_TYHHV0cXZTORvbfDL9tcCZiOiCEbM8.4CF69B75C6FE574799E7BA2670C30EC0&iss=https%3A%2F%2Flocalhost%3A7003 - - - 302 0 - 637.3662ms
+20:52:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+20:52:05 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:52:05 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+20:52:05 [Information] ---> Executing ViewResult, running view "Index".
+20:52:05 [Information] ---> Accessing expired session, Key:"408ff13f-2b42-5e82-ef08-79d4112160e6"
+20:52:05 [Information] ---> Executed ViewResult - view "Index" executed in 62.3357ms.
+20:52:05 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 65.2038ms
+20:52:05 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+20:52:05 [Information] ---> Session started; Key:"408ff13f-2b42-5e82-ef08-79d4112160e6", Id:"44a19b16-3966-2500-e8eb-4d2165e56875"
+20:52:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+20:52:05 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 1.3845ms
+20:52:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+20:52:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:23 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:10:24 [Information] ---> Now listening on: "https://localhost:7001"
+21:10:24 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:10:24 [Information] ---> Hosting environment: "Development"
+21:10:24 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:10:27 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:28 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:28 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:28 [Information] ---> Executing ViewResult, running view "Index".
+21:10:28 [Information] ---> Accessing expired session, Key:"408ff13f-2b42-5e82-ef08-79d4112160e6"
+21:10:28 [Information] ---> Executed ViewResult - view "Index" executed in 273.2272ms.
+21:10:28 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 286.6248ms
+21:10:28 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:28 [Information] ---> Session started; Key:"408ff13f-2b42-5e82-ef08-79d4112160e6", Id:"50e3be6f-14c9-0717-614b-2a96fe445b80"
+21:10:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:28 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 12.8753ms
+21:10:38 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signout-oidc?sid=B143957A5ED6AAC505B4185385FADA92&iss=https%3A%2F%2Flocalhost%3A7003 - -
+21:10:38 [Information] ---> Remote signout request processed.
+21:10:38 [Information] ---> AuthenticationScheme: "cookie" signed out.
+21:10:48 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Admin - -
+21:10:48 [Information] ---> Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+21:10:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Admin - -
+21:10:49 [Information] ---> Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+21:10:49 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+21:10:49 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+21:10:49 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Admin - - - 0 - - 450.6995ms
+21:10:49 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Admin - - - 302 0 - 96.2711ms
+21:10:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signin-oidc?code=F8A00E65974B19DE6FBB65104B1582CB8637973ACEA582018FED77DD7678153A-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKVWkuMfYexkcwiJK67HzTAi2W6guSe_vaGe6kcRrAZMmNyNt-gZAMad7liem70BJLTfhBwY2yRRcttM8ugqxLbovlQzQe3G1ZL7zQKJG5h6WNYH_N7DRcchXJIIZmX9sZitIbfKqY2r94shh-MYPyOy8mW4A7LQTRY8jwqzCtsHKTRqIz1SqlgoIm2hUQeQBnPSE6s1mq-pNMRB8fVSrN6FFE8T0ZRyA2VM_JOHn-gnU-5EDIfU_UGjwYpvnh8ex0WIw_9QRk0ATKEoNJvg792MCk8MGXOddtckY4qsCKdGfw2Li5thXPs3eRfOQnoEvuDdxDFzoOzuwfvdMIYPdqDF_DzZyxMcI9a1Qps2X8b6ww&session_state=LsvMjyk-AW6LrnQkxbHxJMmW8et3a0ATQ_Zcll2RmJY.7B2322020A1517F4866517313DC04F28&iss=https%3A%2F%2Flocalhost%3A7003 - -
+21:10:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Admin?pageNum=0 - -
+21:10:49 [Information] ---> Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+21:10:49 [Information] ---> AuthenticationScheme: "oidc" was challenged.
+21:10:49 [Error] ---> Exception occurred while processing message.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.GetUserInformationAsync(OpenIdConnectMessage message, JwtSecurityToken jwt, ClaimsPrincipal principal, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.HandleRemoteAuthenticateAsync()
+21:10:49 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Admin?pageNum=0 - - - 302 0 - 152.2591ms
+21:10:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signin-oidc?code=6AE8AA993F94A2D0AC2F6CE38910A578930EF16F4ED7CEC0290B21A0CAD7AB4B-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKW9d9CCyAIi9sL8Dgfiu-O1KGQMA7nHVHcOFFjjLadXx6eo-TVit_8aNNxQGyD9xXpQteg_GeC2PsSRkdkRaotcvzizqC1bLaJmSxe5x3pGYE2qoy-cFqWmdAa8flM1wymfMhhmrfQ-ZVVepwmPt8Ori5IhGJLMCqX1f1jCCAbOa5-8wdSTaQPvj1fIgqbEl165ifKiil1CRRGKgvrYw0YkHEOZgW6Ylr2RPE41mYyvC7Zrdhi7Gadk1QhovbOu51mVgqv-nH4KWiInCSrH7AaD-b3U8uTFkNk2WClMKuImXMEPGPoGx_MA02RG00SqhhhXy-Rp92br1Izch-jFtAoCaHawY_KhdStq2waMVml3bSMPMvYx-jmt2Ng-IziPxlI&session_state=AfwlhJ-XlbhSHFQbXje95EvV7qr_uSjVT2q4sntiycA.E90EEF37E0319A21FF90DF3283B69C6C&iss=https%3A%2F%2Flocalhost%3A7003 - -
+21:10:49 [Information] ---> Error from RemoteAuthentication: "A task was canceled.".
+21:10:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:49 [Error] ---> An unhandled exception has occurred while executing the request.
+System.Exception: An error was encountered while handling the remote login.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.GetUserInformationAsync(OpenIdConnectMessage message, JwtSecurityToken jwt, ClaimsPrincipal principal, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.HandleRemoteAuthenticateAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+21:10:49 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:50 [Error] ---> Exception occurred while processing message.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.RedeemAuthorizationCodeAsync(OpenIdConnectMessage tokenEndpointRequest)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.HandleRemoteAuthenticateAsync()
+21:10:50 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:50 [Information] ---> Error from RemoteAuthentication: "A task was canceled.".
+21:10:50 [Information] ---> Executing ViewResult, running view "Index".
+21:10:50 [Error] ---> An unhandled exception has occurred while executing the request.
+System.Exception: An error was encountered while handling the remote login.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.RedeemAuthorizationCodeAsync(OpenIdConnectMessage tokenEndpointRequest)
+   at Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectHandler.HandleRemoteAuthenticateAsync()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+21:10:50 [Information] ---> Executed ViewResult - view "Index" executed in 117.8767ms.
+21:10:50 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 120.4833ms
+21:10:50 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:50 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:50 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:50 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:50 [Information] ---> Executing ViewResult, running view "Index".
+21:10:50 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/signin-oidc?code=6AE8AA993F94A2D0AC2F6CE38910A578930EF16F4ED7CEC0290B21A0CAD7AB4B-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKW9d9CCyAIi9sL8Dgfiu-O1KGQMA7nHVHcOFFjjLadXx6eo-TVit_8aNNxQGyD9xXpQteg_GeC2PsSRkdkRaotcvzizqC1bLaJmSxe5x3pGYE2qoy-cFqWmdAa8flM1wymfMhhmrfQ-ZVVepwmPt8Ori5IhGJLMCqX1f1jCCAbOa5-8wdSTaQPvj1fIgqbEl165ifKiil1CRRGKgvrYw0YkHEOZgW6Ylr2RPE41mYyvC7Zrdhi7Gadk1QhovbOu51mVgqv-nH4KWiInCSrH7AaD-b3U8uTFkNk2WClMKuImXMEPGPoGx_MA02RG00SqhhhXy-Rp92br1Izch-jFtAoCaHawY_KhdStq2waMVml3bSMPMvYx-jmt2Ng-IziPxlI&session_state=AfwlhJ-XlbhSHFQbXje95EvV7qr_uSjVT2q4sntiycA.E90EEF37E0319A21FF90DF3283B69C6C&iss=https%3A%2F%2Flocalhost%3A7003 - - - 500 - text/html;+charset=utf-8 510.0523ms
+21:10:50 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/signin-oidc?code=F8A00E65974B19DE6FBB65104B1582CB8637973ACEA582018FED77DD7678153A-1&scope=openid%20profile&state=CfDJ8N_TvsmgsqNFgP4eCqFjKKVWkuMfYexkcwiJK67HzTAi2W6guSe_vaGe6kcRrAZMmNyNt-gZAMad7liem70BJLTfhBwY2yRRcttM8ugqxLbovlQzQe3G1ZL7zQKJG5h6WNYH_N7DRcchXJIIZmX9sZitIbfKqY2r94shh-MYPyOy8mW4A7LQTRY8jwqzCtsHKTRqIz1SqlgoIm2hUQeQBnPSE6s1mq-pNMRB8fVSrN6FFE8T0ZRyA2VM_JOHn-gnU-5EDIfU_UGjwYpvnh8ex0WIw_9QRk0ATKEoNJvg792MCk8MGXOddtckY4qsCKdGfw2Li5thXPs3eRfOQnoEvuDdxDFzoOzuwfvdMIYPdqDF_DzZyxMcI9a1Qps2X8b6ww&session_state=LsvMjyk-AW6LrnQkxbHxJMmW8et3a0ATQ_Zcll2RmJY.7B2322020A1517F4866517313DC04F28&iss=https%3A%2F%2Flocalhost%3A7003 - - - 500 - text/html;+charset=utf-8 907.6736ms
+21:10:50 [Information] ---> Executed ViewResult - view "Index" executed in 5.7396ms.
+21:10:50 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 6.6483ms
+21:10:50 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:50 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:50 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:50 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:50 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.6036ms
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:51 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:51 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:51 [Information] ---> Executing ViewResult, running view "Index".
+21:10:51 [Information] ---> Executed ViewResult - view "Index" executed in 5.4097ms.
+21:10:51 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 6.2276ms
+21:10:51 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:51 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.3956ms
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:51 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:51 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:51 [Information] ---> Executing ViewResult, running view "Index".
+21:10:51 [Information] ---> Executed ViewResult - view "Index" executed in 5.732ms.
+21:10:51 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 7.0854ms
+21:10:51 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:51 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:51 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.9690ms
+21:10:52 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:52 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:52 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:52 [Information] ---> Executing ViewResult, running view "Index".
+21:10:52 [Information] ---> Executed ViewResult - view "Index" executed in 6.5233ms.
+21:10:52 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 8.0044ms
+21:10:52 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:53 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.5443ms
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:53 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:53 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:53 [Information] ---> Executing ViewResult, running view "Index".
+21:10:53 [Information] ---> Executed ViewResult - view "Index" executed in 7.0497ms.
+21:10:53 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 8.2587ms
+21:10:53 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:53 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 4.1473ms
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:53 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:53 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:53 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:53 [Information] ---> Executing ViewResult, running view "Index".
+21:10:53 [Information] ---> Executed ViewResult - view "Index" executed in 6.7802ms.
+21:10:53 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 9.0198ms
+21:10:53 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:54 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:54 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:54 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 1.5594ms
+21:10:54 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:55 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:55 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:55 [Information] ---> Executing ViewResult, running view "Index".
+21:10:55 [Information] ---> Executed ViewResult - view "Index" executed in 5.9819ms.
+21:10:55 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 7.3082ms
+21:10:55 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:55 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 1.9126ms
+21:10:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:10:56 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:56 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:10:56 [Information] ---> Executing ViewResult, running view "Index".
+21:10:56 [Information] ---> Executed ViewResult - view "Index" executed in 7.6043ms.
+21:10:56 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 8.9272ms
+21:10:56 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:10:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:10:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:10:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:10:56 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 2.0515ms
+21:10:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/catalog - -
+21:10:56 [Information] ---> Executing endpoint '"BookShop.Controllers.BookController.Index (BookShop)"'
+21:10:56 [Information] ---> Route matched with "{action = \"Index\", controller = \"Book\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, Int32)" on controller "BookShop.Controllers.BookController" ("BookShop").
+21:10:56 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/categories/"
+21:10:56 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/categories/"
+21:10:58 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/categories/"
+21:10:58 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/categories/"
+21:10:58 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/Books/7/0"
+21:10:58 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/Books/7/0"
+21:10:59 [Information] ---> Executing ViewResult, running view "Index".
+21:10:59 [Information] ---> Executed ViewResult - view "Index" executed in 263.0415ms.
+21:10:59 [Information] ---> Executed action "BookShop.Controllers.BookController.Index (BookShop)" in 2755.2088ms
+21:10:59 [Information] ---> Executed endpoint '"BookShop.Controllers.BookController.Index (BookShop)"'
+21:14:18 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:14:18 [Information] ---> Now listening on: "https://localhost:7001"
+21:14:18 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:14:18 [Information] ---> Hosting environment: "Development"
+21:14:18 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:14:21 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:14:22 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:14:22 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:14:22 [Information] ---> Executing ViewResult, running view "Index".
+21:14:22 [Information] ---> Executed ViewResult - view "Index" executed in 382.5762ms.
+21:14:22 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 396.0487ms
+21:14:22 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:14:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:14:22 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 20.9645ms
+21:14:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:14:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:14:26 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/signout-oidc?sid=B14E0CBB5D68DE372472EA6CBD8DFF55&iss=https%3A%2F%2Flocalhost%3A7003 - -
+21:14:26 [Information] ---> Remote signout request processed.
+21:14:26 [Information] ---> AuthenticationScheme: "cookie" signed out.
+21:15:57 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:15:58 [Information] ---> Now listening on: "https://localhost:7001"
+21:15:58 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:15:58 [Information] ---> Hosting environment: "Development"
+21:15:58 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:16:01 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:16:02 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:16:02 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:16:02 [Information] ---> Executing ViewResult, running view "Index".
+21:16:02 [Information] ---> Executed ViewResult - view "Index" executed in 414.4673ms.
+21:16:02 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 430.8884ms
+21:16:02 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:16:02 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:16:02 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:16:02 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:16:02 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 46.2947ms
+21:17:33 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:17:33 [Information] ---> Now listening on: "https://localhost:7001"
+21:17:33 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:17:33 [Information] ---> Hosting environment: "Development"
+21:17:33 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:17:37 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:17:37 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:17:37 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:17:37 [Information] ---> Executing ViewResult, running view "Index".
+21:17:38 [Information] ---> Executed ViewResult - view "Index" executed in 389.4011ms.
+21:17:38 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 415.5874ms
+21:17:38 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:17:38 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:17:38 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 5.3384ms
+21:17:38 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:17:38 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:22:59 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:22:59 [Information] ---> Now listening on: "https://localhost:7001"
+21:22:59 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:22:59 [Information] ---> Hosting environment: "Development"
+21:22:59 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:23:10 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:23:10 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:23:10 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:23:10 [Information] ---> Executing ViewResult, running view "Index".
+21:23:11 [Information] ---> Executed ViewResult - view "Index" executed in 454.4451ms.
+21:23:11 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 494.018ms
+21:23:11 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:23:11 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:23:11 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:23:11 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:23:11 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 26.4837ms
+21:24:13 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:24:13 [Information] ---> Now listening on: "https://localhost:7001"
+21:24:13 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:24:13 [Information] ---> Hosting environment: "Development"
+21:24:13 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:24:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:24:23 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:24:23 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:24:23 [Information] ---> Executing ViewResult, running view "Index".
+21:24:24 [Information] ---> Executed ViewResult - view "Index" executed in 409.137ms.
+21:24:24 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 422.9676ms
+21:24:24 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:24:24 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:24:24 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:24:24 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:24:24 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 17.1189ms
+21:27:32 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:27:32 [Information] ---> Now listening on: "https://localhost:7001"
+21:27:32 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:27:32 [Information] ---> Hosting environment: "Development"
+21:27:32 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:27:41 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:27:41 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:27:41 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:27:41 [Information] ---> Executing ViewResult, running view "Index".
+21:27:42 [Information] ---> Executed ViewResult - view "Index" executed in 510.7885ms.
+21:27:42 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 536.2548ms
+21:27:42 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:27:42 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:27:42 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 5.3957ms
+21:27:42 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:27:42 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:28:18 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:28:18 [Information] ---> Now listening on: "https://localhost:7001"
+21:28:18 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:28:18 [Information] ---> Hosting environment: "Development"
+21:28:18 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:28:29 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:28:29 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:28:29 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:28:29 [Information] ---> Executing ViewResult, running view "Index".
+21:28:30 [Information] ---> Executed ViewResult - view "Index" executed in 371.801ms.
+21:28:30 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 389.6525ms
+21:28:30 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:28:30 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:28:30 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:28:30 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:28:30 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 19.0186ms
+21:28:49 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:28:49 [Information] ---> Now listening on: "https://localhost:7001"
+21:28:49 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:28:49 [Information] ---> Hosting environment: "Development"
+21:28:49 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:29:00 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:29:00 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:29:00 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:29:00 [Information] ---> Executing ViewResult, running view "Index".
+21:29:01 [Information] ---> Executed ViewResult - view "Index" executed in 394.0868ms.
+21:29:01 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 406.8252ms
+21:29:01 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:29:01 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:29:01 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:29:01 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:29:01 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 12.6999ms
+21:29:28 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:29:28 [Information] ---> Now listening on: "https://localhost:7001"
+21:29:28 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:29:28 [Information] ---> Hosting environment: "Development"
+21:29:28 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:29:39 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:29:39 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:29:39 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:29:39 [Information] ---> Executing ViewResult, running view "Index".
+21:29:40 [Information] ---> Executed ViewResult - view "Index" executed in 567.4518ms.
+21:29:40 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 590.7285ms
+21:29:40 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:29:40 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:29:40 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:29:40 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:29:40 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 14.1198ms
+21:30:28 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:30:29 [Information] ---> Now listening on: "https://localhost:7001"
+21:30:29 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:30:29 [Information] ---> Hosting environment: "Development"
+21:30:29 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:30:39 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:30:40 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:30:40 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:30:40 [Information] ---> Executing ViewResult, running view "Index".
+21:30:41 [Information] ---> Executed ViewResult - view "Index" executed in 277.3243ms.
+21:30:41 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 293.933ms
+21:30:41 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:30:41 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:30:41 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 11.1233ms
+21:30:41 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:30:41 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:31:05 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:31:05 [Information] ---> Now listening on: "https://localhost:7001"
+21:31:05 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:31:05 [Information] ---> Hosting environment: "Development"
+21:31:05 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:31:16 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:31:17 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:31:17 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:31:17 [Information] ---> Executing ViewResult, running view "Index".
+21:31:18 [Information] ---> Executed ViewResult - view "Index" executed in 1340.9924ms.
+21:31:18 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 1376.0245ms
+21:31:18 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:31:18 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:31:18 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 6.7933ms
+21:31:18 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:31:18 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:31:20 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/catalog - -
+21:31:20 [Information] ---> Executing endpoint '"BookShop.Controllers.BookController.Index (BookShop)"'
+21:31:20 [Information] ---> Route matched with "{action = \"Index\", controller = \"Book\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, Int32)" on controller "BookShop.Controllers.BookController" ("BookShop").
+21:31:20 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/categories/"
+21:31:20 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/categories/"
+21:31:21 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/categories/"
+21:31:21 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/categories/"
+21:31:21 [Information] ---> Start processing HTTP request "GET" "https://localhost:7002/api/Books/7/0"
+21:31:21 [Information] ---> Sending HTTP request "GET" "https://localhost:7002/api/Books/7/0"
+21:31:22 [Information] ---> Executing ViewResult, running view "Index".
+21:31:22 [Information] ---> Executed ViewResult - view "Index" executed in 259.5244ms.
+21:31:22 [Information] ---> Executed action "BookShop.Controllers.BookController.Index (BookShop)" in 1972.128ms
+21:31:22 [Information] ---> Executed endpoint '"BookShop.Controllers.BookController.Index (BookShop)"'
+21:31:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:31:22 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 4.9008ms
+21:31:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:31:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+21:31:57 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+21:31:58 [Information] ---> Now listening on: "https://localhost:7001"
+21:31:58 [Information] ---> Application started. Press Ctrl+C to shut down.
+21:31:58 [Information] ---> Hosting environment: "Development"
+21:31:58 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+21:32:09 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+21:32:09 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:32:09 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+21:32:10 [Information] ---> Executing ViewResult, running view "Index".
+21:32:10 [Information] ---> Executed ViewResult - view "Index" executed in 541.8322ms.
+21:32:10 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 558.2289ms
+21:32:10 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+21:32:10 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+21:32:10 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 11.4182ms
+21:32:10 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+21:32:10 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+22:33:36 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+22:33:36 [Information] ---> Now listening on: "https://localhost:7001"
+22:33:36 [Information] ---> Application started. Press Ctrl+C to shut down.
+22:33:36 [Information] ---> Hosting environment: "Development"
+22:33:36 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+22:33:48 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+22:33:48 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:33:48 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+22:33:48 [Information] ---> Executing ViewResult, running view "Index".
+22:33:49 [Information] ---> Executed ViewResult - view "Index" executed in 469.4804ms.
+22:33:49 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 492.7768ms
+22:33:49 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:33:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+22:33:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+22:33:49 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+22:33:49 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 7.8801ms
+22:36:37 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+22:36:37 [Information] ---> Now listening on: "https://localhost:7001"
+22:36:37 [Information] ---> Application started. Press Ctrl+C to shut down.
+22:36:37 [Information] ---> Hosting environment: "Development"
+22:36:37 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+22:36:54 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+22:36:54 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:36:54 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+22:36:54 [Information] ---> Executing ViewResult, running view "Index".
+22:36:56 [Information] ---> Executed ViewResult - view "Index" executed in 1376.2645ms.
+22:36:56 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 1397.6927ms
+22:36:56 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:36:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+22:36:56 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 11.5799ms
+22:36:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+22:36:56 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+22:53:44 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+22:53:44 [Information] ---> Now listening on: "https://localhost:7001"
+22:53:44 [Information] ---> Application started. Press Ctrl+C to shut down.
+22:53:44 [Information] ---> Hosting environment: "Development"
+22:53:44 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+22:53:57 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+22:53:58 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:53:58 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+22:53:58 [Information] ---> Executing ViewResult, running view "Index".
+22:53:58 [Information] ---> Executed ViewResult - view "Index" executed in 583.9022ms.
+22:53:58 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 603.3916ms
+22:53:58 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:53:58 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+22:53:58 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+22:53:58 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+22:53:58 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 22.8705ms
+22:56:50 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+22:56:50 [Information] ---> Now listening on: "https://localhost:7001"
+22:56:50 [Information] ---> Application started. Press Ctrl+C to shut down.
+22:56:50 [Information] ---> Hosting environment: "Development"
+22:56:50 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+22:57:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+22:57:04 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:57:04 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+22:57:04 [Information] ---> Executing ViewResult, running view "Index".
+22:57:04 [Information] ---> Executed ViewResult - view "Index" executed in 746.4563ms.
+22:57:04 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 786.9302ms
+22:57:04 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+22:57:04 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+22:57:04 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 7.0604ms
+22:57:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+22:57:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:08:59 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:08:59 [Information] ---> Now listening on: "https://localhost:7001"
+23:08:59 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:08:59 [Information] ---> Hosting environment: "Development"
+23:08:59 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:09:11 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:09:11 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:09:13 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:09:13 [Information] ---> Executing ViewResult, running view "Index".
+23:09:13 [Information] ---> Executed ViewResult - view "Index" executed in 356.4465ms.
+23:09:13 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 372.0205ms
+23:09:13 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:09:13 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:09:13 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 8.9648ms
+23:09:13 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:09:13 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:11:09 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:11:09 [Information] ---> Now listening on: "https://localhost:7001"
+23:11:09 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:11:09 [Information] ---> Hosting environment: "Development"
+23:11:09 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:11:21 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:11:21 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:11:21 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:11:22 [Information] ---> Executing ViewResult, running view "Index".
+23:11:22 [Information] ---> Executed ViewResult - view "Index" executed in 628.2508ms.
+23:11:22 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 656.5033ms
+23:11:22 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:11:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:11:22 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 6.0003ms
+23:11:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:11:22 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:14:01 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:14:01 [Information] ---> Now listening on: "https://localhost:7001"
+23:14:01 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:14:01 [Information] ---> Hosting environment: "Development"
+23:14:01 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:14:11 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:14:11 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:14:11 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:14:11 [Information] ---> Executing ViewResult, running view "Index".
+23:14:12 [Information] ---> Executed ViewResult - view "Index" executed in 600.8528ms.
+23:14:12 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 624.8024ms
+23:14:12 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:14:12 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:14:12 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 8.3117ms
+23:14:12 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:14:12 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:15:15 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:15:15 [Information] ---> Now listening on: "https://localhost:7001"
+23:15:15 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:15:15 [Information] ---> Hosting environment: "Development"
+23:15:15 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:15:27 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:15:27 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:15:27 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:15:27 [Information] ---> Executing ViewResult, running view "Index".
+23:15:28 [Information] ---> Executed ViewResult - view "Index" executed in 670.2247ms.
+23:15:28 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 715.2478ms
+23:15:28 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:15:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:15:28 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 11.6315ms
+23:15:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:15:28 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:19:20 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:19:21 [Information] ---> Now listening on: "https://localhost:7001"
+23:19:21 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:19:21 [Information] ---> Hosting environment: "Development"
+23:19:21 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:19:30 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:19:30 [Information] ---> Now listening on: "https://localhost:7001"
+23:19:30 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:19:30 [Information] ---> Hosting environment: "Development"
+23:19:30 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:19:42 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:19:42 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:19:42 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:19:42 [Information] ---> Executing ViewResult, running view "Index".
+23:19:43 [Information] ---> Executed ViewResult - view "Index" executed in 1216.3198ms.
+23:19:43 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 1240.454ms
+23:19:43 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:19:43 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:19:43 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 18.1368ms
+23:19:44 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:19:44 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:25:10 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:25:10 [Information] ---> Now listening on: "https://localhost:7001"
+23:25:10 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:25:10 [Information] ---> Hosting environment: "Development"
+23:25:10 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:25:21 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:25:22 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:25:22 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:25:22 [Information] ---> Executing ViewResult, running view "Index".
+23:25:22 [Information] ---> Executed ViewResult - view "Index" executed in 495.8085ms.
+23:25:22 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 518.8233ms
+23:25:22 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:25:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:25:23 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 9.2335ms
+23:25:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:25:23 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:26:55 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:26:56 [Information] ---> Now listening on: "https://localhost:7001"
+23:26:56 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:26:56 [Information] ---> Hosting environment: "Development"
+23:26:56 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:27:07 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:27:07 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:27:07 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:27:07 [Information] ---> Executing ViewResult, running view "Index".
+23:27:08 [Information] ---> Executed ViewResult - view "Index" executed in 679.4057ms.
+23:27:08 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 714.7555ms
+23:27:08 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:27:08 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:27:08 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:27:08 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:27:08 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 9.3774ms
+23:51:48 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:51:48 [Information] ---> Now listening on: "https://localhost:7001"
+23:51:48 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:51:48 [Information] ---> Hosting environment: "Development"
+23:51:48 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:52:03 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:52:04 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:52:04 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:52:04 [Information] ---> Executing ViewResult, running view "Index".
+23:52:05 [Information] ---> Executed ViewResult - view "Index" executed in 1185.6164ms.
+23:52:05 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 1201.368ms
+23:52:05 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:52:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:52:06 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 5.9038ms
+23:52:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:52:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:56:46 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:56:47 [Information] ---> Now listening on: "https://localhost:7001"
+23:56:47 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:56:47 [Information] ---> Hosting environment: "Development"
+23:56:47 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:56:55 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:56:56 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:56:56 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:56:56 [Information] ---> Executing ViewResult, running view "Index".
+23:56:57 [Information] ---> Executed ViewResult - view "Index" executed in 1179.8432ms.
+23:56:57 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 1192.8313ms
+23:56:57 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:56:57 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:56:57 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 20.1484ms
+23:56:57 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:56:57 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:58:54 [Information] ---> User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+23:58:54 [Information] ---> Now listening on: "https://localhost:7001"
+23:58:54 [Information] ---> Application started. Press Ctrl+C to shut down.
+23:58:54 [Information] ---> Hosting environment: "Development"
+23:58:54 [Information] ---> Content root path: "E:\NewRepos\BookShop\BookShop"
+23:59:05 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/ - -
+23:59:06 [Information] ---> Executing endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:59:06 [Information] ---> Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "BookShop.Controllers.Home" ("BookShop").
+23:59:06 [Information] ---> Executing ViewResult, running view "Index".
+23:59:06 [Information] ---> Executed ViewResult - view "Index" executed in 464.8822ms.
+23:59:06 [Information] ---> Executed action "BookShop.Controllers.Home.Index (BookShop)" in 483.6634ms
+23:59:06 [Information] ---> Executed endpoint '"BookShop.Controllers.Home.Index (BookShop)"'
+23:59:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - -
+23:59:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_framework/aspnetcore-browser-refresh.js - -
+23:59:06 [Information] ---> Request starting HTTP/2 GET https://localhost:7001/_vs/browserLink - -
+23:59:06 [Information] ---> Request finished HTTP/2 GET https://localhost:7001/Web_153505_Abramovich.styles.css - - - 404 0 - 17.7908ms
