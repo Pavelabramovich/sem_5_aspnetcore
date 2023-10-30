@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Cors;
 namespace BookShop.Api.Controllers;
 
 
-[EnableCors("AllowAnyOrigin")]
+[EnableCors("AllowBlazorRequests")]
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
@@ -35,7 +35,8 @@ public class BooksController : ControllerBase
         _imageService = imageService;
     }
 
-    //[AllowAnonymous]
+    [AllowAnonymous]
+  //  [EnableCors("AllowAnyOrigin")]
     [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooksPage(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
@@ -67,7 +68,7 @@ public class BooksController : ControllerBase
         return Ok(booksOnPageResponse);
     }
 
-
+ //   [EnableCors("AllowAnyOrigin")]
     [AllowAnonymous]
     [HttpGet]
     [Route("pageNum{pageNum:int}")]
@@ -81,7 +82,7 @@ public class BooksController : ControllerBase
         return Ok(booksOnPageResponse);
     }
 
-
+ //   [EnableCors("AllowAnyOrigin")]
     [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<Book>> GetBooks()
@@ -98,6 +99,7 @@ public class BooksController : ControllerBase
         }
     }
 
+  //  [EnableCors("AllowAnyOrigin")]
     [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<ActionResult<Book>> GetBook(int id)
@@ -114,7 +116,7 @@ public class BooksController : ControllerBase
         }
     }
 
-    
+ //   [EnableCors("AllowAnyOrigin")]
     [HttpPut("{id}")]
     public async Task<IActionResult> PutBook(int id, Book book)
     {
@@ -126,7 +128,7 @@ public class BooksController : ControllerBase
         return NoContent();
     }
 
-    
+  //  [EnableCors("AllowAnyOrigin")]
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {
@@ -135,7 +137,7 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    
+ //   [EnableCors("AllowAnyOrigin")]
     [HttpPost("{id}")]
     public async Task<ActionResult<ResponseData<string>>> PostImage(int id, IFormFile formFile)
     {
@@ -151,6 +153,7 @@ public class BooksController : ControllerBase
         }       
     }
 
+ //   [EnableCors("AllowAnyOrigin")]
     [AllowAnonymous]
     [HttpGet("image/{id}")]
     public async Task<ActionResult<ResponseData<string>>> GetImage(int id)
@@ -168,7 +171,7 @@ public class BooksController : ControllerBase
     }
 
 
-    
+  //  [EnableCors("AllowAnyOrigin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {

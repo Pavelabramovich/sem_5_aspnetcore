@@ -1,0 +1,14 @@
+﻿<h1>Counter</h1>
+
+<p>Current category: @SelectedCategory</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    [Parameter] public string SelectedCategory { get; set; }
+
+    void IncrementCount()
+    {
+        SelectedCategory += "1";
+    }
+}

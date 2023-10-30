@@ -92,9 +92,41 @@ public class DataService : IDataService
         throw new NotImplementedException();
     }
 
-    public Task GetProductListAsync(string? categoryName, int pageNum = 1)
+    public async Task<PageModel<Book>> GetProductListAsync(string? categoryName, int pageNum = 0)
     {
-        throw new NotImplementedException();
+        var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
+
+        if (categoryName != null)
+        {
+            urlString.Append($"{categoryName}/");
+        }
+        else
+            urlString.Append("7/");
+
+
+        urlString.Append($"{pageNum}");
+
+        await Console.Out.WriteLineAsync(urlString);
+
+
+        var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
+
+        if (response.IsSuccessStatusCode)
+        {
+            try
+            {
+
+                var r = response.Content.ReadFromJsonAsync<ResponseData<PageModel<Book>>>(_serializerOptions).Result.Data;
+                DataLoaded?.Invoke();
+                return r;
+            }
+            catch (JsonException ex)
+            {
+                throw null;
+            }
+        }
+        else
+            throw null;
     }
 
     public async Task<List<Category>> GetCategoriesAsync()

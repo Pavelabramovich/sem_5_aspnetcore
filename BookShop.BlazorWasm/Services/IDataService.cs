@@ -1,4 +1,5 @@
 ﻿using BookShop.Domain.Entities;
+using BookShop.Domain.Models;
 
 namespace BookShop.BlazorWasm.Services;
 
@@ -17,7 +18,7 @@ public interface IDataService
     int CurrentPage { get; }
 
 
-    Task GetProductListAsync(string? categoryName, int pageNum = 1);
+    Task<PageModel<Book>> GetProductListAsync(string? categoryName, int pageNum = 0);
 
     Task GetProductByIdAsync(int id);
 

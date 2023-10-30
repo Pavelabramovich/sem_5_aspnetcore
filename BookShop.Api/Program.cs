@@ -46,13 +46,10 @@ builder.Services
 });
 
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAnyOrigin", builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowBlazorRequests", policy => {
+        policy.WithOrigins("https://localhost:7004")
+            .AllowAnyMethod();
     });
 });
 
@@ -83,6 +80,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors("AllowAnyOrigin");
+app.UseCors("AllowBlazorRequests");
 
 app.Run();

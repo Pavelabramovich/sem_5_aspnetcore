@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.IdentityServer", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.Tests", "BookShop.Tests\BookShop.Tests.csproj", "{49D45B9D-3204-4F81-A2FE-ED0DD90525BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.BlazorWasm", "BookShop.BlazorWasm\BookShop.BlazorWasm.csproj", "{E2578B1A-E58F-4EF7-9218-5CEF1EDCE01F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop.BlazorWasm", "BookShop.BlazorWasm\BookShop.BlazorWasm.csproj", "{E2578B1A-E58F-4EF7-9218-5CEF1EDCE01F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

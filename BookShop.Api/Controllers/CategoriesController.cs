@@ -3,11 +3,13 @@
 using BookShop.Api.Services;
 using BookShop.Domain.Models;
 using BookShop.Domain.Entities;
+using Microsoft.AspNetCore.Cors;
 
 
 namespace BookShop.Api.Controllers;
 
 
+[EnableCors("AllowBlazorRequests")]
 [Route("api/[controller]")]
 [ApiController]
 public class CategoriesController : ControllerBase
