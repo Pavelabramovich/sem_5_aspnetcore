@@ -1,5 +1,6 @@
 ﻿using BookShop.Domain.Entities;
 using BookShop.Domain.Models;
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
@@ -9,11 +10,11 @@ namespace BookShop.BlazorWasm.Services;
 public class DataService : IDataService
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<DataService> _logger;
+    private readonly IAccessTokenProvider _tokenProvider;
     private readonly JsonSerializerOptions _serializerOptions;
 
 
-    public DataService(HttpClient httpClient, ILogger<DataService> logger)
+    public DataService(HttpClient httpClient, ILogger<DataService> logger, IAccessTokenProvider tokenProvider)
     {
         _serializerOptions = new JsonSerializerOptions()
         {
@@ -21,25 +22,20 @@ public class DataService : IDataService
         };
 
         _httpClient = httpClient;
-        _logger = logger;
+        _tokenProvider = tokenProvider;
     }
 
 
     public async Task<List<Book>> GetBooksAsync()
     {
-     
+        var tokenRequest = await _tokenProvider.RequestAccessToken();
 
+        if (tokenRequest.TryGetToken(out var token))
+        {
             var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
             var uri = new Uri(urlString.ToString());
 
-
-
-
-            
-               var response = await _httpClient.GetAsync(uri);
-
-
-
+            var response = await _httpClient.GetAsync(uri);
             if (response.IsSuccessStatusCode)
             {
                 try
@@ -58,8 +54,12 @@ public class DataService : IDataService
             else
             {
                 throw new InvalidOperationException("Unsecces response status code");
-           }
-        
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't get token from token request.");
+        }
     }
 
     public bool Success { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

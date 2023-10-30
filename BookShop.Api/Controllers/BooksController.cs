@@ -15,17 +15,13 @@ namespace BookShop.Api.Controllers;
 [EnableCors("AllowAnyOrigin")]
 [Route("api/[controller]")]
 [ApiController]
-
-//[Authorize]
+[Authorize]
 public class BooksController : ControllerBase
 {
     private readonly IBookService _bookService;
     private readonly IEntityService<Category> _categoryService;
 
     private readonly EntityImageService<Book> _imageService;
-
-    private readonly string _imagesPath;
-    private readonly string _appUri;
 
     public BooksController(
         IBookService bookService, 
@@ -37,11 +33,9 @@ public class BooksController : ControllerBase
         _bookService = bookService;
         _categoryService = categoryService;
         _imageService = imageService;
-
-        _appUri = configuration.GetSection("AppUrl")?.Value ?? throw new InvalidOperationException("AppUrl don't set.");
     }
 
-    [AllowAnonymous]
+    //[AllowAnonymous]
     [HttpGet("{categoryId}/{pageNum}")]
     public async Task<ActionResult<ResponseData<List<Book>>>> GetBooksPage(int? categoryId = null, int pageNum = 0, int itemsPerPage = 3)
     {
