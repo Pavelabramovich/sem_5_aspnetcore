@@ -4,6 +4,8 @@ namespace BookShop.BlazorWasm.Services;
 
 public interface IDataService
 {
+    event Action DataLoaded;
+
     Task<List<Book>> GetBooksAsync();
     Task<List<Category>> GetCategoriesAsync();
 

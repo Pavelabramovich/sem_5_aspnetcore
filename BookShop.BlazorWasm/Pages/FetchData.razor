@@ -6,6 +6,9 @@
 @inject HttpClient Http
 @inject IServiceProvider ServiceProvider
 
+@implements IDisposable
+
+
 <PageTitle>Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>
@@ -53,23 +56,15 @@ else
 
 @code {
     private IDataService _dataService;
-
-
-    // public FetchData(IDataService dataService)
-    // {
-    //     _dataService = dataService;
-    // }
-
-
-
     private List<Book> _books;
 
     protected override async Task OnInitializedAsync()
     {
         _dataService = ServiceProvider.GetRequiredService<IDataService>();
-
+        _dataService.DataLoaded += StateHasChanged;
+        
         _books = await _dataService.GetBooksAsync();
-
+       
         var categories = new Dictionary<int, Category>();
 
         (await _dataService.GetCategoriesAsync()).ForEach(c => categories.Add(c.Id, c));
@@ -81,5 +76,10 @@ else
                 item.Category = categories[(int)item.CategoryId];
             }
         }
+    }
+
+    public void Dispose()
+    {
+        _dataService.DataLoaded -= StateHasChanged;
     }
 }

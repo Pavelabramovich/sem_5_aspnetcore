@@ -2,6 +2,7 @@
 using BookShop.Domain.Models;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using System.Net.Http.Json;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.Json;
 
@@ -13,6 +14,7 @@ public class DataService : IDataService
     private readonly IAccessTokenProvider _tokenProvider;
     private readonly JsonSerializerOptions _serializerOptions;
 
+    public event Action? DataLoaded;
 
     public DataService(HttpClient httpClient, ILogger<DataService> logger, IAccessTokenProvider tokenProvider)
     {
@@ -23,6 +25,8 @@ public class DataService : IDataService
 
         _httpClient = httpClient;
         _tokenProvider = tokenProvider;
+
+        DataLoaded = () => { };
     }
 
 
@@ -40,16 +44,25 @@ public class DataService : IDataService
             {
                 try
                 {
-                    return response.Content.ReadFromJsonAsync<ResponseData<List<Book>>>(_serializerOptions).Result.Data ?? throw new NullReferenceException();
+                    var res = response.Content.ReadFromJsonAsync<ResponseData<List<Book>>>(_serializerOptions).Result;
+                     
+                    if (res is null)
+                    {
+                        throw new InvalidOperationException("Unsecces response data");
+                    }
+                    else
+                    {
+                        if (res.ErrorMessage is not null)
+                            DataLoaded?.Invoke();
+
+                        return res.Data;
+                    }
                 }
                 catch (JsonException ex)
                 {
                     throw new JsonException("Incorrect format in api/Books", ex);
                 }
-                catch (NullReferenceException ex)
-                {
-                    throw new InvalidOperationException("Unsecces response data", ex);
-                }
+   
             }
             else
             {
