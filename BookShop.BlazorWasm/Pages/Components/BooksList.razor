@@ -7,12 +7,13 @@
 }
 else
 {
+    <link rel="stylesheet" href="lib/font-awesome/css/all.css" />
+
     <table class="table">
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Price</th>
-                <th>Image</th>
+                <th>Info</th>
                 <th></th>
             </tr>
         </thead>
@@ -25,10 +26,9 @@ else
                         @book.Title
                     </td>
                     <td>
-                        @book.Price
-                    </td>
-                    <td>
-                        <img src="@book.ImagePath" style="height: 80px;" />
+                        <button class="btn btn-info" @onclick="async () => await DisplayInfo.InvokeAsync(book.Id)">
+                            <i class="fa-sharp fa-solid fa-magnifying-glass" style="letter-spacing:5px;">&nbsp; DETAILS</i>
+                        </button>
                     </td>
                 </tr>
             }
@@ -36,8 +36,40 @@ else
     </table>
 }
 
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Info</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var book in DataService.Books)
+        {
+            <tr>
+                <td>
+                    @book.Title
+                </td>
+                <td>
+                    @book.Price
+                </td>
+                <td>
+                    <img src="@book.ImagePath" style="height: 80px;" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+
 @code {
     [Inject] public IDataService DataService { get; set; }
+
+    [Parameter] public EventCallback<int> DisplayInfo { get; set; }
 
 
     protected override void OnInitialized()

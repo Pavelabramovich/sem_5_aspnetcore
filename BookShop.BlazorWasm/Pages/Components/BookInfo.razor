@@ -1,0 +1,48 @@
+﻿@implements IDisposable
+
+
+@if (Book is not null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    @Book.Title
+                </td>
+                <td>
+                    @Book.Price
+                </td>
+                <td>
+                    <img src="@Book.ImagePath" style="height: 80px;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+@code {
+    [Inject] public IDataService DataService { get; set; }
+
+    [Parameter] public Book? Book { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        DataService.DataLoaded += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        DataService.DataLoaded -= StateHasChanged;
+    }
+}

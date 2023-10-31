@@ -13,16 +13,18 @@
 <PageTitle>Catalog</PageTitle>
 
 <CategorySelector CategoryName=@CategoryName />
-<BooksList />
+<BooksList DisplayInfo=@DisplayInfo />
 
 <Pager CategoryName=@CategoryName />
+
+<BookInfo Book=@SelectedBook />
 
 @code {
     [Inject] public IDataService DataService { get; set; }
 
     [ParameterAttribute] public string? CategoryName { get; set; }
 
-
+    public Book? SelectedBook;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -30,6 +32,12 @@
 
         await DataService.GetBookListAsync(CategoryName);
     }
+
+    private void DisplayInfo(int id)
+    {
+        SelectedBook = DataService.GetBookByIdAsync(id).Result;
+    }
+
 
     public void Dispose()
     {

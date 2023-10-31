@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/BookInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xCb29rSW5mby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/BooksList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xCb29rc0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -68,9 +68,9 @@ public class DataService : IDataService
         }
     }
 
-    public Task GetBookByIdAsync(int id)
+    public Task<Book?> GetBookByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return Task.FromResult(Books.FirstOrDefault(x => x.Id == id));
     }
 
     public async Task GetBookListAsync(string? categoryName, int pageNum = 0)

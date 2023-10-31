@@ -19,7 +19,7 @@ public interface IDataService
 
     Task GetBookListAsync(string? categoryName, int pageNum = 0);
 
-    Task GetBookByIdAsync(int id);
+    Task<Book> GetBookByIdAsync(int id);
 
     Task GetCategoryListAsync();
 }
