@@ -11,128 +11,96 @@ namespace BookShop.BlazorWasm.Services;
 public class DataService : IDataService
 {
     private readonly HttpClient _httpClient;
-    private readonly IAccessTokenProvider _tokenProvider;
     private readonly JsonSerializerOptions _serializerOptions;
 
     public event Action? DataLoaded;
 
-    public DataService(HttpClient httpClient, ILogger<DataService> logger, IAccessTokenProvider tokenProvider)
+    public DataService(HttpClient httpClient, IAccessTokenProvider tokenProvider)
     {
+        Console.WriteLine("ctor");
+
         _serializerOptions = new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
 
         _httpClient = httpClient;
-        _tokenProvider = tokenProvider;
-
-        DataLoaded = () => { };
     }
 
+    public bool Success { get; private set; }
+    public string ErrorMessage { get; private set; }
 
-    public async Task<List<Book>> GetBooksAsync()
-    {
-        var tokenRequest = await _tokenProvider.RequestAccessToken();
+    public int TotalPages { get; private set; }
+    public int CurrentPage { get; private set; }
 
-        if (tokenRequest.TryGetToken(out var token))
-        {
-            var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
-            var uri = new Uri(urlString.ToString());
-
-            var response = await _httpClient.GetAsync(uri);
-            if (response.IsSuccessStatusCode)
-            {
-                try
-                {
-                    var res = response.Content.ReadFromJsonAsync<ResponseData<List<Book>>>(_serializerOptions).Result;
-                     
-                    if (res is null)
-                    {
-                        throw new InvalidOperationException("Unsecces response data");
-                    }
-                    else
-                    {
-                        if (res.ErrorMessage is not null)
-                            DataLoaded?.Invoke();
-
-                        return res.Data;
-                    }
-                }
-                catch (JsonException ex)
-                {
-                    throw new JsonException("Incorrect format in api/Books", ex);
-                }
-   
-            }
-            else
-            {
-                throw new InvalidOperationException("Unsecces response status code");
-            }
-        }
-        else
-        {
-            throw new InvalidOperationException("Can't get token from token request.");
-        }
-    }
-
-    public bool Success { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string ErrorMessage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-    public int TotalPages { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public int CurrentPage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public IEnumerable<Book>? Books { get; private set; }
+    public IEnumerable<Category>? Categories { get; private set; }
 
 
-    public Task GetCategoryListAsync()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task GetProductByIdAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<PageModel<Book>> GetProductListAsync(string? categoryName, int pageNum = 0)
-    {
-        var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
-
-        if (categoryName != null)
-        {
-            urlString.Append($"{categoryName}/");
-        }
-        else
-            urlString.Append("7/");
-
-
-        urlString.Append($"{pageNum}");
-
-        await Console.Out.WriteLineAsync(urlString);
-
-
-        var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
-
-        if (response.IsSuccessStatusCode)
-        {
-            try
-            {
-
-                var r = response.Content.ReadFromJsonAsync<ResponseData<PageModel<Book>>>(_serializerOptions).Result.Data;
-                DataLoaded?.Invoke();
-                return r;
-            }
-            catch (JsonException ex)
-            {
-                throw null;
-            }
-        }
-        else
-            throw null;
-    }
-
-    public async Task<List<Category>> GetCategoriesAsync()
+    public async Task GetCategoryListAsync()
     {
         var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}categories/");
 
+        var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
+
+        if (response.IsSuccessStatusCode)
+        {
+            try
+            {
+                var result = await response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>(_serializerOptions);
+
+                if (result?.Data is not null)
+                {
+                    Categories = result!.Data!;
+                    DataLoaded?.Invoke();
+                }
+                else
+                {
+                    ErrorMessage = result!.ErrorMessage!;
+                }
+            }
+            catch (JsonException ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+        }
+        else
+        {
+            ErrorMessage = "Unsecces response status code";
+        }
+    }
+
+    public Task GetBookByIdAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task GetBookListAsync(string? categoryName, int pageNum = 0)
+    {
+        Console.WriteLine("service");
+
+        var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
+
+       
+        await GetCategoryListAsync();
+
+        Category? category;
+
+        if (categoryName is not null && Categories!.SingleOrDefault(c => c.Name == categoryName) is Category single)
+        {
+            category = single;
+        }
+        else
+        {
+            category = Categories!.FirstOrDefault();
+        }
+            
+        
+        if (category is null)
+            throw new ArgumentException("CategoryName is invalid category name", nameof(categoryName));
+
+
+        urlString.Append($"{category.Id}/{pageNum}");
 
         var response = await _httpClient.GetAsync(new Uri(urlString.ToString()));
 
@@ -140,20 +108,28 @@ public class DataService : IDataService
         {
             try
             {
-                return response.Content.ReadFromJsonAsync<ResponseData<List<Category>>>(_serializerOptions).Result.Data ?? throw new NullReferenceException(); ;
+                var result = await response.Content.ReadFromJsonAsync<ResponseData<PageModel<Book>>>(_serializerOptions);
+
+                if (result?.Data is not null)
+                {
+                    var pageModel = result!.Data!;
+                    (Books, TotalPages, CurrentPage) = pageModel;
+
+                    DataLoaded?.Invoke();
+                }
+                else
+                {
+                    ErrorMessage = result!.ErrorMessage!;
+                }
             }
             catch (JsonException ex)
             {
-                throw new JsonException("Incorrect format in api/Categories", ex);
-            }
-            catch (NullReferenceException ex)
-            {
-                throw new InvalidOperationException("Unsecces response data", ex);
+                ErrorMessage = ex.Message;
             }
         }
         else
         {
-            throw new InvalidOperationException("Unsecces response status code");
+            ErrorMessage = "Unsecces response status code";
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿@implements IDisposable
+
+
+
+
+<h3>DishesList</h3>
+@foreach (var book in DataService.Books ?? new List<Book> { new() { Title = "Pusto" } })
+{
+    <text>@book.Title</text>
+}
+
+@code {
+    [Inject]
+    public IDataService DataService { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("list");
+
+        DataService.DataLoaded += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        DataService.DataLoaded -= StateHasChanged;
+    }
+}

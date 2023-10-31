@@ -9,12 +9,13 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddScoped<IDataService, DataService>();
+builder.Services.AddSingleton<IDataService, DataService>();
 
 var apiUri = builder.Configuration["UriData:ApiUri"];
 
 builder.Services
     .AddHttpClient<IDataService, DataService>(opt => opt.BaseAddress = new Uri(apiUri));
+
 
 
 //builder.Services.AddRazorPages();

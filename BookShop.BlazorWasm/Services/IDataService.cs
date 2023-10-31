@@ -7,20 +7,19 @@ public interface IDataService
 {
     event Action DataLoaded;
 
-    Task<List<Book>> GetBooksAsync();
-    Task<List<Category>> GetCategoriesAsync();
-
+    IEnumerable<Book>? Books { get; }
+    IEnumerable<Category>? Categories { get; }
 
     bool Success { get; }
-    string ErrorMessage { get;  }
+    string? ErrorMessage { get;  }
 
     int TotalPages { get;  }
     int CurrentPage { get; }
 
 
-    Task<PageModel<Book>> GetProductListAsync(string? categoryName, int pageNum = 0);
+    Task GetBookListAsync(string? categoryName, int pageNum = 0);
 
-    Task GetProductByIdAsync(int id);
+    Task GetBookByIdAsync(int id);
 
     Task GetCategoryListAsync();
 }

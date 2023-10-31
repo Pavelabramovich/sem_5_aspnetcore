@@ -20,5 +20,12 @@ public class PageModel<T>
         PagesCount = pagesCount;
         PageNum = pageNum;
     }
+
+    public void Deconstruct(out IEnumerable<T> items, out int pagesCount, out int pageNum)
+    {
+        items = Items;
+        pagesCount = PagesCount;
+        pageNum = PageNum;
+    }
 }
    

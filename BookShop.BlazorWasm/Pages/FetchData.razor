@@ -1,25 +1,26 @@
 ﻿@page "/catalog"
+@page "/catalog/{categoryName}"
 
 
 @using Microsoft.AspNetCore.Authorization
 @attribute [Authorize]
 
-@inject HttpClient Http
 @inject IServiceProvider ServiceProvider
 
 @implements IDisposable
 
 
-<PageTitle>Weather forecast</PageTitle>
-<CategorySelector SelectedCategory="123"/>
-<DishesList />
+<PageTitle>Catalog</PageTitle>
+
+<CategorySelector CategoryName=@CategoryName />
+<BooksList />
 
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (_books == null)
+@if (DataService.Books is null)
 {
     <p><em>Loading...</em></p>
 }
@@ -29,7 +30,6 @@ else
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Category</th>
                 <th>Price</th>
                 <th>Image</th>
                 <th></th>
@@ -37,14 +37,11 @@ else
         </thead>
 
         <tbody>
-            @foreach (var book in _books)
+            @foreach (var book in DataService.Books)
             {
                 <tr>
                     <td>
                         @book.Title
-                    </td>
-                    <td>
-                        @(book.Category != null ? book.Category.Name : "???")
                     </td>
                     <td>
                         @book.Price
@@ -59,37 +56,25 @@ else
 }
 
 @code {
-    private IDataService _dataService;
-    private List<Book> _books;
+    [Inject]
+    public IDataService DataService { get; set; }
 
-    [Parameter] public string Category { get; set; }
 
-    public string SelectedName { get; set; }
+    [ParameterAttribute] public string? CategoryName { get; set; }
 
 
     protected override async Task OnParametersSetAsync()
     {
-        _dataService = ServiceProvider.GetRequiredService<IDataService>();
-        _dataService.DataLoaded += StateHasChanged;
+      //  _dataService = ServiceProvider.GetRequiredService<IDataService>();
+       
+        DataService.DataLoaded += StateHasChanged;
 
-        _books = (await _dataService.GetProductListAsync(Category)).Items.ToList();
-
-        var categories = new Dictionary<int, Category>();
-
-        (await _dataService.GetCategoriesAsync()).ForEach(c => categories.Add(c.Id, c));
-
-        foreach (var item in _books)
-        {
-            if (item.CategoryId is not null)
-            {
-                item.Category = categories[(int)item.CategoryId];
-            }
-        }
+        await DataService.GetBookListAsync(CategoryName);
     }
 
 
     public void Dispose()
     {
-        _dataService.DataLoaded -= StateHasChanged;
+        DataService.DataLoaded -= StateHasChanged;
     }
 }

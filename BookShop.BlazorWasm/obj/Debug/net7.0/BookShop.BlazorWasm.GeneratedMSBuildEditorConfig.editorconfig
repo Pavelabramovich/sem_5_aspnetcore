@@ -24,12 +24,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/CategorySelector.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xDYXRlZ29yeVNlbGVjdG9yLnJhem9y
+[E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/BooksList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xCb29rc0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/DishesList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xEaXNoZXNMaXN0LnJhem9y
+[E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Components/CategorySelector.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xDYXRlZ29yeVNlbGVjdG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/NewRepos/BookShop/BookShop.BlazorWasm/Pages/Counter.razor]

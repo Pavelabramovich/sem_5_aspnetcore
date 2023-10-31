@@ -1,14 +1,50 @@
-﻿<h1>Counter</h1>
+﻿@implements IDisposable
 
-<p>Current category: @SelectedCategory</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@inject IDataService DataService
+
+
+<div class="dropdown">
+    <button 
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdown"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+
+        Categories
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="dropdown">
+        @if (DataService.Categories is null)
+        {
+            <span class="dropdown-item">Loading...</span>
+        }
+        else
+        {
+            foreach (var category in DataService.Categories)
+            {
+                <a class="dropdown-item" href=@($"catalog/{category.Name}")>
+                    @category.Name
+                </a>
+            }
+        }
+    </div>
+</div>
 
 @code {
-    [Parameter] public string SelectedCategory { get; set; }
+    [Parameter] public string? CategoryName { get; set; }
 
-    void IncrementCount()
+    protected override async void OnInitialized()
     {
-        SelectedCategory += "1";
+        DataService.DataLoaded += StateHasChanged;
+
+        await DataService.GetCategoryListAsync();
+    }
+
+    public void Dispose()
+    {
+        DataService.DataLoaded -= StateHasChanged;
     }
 }
