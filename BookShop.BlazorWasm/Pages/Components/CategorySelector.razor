@@ -1,9 +1,6 @@
 ﻿@implements IDisposable
 
 
-@inject IDataService DataService
-
-
 <div class="dropdown">
     <button 
         class="btn btn-secondary dropdown-toggle"
@@ -34,6 +31,8 @@
 </div>
 
 @code {
+    [Inject] public IDataService DataService { get; set; }
+
     [Parameter] public string? CategoryName { get; set; }
 
     protected override async void OnInitialized()

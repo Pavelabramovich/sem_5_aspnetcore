@@ -15,7 +15,7 @@ public class DataService : IDataService
 
     public event Action? DataLoaded;
 
-    public DataService(HttpClient httpClient, IAccessTokenProvider tokenProvider)
+    public DataService(IHttpFactory httpFactory)
     {
         Console.WriteLine("ctor");
 
@@ -24,7 +24,7 @@ public class DataService : IDataService
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
 
-        _httpClient = httpClient;
+        _httpClient = httpFactory.Client;
     }
 
     public bool Success { get; private set; }

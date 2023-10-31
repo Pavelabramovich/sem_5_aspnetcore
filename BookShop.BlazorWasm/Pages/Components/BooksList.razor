@@ -1,17 +1,43 @@
 ﻿@implements IDisposable
 
 
-
-
-<h3>DishesList</h3>
-@foreach (var book in DataService.Books ?? new List<Book> { new() { Title = "Pusto" } })
+@if (DataService.Books is null)
 {
-    <text>@book.Title</text>
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var book in DataService.Books)
+            {
+                <tr>
+                    <td>
+                        @book.Title
+                    </td>
+                    <td>
+                        @book.Price
+                    </td>
+                    <td>
+                        <img src="@book.ImagePath" style="height: 80px;" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 @code {
-    [Inject]
-    public IDataService DataService { get; set; }
+    [Inject] public IDataService DataService { get; set; }
 
 
     protected override void OnInitialized()

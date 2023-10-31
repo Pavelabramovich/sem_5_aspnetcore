@@ -16,62 +16,18 @@
 <BooksList />
 
 
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
-@if (DataService.Books is null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var book in DataService.Books)
-            {
-                <tr>
-                    <td>
-                        @book.Title
-                    </td>
-                    <td>
-                        @book.Price
-                    </td>
-                    <td>
-                        <img src="@book.ImagePath" style="height: 80px;" />
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-
 @code {
-    [Inject]
-    public IDataService DataService { get; set; }
-
+    [Inject] public IDataService DataService { get; set; }
 
     [ParameterAttribute] public string? CategoryName { get; set; }
 
 
     protected override async Task OnParametersSetAsync()
     {
-      //  _dataService = ServiceProvider.GetRequiredService<IDataService>();
-       
         DataService.DataLoaded += StateHasChanged;
 
         await DataService.GetBookListAsync(CategoryName);
     }
-
 
     public void Dispose()
     {

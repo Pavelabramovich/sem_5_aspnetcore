@@ -13,8 +13,11 @@ builder.Services.AddSingleton<IDataService, DataService>();
 
 var apiUri = builder.Configuration["UriData:ApiUri"];
 
-builder.Services
-    .AddHttpClient<IDataService, DataService>(opt => opt.BaseAddress = new Uri(apiUri));
+builder.Services.AddSingleton<IHttpFactory, HttpFactory>();
+builder.Services.Configure<HttpOptions>(options => options.BaseUrl = apiUri);
+
+//builder.Services
+//    .AddHttpClient<IDataService, DataService>(opt => opt.BaseAddress = new Uri(apiUri));
 
 
 

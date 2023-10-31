@@ -213,14 +213,14 @@
       "netstandard.dll": "sha256-urq+e2ZQXxmOWMRxTR92529HnUVu6+kyVnfF6SoLad8=",
       "System.Private.CoreLib.dll": "sha256-ixnF\/wVKLHZM1N0lfJufpZ41EC2LvvyiSqdW43h3Xew=",
       "BookShop.Domain.dll": "sha256-TI\/qsP+wuxvURGhGk0txhsp5NplDlbMEpDz3K01t42s=",
-      "BookShop.BlazorWasm.dll": "sha256-d8hw4LzqiuZr\/aLJ1Rx03puUZEIwQ30SOBRf8hu05E0="
+      "BookShop.BlazorWasm.dll": "sha256-ReNG7b6N7KY2NpEz14mX2I7BOdGmXeX0zb3vAMg94As="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BookShop.Domain.pdb": "sha256-BAGFxija7AKA13dJUYMyWQO11VOb9Qb4mJrOkfNs2H8=",
-      "BookShop.BlazorWasm.pdb": "sha256-5+EfnK90YnGodMfUScCu0PKhLGptNPraAs0RE62CRwU="
+      "BookShop.BlazorWasm.pdb": "sha256-MUIwkdbxBlRKaVqwTcctdl7NPiSzYfY1g1QKqnofFkw="
     },
     "runtime": {
       "dotnet.7.0.12.1bjiu9f6fw.js": "sha256-cPJgWy8SjMaYFeimGkYy23ls+rDZVmoC\/eMoHpqRc+4=",
