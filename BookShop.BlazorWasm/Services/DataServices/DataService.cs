@@ -17,8 +17,6 @@ public class DataService : IDataService
 
     public DataService(IHttpFactory httpFactory)
     {
-        Console.WriteLine("ctor");
-
         _serializerOptions = new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
@@ -77,8 +75,6 @@ public class DataService : IDataService
 
     public async Task GetBookListAsync(string? categoryName, int pageNum = 0)
     {
-        Console.WriteLine("service");
-
         var urlString = new StringBuilder($"{_httpClient.BaseAddress.AbsoluteUri}Books/");
 
        

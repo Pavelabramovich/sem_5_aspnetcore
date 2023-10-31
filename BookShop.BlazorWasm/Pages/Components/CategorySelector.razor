@@ -10,7 +10,7 @@
         aria-haspopup="true"
         aria-expanded="false">
 
-        Categories
+        @(CategoryName ?? "Loading...")
     </button>
 
     <div class="dropdown-menu" aria-labelledby="dropdown">
@@ -40,6 +40,9 @@
         DataService.DataLoaded += StateHasChanged;
 
         await DataService.GetCategoryListAsync();
+
+        if (CategoryName is null)
+            CategoryName = DataService.Categories!.First().Name;
     }
 
     public void Dispose()
