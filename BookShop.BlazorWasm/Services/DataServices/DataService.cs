@@ -28,8 +28,8 @@ public class DataService : IDataService
     public bool Success { get; private set; }
     public string ErrorMessage { get; private set; }
 
-    public int TotalPages { get; private set; }
-    public int CurrentPage { get; private set; }
+    public int PagesCount { get; private set; }
+    public int PageNum { get; private set; }
 
     public IEnumerable<Book>? Books { get; private set; }
     public IEnumerable<Category>? Categories { get; private set; }
@@ -109,7 +109,7 @@ public class DataService : IDataService
                 if (result?.Data is not null)
                 {
                     var pageModel = result!.Data!;
-                    (Books, TotalPages, CurrentPage) = pageModel;
+                    (Books, PagesCount, PageNum) = pageModel;
 
                     DataLoaded?.Invoke();
                 }

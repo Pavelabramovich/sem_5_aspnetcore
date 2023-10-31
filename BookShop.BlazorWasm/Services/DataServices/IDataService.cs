@@ -13,8 +13,8 @@ public interface IDataService
     bool Success { get; }
     string? ErrorMessage { get;  }
 
-    int TotalPages { get;  }
-    int CurrentPage { get; }
+    int PagesCount { get;  }
+    int PageNum { get; }
 
 
     Task GetBookListAsync(string? categoryName, int pageNum = 0);

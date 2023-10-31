@@ -7,33 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 namespace BookShop.TagHelpers;
 
 
-public class EmailTagHelper : TagHelper
-{
-    private const string EmailDomain = "example.com";
-
-    public string MailTo { get; set; }
-
-    public override void Process(TagHelperContext context, TagHelperOutput output)
-    {
-        output.TagName = "a";
-        string address = MailTo + "@" + EmailDomain;
-        output.Attributes.SetAttribute("href", "mailto:" + address);
-        output.Content.SetContent(address);
-    }
-}
-
-[HtmlTargetElement("copyright")]
-public class CopyrightTagHelper : TagHelper
-{
-    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-    {
-        var content = await output.GetChildContentAsync();
-        string copyright = $"<p>© {DateTime.Now.Year} {content.GetContent()}</p>";
-        output.Content.SetHtmlContent(copyright);
-    }
-}
-
-
 public abstract class PagerTagHelper : TagHelper
 {
     public int CurrentPage { get; set; } = 0;

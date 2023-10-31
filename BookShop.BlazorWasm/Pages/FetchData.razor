@@ -15,11 +15,13 @@
 <CategorySelector CategoryName=@CategoryName />
 <BooksList />
 
+<Pager CategoryName=@CategoryName />
 
 @code {
     [Inject] public IDataService DataService { get; set; }
 
     [ParameterAttribute] public string? CategoryName { get; set; }
+
 
 
     protected override async Task OnParametersSetAsync()

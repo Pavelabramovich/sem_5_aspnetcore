@@ -1,0 +1,50 @@
+﻿@implements IDisposable
+
+
+@if (DataService.PagesCount > 1)
+{
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @{
+                var pageNum = DataService.PageNum;
+                var pagesCount = DataService.PagesCount;
+
+                var next = pageNum + 1 < pagesCount ? pageNum + 1 : pagesCount - 1;
+                var prev = pageNum - 1 >= 0 ? pageNum - 1 : 0;
+            }
+
+            <li class="page-item">
+                <button class="page-link" @onclick="() => DataService.GetBookListAsync(CategoryName, prev)">&laquo;</button>
+            </li>
+
+            @foreach (int i in Enumerable.Range(0, pagesCount))
+            {
+                <li class="page-item @(i == pageNum ? "active" : string.Empty)">
+                    <button class="page-link" @onclick="() => DataService.GetBookListAsync(CategoryName, i)">@(i + 1)</button>
+                </li>
+            }
+
+            <li class="page-item">
+                <button class="page-link" @onclick="() => DataService.GetBookListAsync(CategoryName, next)">&raquo;</button>
+            </li>
+        </ul>
+    </nav>
+}
+
+
+@code {
+    [Inject] public IDataService DataService { get; set; }
+
+    [Parameter] public string? CategoryName { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        DataService.DataLoaded += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        DataService.DataLoaded -= StateHasChanged;
+    }
+}
